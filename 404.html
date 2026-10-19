@@ -6,7 +6,13 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="robots" content="noindex">
 <meta charset="utf-8">
-<base href="/prospera-website/">
+<base href="/">
+<script>
+/* Old ERP addresses on www.prosperasystems.com: send them to the ERP at erp.prosperasystems.com, keeping the path */
+(function(){var p=location.pathname;
+if(/^\/(login|desk|app|api|files|private|printview|update-password|me|logout|assets\/erpnext|assets\/frappe)(\/|$|\?)/.test(p)||p==='/login'){
+location.replace('https://erp.prosperasystems.com'+p+location.search+location.hash);}})();
+</script>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap">
