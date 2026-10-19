@@ -1,0 +1,49 @@
+/* Arabic (RTL) layer. Loaded after uplift.css on ar/ pages only. */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap");
+:root{--display:"IBM Plex Sans Arabic","Instrument Sans",Tahoma,Arial,sans-serif;--body:"IBM Plex Sans Arabic","Instrument Sans",Tahoma,Arial,sans-serif}
+html[dir="rtl"] body{font-family:var(--body);letter-spacing:0;line-height:1.75}
+/* Arabic must never be letter-spaced: it breaks the joined script */
+html[dir="rtl"] *{letter-spacing:0!important}
+html[dir="rtl"] h1,html[dir="rtl"] h2{line-height:1.25;font-weight:700}
+html[dir="rtl"] .hero h1,html[dir="rtl"] .page-hero h1,html[dir="rtl"] .m-hero h1{line-height:1.2}
+html[dir="rtl"] .label,html[dir="rtl"] .vs-k,html[dir="rtl"] .k,html[dir="rtl"] .fo-k,html[dir="rtl"] .mm-col>p{text-transform:none;font-size:13px}
+html[dir="rtl"] .num,html[dir="rtl"] .amt,html[dir="rtl"] .big,html[dir="rtl"] .price,html[dir="rtl"] .bal b{direction:ltr;unicode-bidi:isolate}
+/* Mirror absolutely positioned floating cards */
+html[dir="rtl"] .sec-card.c1,html[dir="rtl"] .hero-stage .sec-card.c1,html[dir="rtl"] .m-photo .sec-card.c1{left:auto;right:-5%}
+html[dir="rtl"] .sec-card.c2,html[dir="rtl"] .hero-stage .sec-card.c2,html[dir="rtl"] .m-photo .sec-card.c2{right:auto;left:-6%}
+html[dir="rtl"] .sec-card.c3,html[dir="rtl"] .hero-stage .sec-card.c3{left:auto;right:7%}
+@media (max-width:900px){html[dir="rtl"] .sec-card.c1,html[dir="rtl"] .m-photo .sec-card.c1,html[dir="rtl"] .hero-stage .sec-card.c1{right:3%}html[dir="rtl"] .sec-card.c2,html[dir="rtl"] .m-photo .sec-card.c2,html[dir="rtl"] .hero-stage .sec-card.c2{left:3%}html[dir="rtl"] .sec-card.c3,html[dir="rtl"] .hero-stage .sec-card.c3{right:3%}}
+html[dir="rtl"] .ip-note{right:auto;left:max(-6%,-30px)}
+html[dir="rtl"] .ip-note.n2{left:auto;right:max(-6%,-30px)}
+html[dir="rtl"] .plan .rec{left:auto;right:22px}
+html[dir="rtl"] .pc .flag{right:auto;left:16px}
+html[dir="rtl"] .price .from{left:auto;right:0}
+/* Lists and accent borders */
+html[dir="rtl"] .only li,html[dir="rtl"] .dots li,html[dir="rtl"] .vs-col li{padding-left:0;padding-right:22px}
+html[dir="rtl"] .only li::before,html[dir="rtl"] .dots li::before,html[dir="rtl"] .vs-col li::before{left:auto;right:0}
+html[dir="rtl"] .vs-col li{padding-right:26px}
+html[dir="rtl"] .m-split .pts div{padding-left:0;padding-right:18px;border-left:0;border-right:3px solid var(--a-blue)}
+html[dir="rtl"] .m-split .pts div:nth-child(2){border-right-color:var(--gold)}
+html[dir="rtl"] .m-split .pts div:nth-child(3){border-right-color:var(--a-mint)}
+html[dir="rtl"] .exclusive{border-left:0;border-right:3px solid var(--gold)}
+html[dir="rtl"] .plan .feat-list,html[dir="rtl"] .plan ul,html[dir="rtl"] .card ul{padding-left:0;padding-right:18px}
+html[dir="rtl"] .ip-wrap,html[dir="rtl"] .iphone,html[dir="rtl"] .ip-screen{direction:ltr}
+html[dir="rtl"] .ip-app,html[dir="rtl"] .ip-widget{direction:rtl}
+html[dir="rtl"] .doc{direction:ltr;transform:rotate(2.5deg)}
+html[dir="rtl"] .year::before{background:linear-gradient(270deg,var(--a-blue),var(--gold),var(--a-mint))}
+html[dir="rtl"] .year div::before{left:auto;right:0}
+@media (max-width:1000px){html[dir="rtl"] .year::before{left:auto;right:7px}html[dir="rtl"] .year div{padding:0 34px 22px 0}}
+html[dir="rtl"] .ind-band .t1::before{mask:linear-gradient(270deg,#000,transparent 70%);-webkit-mask:linear-gradient(270deg,#000,transparent 70%)}
+html[dir="rtl"] .mm-col>p{margin:0 10px 8px 0}
+html[dir="rtl"] th,html[dir="rtl"] td,html[dir="rtl"] .two-tables th{text-align:right}
+html[dir="rtl"] .two-tables td.num,html[dir="rtl"] .grid-table td.c{text-align:center}
+html[dir="rtl"] .step input,html[dir="rtl"] .roi-f output{direction:ltr}
+html[dir="rtl"] .roi-f output{text-align:left}
+html[dir="rtl"] .footer .meta{justify-self:start;text-align:left}
+/* Language switch */
+.lang{font-size:14px;font-weight:600;color:var(--navy);text-decoration:none;padding:8px 12px;border-radius:999px;border:1px solid var(--cool);margin-inline-end:10px;white-space:nowrap}
+.lang:hover{background:var(--off)}
+.header .inner>.btn-small{margin-inline-start:0}
+/* Arabic: no monospace letter-spacing on small labels, it pulls Arabic letters apart */
+html[dir="rtl"] .zx-k,html[dir="rtl"] .zx-s,html[dir="rtl"] .cl-k,html[dir="rtl"] .prod .tag,html[dir="rtl"] .badge,html[dir="rtl"] .state,html[dir="rtl"] .country,html[dir="rtl"] .pc .flag,html[dir="rtl"] .ind .n{font-family:var(--body);letter-spacing:0;text-transform:none}
+html[dir="rtl"] .zx-k,html[dir="rtl"] .zx-s,html[dir="rtl"] .prod .tag,html[dir="rtl"] .cl-k{font-size:13px}
