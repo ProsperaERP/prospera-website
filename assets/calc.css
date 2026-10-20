@@ -195,3 +195,14 @@
 /* v12: server select */
 .pc-sel{width:100%;margin-top:10px;font:inherit;font-size:14.5px;color:var(--navy);padding:10px 12px;border:1px solid var(--cool);border-radius:10px;background:var(--white)}
 .pc-sel:focus-visible{outline:2px solid #2A4FA0;outline-offset:2px}
+/* v13: Accounting Desk */
+.pv-adpk{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:24px}
+.pv-pk{border:1px solid var(--line);border-radius:18px;padding:20px;background:var(--white);display:flex;flex-direction:column;gap:6px}
+.pv-pk h3{font-size:17px;margin:0;font-family:var(--body);font-weight:700;color:var(--navy)}
+.pv-pk .pv-hrs{margin:0;color:var(--muted);font-size:13px}
+.pv-pk .pv-pp{margin:6px 0 4px;color:var(--muted);font-size:13px}
+.pv-pk .pv-pp b{font-size:22px;color:var(--navy);font-weight:800;letter-spacing:-.01em}
+.pv-pk ul{margin:6px 0 0;padding-inline-start:18px;color:var(--ink,#22324d);font-size:13.5px;line-height:1.55}
+.pv-ad .lede{max-width:760px}
+@media (max-width:1000px){.pv-adpk{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.pv-adpk{grid-template-columns:1fr}}
