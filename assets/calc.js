@@ -1,4 +1,4 @@
-/* Prospera pricing calculator v10: Prospera ERP vs Odoo Custom vs Zoho One. Competitor prices: Egypt, checked 20 Oct 2026. */
+/* Prospera pricing calculator v11: Prospera ERP vs Odoo Custom vs Zoho One. Competitor prices: Egypt, checked 20 Oct 2026. */
 (function(){
   var D=document.getElementById('pv-data'); if(!D) return;
   var C=JSON.parse(D.textContent), T=C.t;
@@ -29,18 +29,25 @@
     return {total:tot,base:base,sup:sup,plan:plan,lic:lic,add:st.zadd,js:js,jsE:jsE,one:st.zone,ebs:st.zebs,ebsE:ebsE,y1:tot*12+jsE+ebsE+st.zone,minOk:!(Z.min[st.zsup]&&lic<Z.min[st.zsup]),annOk:!(st.zsup==='platinum'&&b!=='a')}}
 
   function setBill(b){st.bill=b;$$('[data-bill]').forEach(function(x){x.setAttribute('aria-pressed',x.getAttribute('data-bill')===b)});
-    $$('[data-pm]').forEach(function(x){x.textContent=money(+x.getAttribute(b==='m'?'data-pm':'data-pa'))});calc();}
+    $$('[data-pm]').forEach(function(x){x.textContent=money(+x.getAttribute(b==='m'?'data-pm':'data-pa'))});$$('[data-y1p]').forEach(function(x){x.textContent=Math.round(P[b].d1*100)});calc();}
   $$('[data-bill]').forEach(function(x){x.addEventListener('click',function(){setBill(x.getAttribute('data-bill'))})});
   $$('[data-year]').forEach(function(x){x.addEventListener('click',function(){st.year=x.getAttribute('data-year');$$('[data-year]').forEach(function(y){y.setAttribute('aria-pressed',y===x)});calc()})});
 
   var F={E:$('#pc-E'),U:$('#pc-U'),T:$('#pc-T')};
-  function clamp(){var E=Math.max(1,Math.min(1000,parseInt(F.E.n.value,10)||1));var U=Math.max(1,Math.min(E,parseInt(F.U.n.value,10)||1));var Tm=Math.max(0,Math.min(E-U,parseInt(F.T.n.value,10)||0));st.E=E;st.U=U;st.T=Tm;
-    F.U.r.max=Math.min(300,E);F.T.r.max=Math.max(0,Math.min(300,E-U));F.U.n.max=E;F.T.n.max=E-U;
-    ['E','U','T'].forEach(function(k){var v=st[k];if(document.activeElement!==F[k].n)F[k].n.value=v;F[k].r.value=v})}
+  /* employees are optional: never fewer than full users plus light users */
+  function clamp(){var U=Math.max(1,Math.min(1000,parseInt(F.U.n.value,10)||1));var Tm=Math.max(0,Math.min(1000,parseInt(F.T.n.value,10)||0));
+    var raw=parseInt(F.E.n.value,10),E=isNaN(raw)?0:Math.min(1000,Math.max(0,raw));st.autoE=E<U+Tm;E=Math.max(E,U+Tm);st.E=E;st.U=U;st.T=Tm;
+    ['U','T'].forEach(function(k){if(document.activeElement!==F[k].n)F[k].n.value=st[k];F[k].r.value=st[k]});
+    F.E.r.value=E;F.E.n.placeholder=U+Tm;
+    var h=$('#pc-E-auto');if(h){h.textContent=st.autoE?T.autoE.replace('{n}',E):'';h.hidden=!st.autoE}}
   ['E','U','T'].forEach(function(k){var w=F[k];if(!w)return;w.n=$('input[type=number]',w);w.r=$('input[type=range]',w);
     w.r.addEventListener('input',function(){w.n.value=w.r.value;clamp();calc()});
-    w.n.addEventListener('input',function(){if(w.n.value==='')return;clamp();calc()});
+    w.n.addEventListener('input',function(){if(w.n.value===''&&k!=='E')return;clamp();calc()});
     w.n.addEventListener('blur',function(){clamp();calc()});});
+  if(F.E&&F.E.n){var ah=document.createElement('p');ah.className='pc-hint pc-auto';ah.id='pc-E-auto';ah.hidden=true;F.E.appendChild(ah)}
+  /* info buttons */
+  $$('.pc-i').forEach(function(btn){var tip=document.getElementById(btn.getAttribute('aria-controls'));btn.addEventListener('click',function(){var open=tip.hidden;$$('.pc-tip').forEach(function(t){t.hidden=true});$$('.pc-i').forEach(function(b){b.setAttribute('aria-expanded','false')});tip.hidden=!open;btn.setAttribute('aria-expanded',open)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){$$('.pc-tip').forEach(function(t){t.hidden=true});$$('.pc-i').forEach(function(b){b.setAttribute('aria-expanded','false')})}});
   $$('[data-preset]').forEach(function(x){x.addEventListener('click',function(){var v=x.getAttribute('data-preset').split(',');F.E.n.value=v[0];F.U.n.value=v[1];F.T.n.value=v[2]||0;clamp();calc()})});
 
   /* quote settings */
@@ -67,6 +74,7 @@
     function cmp(v){var d=(v-pv)*12;return d>=0?[T.saves.replace('{n}',money(d)),'']:[T.costsLess.replace('{n}',money(-d)),'pc-more']}
     var y1e=$('[data-card=p] .pc-y1');if(y1e){if(p.disc){y1e.innerHTML='<b>'+T.pY1.replace('{p}',p.pct).replace('{n}',money(p.disc*12))+'</b><span>'+T.pY1b.replace('{n}',money(p.list))+'</span>';}else{var p1=prospera(st.E,st.U,st.T,b,'y1');y1e.innerHTML='<span>'+T.pY2n.replace('{p}',p1.pct).replace('{n}',money(p1.total))+'</span>';}y1e.hidden=false;y1e.classList.toggle('pc-y1-off',!p.disc)}
     setCard('p',pv,pl(st.U,'pPlan').replace('{u}',st.U)+(st.T?T.pPlanT.replace('{t}',st.T):'')+(p.cap?T.pCap:''),'','');
+    var pc=$('[data-card=p]');if(pc){var rb=$('.pc-ribbon',pc);if(rb)rb.hidden=!p.disc;pc.classList.toggle('pc-has-y1',!!p.disc);if(p.disc)$('.pc-amt',pc).innerHTML='<s class="pc-was">'+money(p.list)+'</s>'+money(pv)+' <small>'+T.mo+'</small>';}
     var co=cmp(ov),cz=cmp(zv);
     var oh=st.host==='sh'?T.oHostSh.replace('{w}',o.wk).replace('{g}',o.gb):T.oHostOn;
     setCard('o',ov,pl(st.U,y==='y1'?'oPlan1':'oPlan2').replace('{u}',st.U)+', '+oh,co[0],co[1]);

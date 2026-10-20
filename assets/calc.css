@@ -159,3 +159,36 @@
 .pc-ql li.pc-y1l{background:#fff1c7;border-radius:8px;padding:6px 8px;color:#7a4b00;font-weight:700}
 .pv-ex b{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
 .pv-ex em.pv-y1{display:inline-block;padding:2px 8px;border-radius:999px;background:#ffe7a8;color:#7a4b00;font-style:normal;font-weight:700;font-size:.78rem;white-space:nowrap}
+/* v11: info buttons, optional employees, first-year spotlight */
+.pc-lab{display:flex;align-items:center;gap:8px}
+.pc-lab label{flex:1}
+.pc-i{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--cool);background:var(--white);color:var(--navy);font:700 12px/1 Georgia,serif;font-style:italic;cursor:pointer;display:inline-grid;place-items:center;padding:0}
+.pc-i:hover,.pc-i[aria-expanded=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pc-i:focus-visible{outline:2px solid #2A4FA0;outline-offset:2px}
+.pc-tip{margin-top:8px;padding:10px 12px;border-radius:12px;background:#0B1F3F;color:#E8EEF8;font-size:13px;line-height:1.5;box-shadow:0 10px 24px rgba(10,25,49,.18)}
+.pc-auto{color:#2A4FA0}
+.pc-chips .pc-chip{text-align:start}
+/* hero spotlight */
+.pv-y1hero{display:inline-flex;align-items:center;gap:14px;margin:22px auto 6px;padding:10px 20px 10px 10px;border-radius:999px;text-decoration:none;color:#3d2600;background:linear-gradient(110deg,#FFE08A 0%,#FFC94D 45%,#FFE9A8 60%,#FFC94D 100%);background-size:220% 100%;box-shadow:0 10px 30px rgba(255,170,0,.35),inset 0 0 0 1px rgba(255,255,255,.55);animation:pvShine 4.5s ease-in-out infinite}
+.pv-y1num{display:grid;place-items:center;min-width:64px;height:64px;border-radius:50%;background:#0B1F3F;color:#FFD15C;font-weight:800;font-size:24px;letter-spacing:-.02em;box-shadow:0 0 0 4px rgba(255,255,255,.6)}
+.pv-y1txt{display:flex;flex-direction:column;text-align:start}
+.pv-y1txt b{font-size:18px;font-weight:800;color:#2b1a00}
+.pv-y1txt small{font-size:13px;color:#5c3d00}
+@keyframes pvShine{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+/* price list banner medallion */
+.pv-y1box{flex-direction:row!important;align-items:center;gap:16px!important;padding:16px 18px!important;background:linear-gradient(110deg,#FFE08A,#FFC94D 50%,#FFE9A8)!important;border:0!important;box-shadow:0 12px 28px rgba(255,170,0,.28)}
+.pv-y1box>div{display:flex;flex-direction:column;gap:4px}
+.pv-y1med{flex:none;display:grid;place-items:center;width:74px;height:74px;border-radius:50%;background:#0B1F3F;color:#FFD15C;box-shadow:0 0 0 4px rgba(255,255,255,.65)}
+.pv-y1med b{font-size:24px;font-weight:800;line-height:1;color:#FFD15C!important}
+.pv-y1med small{font-size:10px;font-weight:800;letter-spacing:.14em;color:#FFE9A8}
+/* card ribbon and strike */
+.pc-card.pc-us{position:relative;overflow:hidden}
+.pc-ribbon{position:absolute;top:14px;inset-inline-end:-40px;transform:rotate(35deg);background:linear-gradient(90deg,#FFC94D,#FFE08A);color:#2b1a00;font-weight:800;font-size:11.5px;letter-spacing:.04em;padding:6px 46px;box-shadow:0 6px 14px rgba(255,170,0,.4);white-space:nowrap}
+[dir=rtl] .pc-ribbon{transform:rotate(-35deg)}
+.pc-card.pc-has-y1{border-color:#E8A400!important;box-shadow:0 0 0 4px rgba(255,201,77,.35),0 18px 40px rgba(10,25,49,.10)!important}
+.pc-was{display:block;font-size:15px;font-weight:600;color:var(--muted);text-decoration:line-through;text-decoration-color:#E8A400;text-decoration-thickness:2px;margin-bottom:2px}
+@media (prefers-reduced-motion:reduce){.pv-y1hero{animation:none}}
+@media (max-width:560px){.pv-y1hero{border-radius:22px;padding:10px 14px 10px 10px}.pv-y1num{min-width:54px;height:54px;font-size:20px}.pv-y1txt b{font-size:15.5px}.pv-y1box{align-items:flex-start}.pv-y1med{width:62px;height:62px}}
+.pv-y1num{display:flex;align-items:center;justify-content:center;white-space:nowrap}
+.pv-y1med b{white-space:nowrap}
+.pv-y1box b span,.pv-y1med b span{font-size:inherit;line-height:inherit;color:inherit}
