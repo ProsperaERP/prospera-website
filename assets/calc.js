@@ -1,12 +1,12 @@
-/* Prospera pricing calculator v14: Prospera ERP vs Odoo Custom vs Zoho One. Competitor prices: Egypt, checked 20 Oct 2026. */
+/* Prospera pricing calculator v15: Prospera ERP vs Odoo Custom vs Zoho One. Competitor prices: Egypt, checked 20 Oct 2026. */
 (function(){
   var D=document.getElementById('pv-data'); if(!D) return;
   var C=JSON.parse(D.textContent), T=C.t;
   /* mode: '' = Prospera only (pricing page), 'o' = vs Odoo, 'z' = vs Zoho One, 'oz' = both */
   var CMP=D.getAttribute('data-cmp')||'', HAS={p:1,o:CMP.indexOf('o')>=0,z:CMP.indexOf('z')>=0};
   (function(){var w=document.querySelector('.pc-wrap');if(w)w.classList.add(CMP.length===0?'pc-solo':CMP.length===1?'pc-duo':'pc-trio')})();
-  /* Prospera v7: users 1-2 at p1, every user after at p2; never more than cap x employees; team members on top */
-  var P={ m:{p1:3457,n:2,p2:857,cap:1527,tm:99,d1:4/20.9}, a:{p1:2760,n:2,p2:680,cap:1256,tm:79,d1:3/16.4} };
+  /* Prospera v15: 2 users minimum at p1, every user after at p2. HR, payroll and the Employee Portal are free for every employee */
+  var P={ m:{p1:1527,n:2,p2:857,cap:1527,tm:99,d1:4/20.9}, a:{p1:1256,n:2,p2:680,cap:1256,tm:79,d1:3/16.4} };
   /* servers: Basic included; upgrades monthly in EGP (US$120 and US$195 at 54.5), not discounted in year 1 */
   var SRV={basic:0,pro:6540,adv:10630};
   /* like-for-like: Odoo.sh capacity matched to the Prospera server (1 worker per 25 users, same storage) */
@@ -29,7 +29,7 @@
   function pl(n,k){return T[k+(n===1?'1':'')]||T[k]}
   function autoWk(U){return 1+Math.floor((U-1)/25)}
   function autoGb(U){return 50*Math.ceil(U/12.5)}
-  function prospera(E,U,Tm,b,y){var p=P[b];var u=Math.min(U,p.n)*p.p1+Math.max(0,U-p.n)*p.p2;var capped=Math.min(u,E*p.cap);var list=capped+Tm*p.tm;var disc=y==='y1'?list*p.d1:0;var sv=SRV[st.srv]||0;var ad=AD[st.ad]||0;return {ad:ad,mec:mecH(U),users:u,capped:capped,cap:capped<u,team:Tm*p.tm,list:list,disc:disc,pct:Math.round(p.d1*100),srv:sv,listAll:list+sv+ad,total:list-disc+sv+ad}}
+  function prospera(E,U,Tm,b,y){var p=P[b];U=Math.max(U,p.n);Tm=0;var u=Math.min(U,p.n)*p.p1+Math.max(0,U-p.n)*p.p2;var capped=u;var list=capped+Tm*p.tm;var disc=y==='y1'?list*p.d1:0;var sv=SRV[st.srv]||0;var ad=AD[st.ad]||0;return {ad:ad,mec:mecH(U),users:u,capped:capped,cap:capped<u,team:Tm*p.tm,list:list,disc:disc,pct:Math.round(p.d1*100),srv:sv,listAll:list+sv+ad,total:list-disc+sv+ad}}
   function odoo(U,b,y){var o=O[b];var wk=st.wk==null?Math.max(autoWk(U),SW[st.srv]||1):st.wk,gb=st.gb==null?Math.max(autoGb(U),SG[st.srv]||50):st.gb,sg=st.stg;
     var list=U*o.lic,disc=y==='y1'?U*o.disc:0,hw=0,hg=0,hs=0;
     if(st.host==='sh'){hw=wk*o.wk;hg=gb*o.gb;hs=sg*o.st}
@@ -43,14 +43,13 @@
   $$('[data-bill]').forEach(function(x){x.addEventListener('click',function(){setBill(x.getAttribute('data-bill'))})});
   $$('[data-year]').forEach(function(x){x.addEventListener('click',function(){st.year=x.getAttribute('data-year');$$('[data-year]').forEach(function(y){y.setAttribute('aria-pressed',y===x)});calc()})});
 
-  var F={E:$('#pc-E'),U:$('#pc-U'),T:$('#pc-T')};
+  var F={E:$('#pc-E'),U:$('#pc-U')};
   /* employees are optional: never fewer than full users plus light users */
-  function clamp(){var U=Math.max(1,Math.min(1000,parseInt(F.U.n.value,10)||1));var Tm=Math.max(0,Math.min(1000,parseInt(F.T.n.value,10)||0));
-    var raw=parseInt(F.E.n.value,10),E=isNaN(raw)?0:Math.min(1000,Math.max(0,raw));st.autoE=E<U+Tm;E=Math.max(E,U+Tm);st.E=E;st.U=U;st.T=Tm;
-    ['U','T'].forEach(function(k){if(document.activeElement!==F[k].n)F[k].n.value=st[k];F[k].r.value=st[k]});
-    F.E.r.value=E;F.E.n.placeholder=U+Tm;
-    var h=$('#pc-E-auto');if(h){h.textContent=st.autoE?T.autoE.replace('{n}',E):'';h.hidden=!st.autoE}}
-  ['E','U','T'].forEach(function(k){var w=F[k];if(!w)return;w.n=$('input[type=number]',w);w.r=$('input[type=range]',w);
+  function clamp(){var U=Math.max(1,Math.min(1000,parseInt(F.U.n.value,10)||1));st.U=U;st.T=0;
+    if(document.activeElement!==F.U.n)F.U.n.value=U;F.U.r.value=U;
+    if(F.E){var raw=parseInt(F.E.n.value,10),E=isNaN(raw)?0:Math.min(1000,Math.max(0,raw));st.autoE=E<U;E=Math.max(E,U);st.E=E;F.E.r.value=E;F.E.n.placeholder=U;
+      var h=$('#pc-E-auto');if(h){h.textContent=st.autoE?T.autoE.replace('{n}',E):'';h.hidden=!st.autoE}}else{st.E=U;st.autoE=false}}
+  ['E','U'].forEach(function(k){var w=F[k];if(!w)return;w.n=$('input[type=number]',w);w.r=$('input[type=range]',w);
     w.r.addEventListener('input',function(){w.n.value=w.r.value;clamp();calc()});
     w.n.addEventListener('input',function(){if(w.n.value===''&&k!=='E')return;clamp();calc()});
     w.n.addEventListener('blur',function(){clamp();calc()});});
@@ -60,7 +59,7 @@
   /* info buttons */
   $$('.pc-i').forEach(function(btn){var tip=document.getElementById(btn.getAttribute('aria-controls'));btn.addEventListener('click',function(){var open=tip.hidden;$$('.pc-tip').forEach(function(t){t.hidden=true});$$('.pc-i').forEach(function(b){b.setAttribute('aria-expanded','false')});tip.hidden=!open;btn.setAttribute('aria-expanded',open)})});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){$$('.pc-tip').forEach(function(t){t.hidden=true});$$('.pc-i').forEach(function(b){b.setAttribute('aria-expanded','false')})}});
-  $$('[data-preset]').forEach(function(x){x.addEventListener('click',function(){var v=x.getAttribute('data-preset').split(',');F.E.n.value=v[0];F.U.n.value=v[1];F.T.n.value=v[2]||0;clamp();calc()})});
+  $$('[data-preset]').forEach(function(x){x.addEventListener('click',function(){var v=x.getAttribute('data-preset').split(',');if(F.E)F.E.n.value=v[0];F.U.n.value=v[1];clamp();calc()})});
 
   /* quote settings */
   var S={host:$('#pc-host'),wk:$('#pc-wk'),gb:$('#pc-gb'),stg:$('#pc-stg'),fx:$('#pc-fx'),zplan:$('#pc-zplan'),zsup:$('#pc-zsup'),zjs:$('#pc-zjs'),zebs:$('#pc-zebs'),zadd:$('#pc-zadd'),zone:$('#pc-zone')};
@@ -78,7 +77,7 @@
     ['zjs','zebs','zadd','zone'].forEach(function(k){if(S[k])S[k].value=0});var dv={host:'sh',stg:1,fx:54.5,zplan:'best',zsup:'classic',wk:'',gb:''};Object.keys(dv).forEach(function(k){if(S[k])S[k].value=dv[k]});calc()});
 
   function setCard(k,mo,plan,tag,tagCls){var c=$('[data-card='+k+']');if(!c)return;$('.pc-amt',c).innerHTML=money(mo)+' <small>'+T.mo+'</small>';
-    $('.pc-plan',c).textContent=plan;$('.pc-sub',c).textContent=money(mo*12)+' '+T.yr+' · '+money(mo/st.E)+' '+T.perEmp;
+    $('.pc-plan',c).textContent=plan;$('.pc-sub',c).textContent=money(mo*12)+' '+T.yr+' · '+money(mo/st.U)+' '+T.perUser;
     var g=$('.pc-tag',c);if(g){g.textContent=tag||'';g.hidden=!tag;g.className='pc-tag'+(tagCls?' '+tagCls:'')}}
   function li(a,b,cls){return '<li'+(cls?' class="'+cls+'"':'')+'><span>'+a+'</span><b>'+b+'</b></li>'}
   function calc(){
@@ -87,7 +86,7 @@
     if(S.wk){S.wk.placeholder=Math.max(autoWk(st.U),SW[st.srv]||1);S.gb.placeholder=Math.max(autoGb(st.U),SG[st.srv]||50);var dis=st.host!=='sh';[S.wk,S.gb,S.stg].forEach(function(e){e.disabled=dis})}
     function cmp(v){var d=(v-pv)*12;return d>=0?[T.saves.replace('{n}',money(d)),'']:[T.costsLess.replace('{n}',money(-d)),'pc-more']}
     var y1e=$('[data-card=p] .pc-y1');if(y1e){if(p.disc){y1e.innerHTML='<b>'+T.pY1.replace('{p}',p.pct).replace('{n}',money(p.disc*12))+'</b><span>'+T.pY1b.replace('{n}',money(p.listAll))+'</span>';}else{var p1=prospera(st.E,st.U,st.T,b,'y1');y1e.innerHTML='<span>'+T.pY2n.replace('{p}',p1.pct).replace('{n}',money(p1.total))+'</span>';}y1e.hidden=false;y1e.classList.toggle('pc-y1-off',!p.disc)}
-    setCard('p',pv,pl(st.U,'pPlan').replace('{u}',st.U)+(st.T?T.pPlanT.replace('{t}',st.T):'')+T.pMec.replace('{h}',(p.mec===1?T.hr1:p.mec===2?T.hr2:T.hrN.replace('{n}',p.mec)))+(p.cap?T.pCap:''),'','');
+    setCard('p',pv,(st.U<2?T.pMin:pl(st.U,'pPlan').replace('{u}',st.U))+T.pMec.replace('{h}',(p.mec===1?T.hr1:p.mec===2?T.hr2:T.hrN.replace('{n}',p.mec))),'','');
     var pc=$('[data-card=p]');if(pc){var rb=$('.pc-ribbon',pc);if(rb)rb.hidden=!p.disc;pc.classList.toggle('pc-has-y1',!!p.disc);if(p.disc)$('.pc-amt',pc).innerHTML='<s class="pc-was">'+money(p.listAll)+'</s>'+money(pv)+' <small>'+T.mo+'</small>';}
     var co=cmp(ov),cz=cmp(zv);
     var oh=st.host==='sh'?T.oHostSh.replace('{w}',o.wk).replace('{g}',o.gb):T.oHostOn;
@@ -102,11 +101,9 @@
       else {$('b',sv).textContent=T.saveMixed.replace('{o}',(so>=0?T.less:T.more).replace('{n}',money(Math.abs(so)))).replace('{z}',(sz>=0?T.less:T.more).replace('{n}',money(Math.abs(sz))));}
       $('span',sv).textContent=(b==='m'?T.billM:T.billA)+' · '+(y==='y1'?T.yr1:T.yr2);}
     /* three quotes, line by line */
-    var q=$('#pc-q-p');if(q){var pp=P[b],L='';var u1=Math.min(st.U,pp.n),u2=Math.max(0,st.U-pp.n);
+    var q=$('#pc-q-p');if(q){var pp=P[b],L='',Ub=Math.max(st.U,pp.n);var u1=pp.n,u2=Math.max(0,Ub-pp.n);
       L+=li(T.bk1.replace('{n}',u1).replace('{p}',money(pp.p1)),money(u1*pp.p1));if(u2)L+=li(T.bk2.replace('{n}',u2).replace('{p}',money(pp.p2)),money(u2*pp.p2));
-      if(p.cap)L+=li(T.bkCap.replace('{e}',st.E).replace('{p}',money(pp.cap)),'−'+money(p.users-p.capped));
-      if(st.T)L+=li(T.bkT.replace('{n}',st.T).replace('{p}',money(pp.tm)),money(p.team));
-      L+=li(T.bkFree.replace('{n}',Math.max(0,st.E-st.U-st.T)),T.free);if(p.disc)L+=li(T.pqDisc.replace('{p}',p.pct),'−'+money(p.disc),'pc-y1l');L+=li(T.pqMec.replace('{h}',(p.mec===1?T.hr1:p.mec===2?T.hr2:T.hrN.replace('{n}',p.mec))),T.inclT);if(p.ad)L+=li(T.pqAD.replace('{n}',st.ad),money(p.ad));L+=li(st.srv==='pro'?T.pqSrvP:st.srv==='adv'?T.pqSrvA:T.pqSrvB,p.srv?money(p.srv):T.inclT);L+=li(T.total,money(pv),'pc-qt');q.innerHTML=L}
+      L+=li(T.bkHR,T.inclT);L+=li(T.pqMec.replace('{h}',(p.mec===1?T.hr1:p.mec===2?T.hr2:T.hrN.replace('{n}',p.mec))),T.inclT);if(p.ad)L+=li(T.pqAD.replace('{n}',st.ad),money(p.ad));L+=li(st.srv==='pro'?T.pqSrvP:st.srv==='adv'?T.pqSrvA:T.pqSrvB,p.srv?money(p.srv):T.inclT);if(p.disc)L+=li(T.pqDisc.replace('{p}',p.pct),'−'+money(p.disc),'pc-y1l');L+=li(T.total,money(pv),'pc-qt');q.innerHTML=L}
     q=$('#pc-q-o');if(q){var oo=O[b],L2='';L2+=li(T.oqUsers.replace('{n}',st.U).replace('{p}',usd(oo.lic)),usd(o.list));
       if(o.disc)L2+=li(T.oqDisc.replace('{p}',usd(oo.disc)),'−'+usd(o.disc));
       if(st.host==='sh'){L2+=li(T.oqWk.replace('{n}',o.wk).replace('{p}',usd(oo.wk)),usd(o.hw));L2+=li(T.oqGb.replace('{n}',o.gb).replace('{p}',usd(oo.gb)),usd(o.hg));if(o.sg)L2+=li(T.oqSt.replace('{n}',o.sg).replace('{p}',usd(oo.st)),usd(o.hs));}

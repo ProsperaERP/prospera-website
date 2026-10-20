@@ -348,7 +348,7 @@ details p{margin-top:8px;color:var(--muted);font-size:15px;max-width:65ch}
               <a href="erp.html"><i class="c1">◉</i><span><b>Prospera ERP overview</b><small>Every area on one record</small></span></a>
               <a href="erp-features.html"><i class="c3">≡</i><span><b>Every ERP feature</b><small>420 features, one list</small></span></a>
               <a href="roi.html"><i class="c2">%</i><span><b>ROI calculator</b><small>What one system saves you</small></span></a>
-              <a class="mm-cta" href="pricing.html#calc"><b>Pricing</b><small>All apps from EGP&nbsp;2,795 a month in year 1. See your price in a minute.</small><span>Open the price calculator →</span></a>
+              <a class="mm-cta" href="pricing.html#calc"><b>Pricing</b><small>All apps from EGP&nbsp;2,470 a month in year 1. See your price in a minute.</small><span>Open the price calculator →</span></a>
             </div>
           </div>
         </div>
@@ -384,7 +384,7 @@ details p{margin-top:8px;color:var(--muted);font-size:15px;max-width:65ch}
             <label><span>Average monthly cost of one of those people (EGP)</span><input type="range" id="r-sal" min="8000" max="80000" step="1000" value="22000"><output id="o-sal"></output></label>
             <label><span>Monthly spend on tools Prospera would replace (EGP)</span><input type="range" id="r-tools" min="0" max="60000" step="500" value="6000"><output id="o-tools"></output></label>
             <label><span>Share of that manual time you expect one system to remove</span><input type="range" id="r-share" min="10" max="90" step="5" value="50"><output id="o-share"></output></label>
-            <label><span>Full users in Prospera ERP</span><input type="range" id="r-users" min="1" max="60" value="6"><output id="o-users"></output></label>
+            <label><span>Users in Prospera ERP</span><input type="range" id="r-users" min="1" max="60" value="6"><output id="o-users"></output></label>
             <label class="sel"><span>Prospera ERP billing</span><select id="r-plan"><option value="m" selected>Monthly billing</option><option value="y">Annual billing, per month</option></select></label>
           </div>
         </div>
@@ -423,7 +423,7 @@ details p{margin-top:8px;color:var(--muted);font-size:15px;max-width:65ch}
 <script>
 (function(){
  var $=function(i){return document.getElementById(i)};var ids=["staff","hours","sal","tools","share","users"];
- var PL={m:[3457,857],y:[2760,680]};
+ var PL={m:[1527,857],y:[1256,680]};
  function price(u,p){return Math.min(u,2)*p[0]+Math.max(0,u-2)*p[1]}
  function f(n){return "EGP "+Math.round(n).toLocaleString("en-US")}
  function run(){var s=+$("r-staff").value,h=+$("r-hours").value,sal=+$("r-sal").value,tl=+$("r-tools").value,sh=+$("r-share").value/100,u=+$("r-users").value;
