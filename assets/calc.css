@@ -253,3 +253,6 @@
 @media (max-width:560px){.pv-dt th,.pv-dt td{padding:10px 10px;font-size:13px}.pv-dt td{white-space:normal}}
 .pv-dt tbody th{font-size:14.5px!important;background:var(--white)!important;text-transform:none!important;letter-spacing:0!important;font-family:inherit!important}
 .pv-dt thead th{text-transform:none!important;letter-spacing:0!important;font-family:inherit!important}
+/* v16: one plain rate line under the calculator */
+.pv-rateline{margin:26px auto 0;max-width:880px;text-align:center;font-size:15.5px;line-height:1.65;color:var(--muted);padding:18px 22px;border:1px solid var(--cool,#e3e8ef);border-radius:14px;background:#fff}
+.pv-rateline b{color:var(--navy);font-weight:600}

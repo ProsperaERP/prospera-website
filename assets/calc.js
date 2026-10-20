@@ -1,4 +1,4 @@
-/* Prospera pricing calculator v15: Prospera ERP vs Odoo Custom vs Zoho One. Competitor prices: Egypt, checked 20 Oct 2026. */
+/* Prospera pricing calculator v16: Prospera ERP vs Odoo Custom vs Zoho One. Competitor prices: Egypt, checked 20 Oct 2026. */
 (function(){
   var D=document.getElementById('pv-data'); if(!D) return;
   var C=JSON.parse(D.textContent), T=C.t;
@@ -6,9 +6,9 @@
   var CMP=D.getAttribute('data-cmp')||'', HAS={p:1,o:CMP.indexOf('o')>=0,z:CMP.indexOf('z')>=0};
   (function(){var w=document.querySelector('.pc-wrap');if(w)w.classList.add(CMP.length===0?'pc-solo':CMP.length===1?'pc-duo':'pc-trio')})();
   /* Prospera v15: 2 users minimum at p1, every user after at p2. HR, payroll and the Employee Portal are free for every employee */
-  var P={ m:{p1:1527,n:2,p2:857,cap:1527,tm:99,d1:4/20.9}, a:{p1:1256,n:2,p2:680,cap:1256,tm:79,d1:3/16.4} };
-  /* servers: Basic included; upgrades monthly in EGP (US$120 and US$195 at 54.5), not discounted in year 1 */
-  var SRV={basic:0,pro:6540,adv:10630};
+  var P={ m:{p1:2995,n:2,p2:1125,cap:1e9,tm:99,d1:4/20.9}, a:{p1:2395,n:2,p2:880,cap:1e9,tm:79,d1:3/16.4} };
+  /* servers v16: Basic included; upgrades priced to match Odoo.sh capacity (Professional 3,095 / Advanced 8,895 monthly; 2,475 / 7,115 annual), not discounted in year 1 */
+  var SRVB={m:{basic:0,pro:3095,adv:8895},a:{basic:0,pro:2475,adv:7115}};function SRVF(b){return SRVB[b]||SRVB.m}var SRV=SRVB.m;
   /* like-for-like: Odoo.sh capacity matched to the Prospera server (1 worker per 25 users, same storage) */
   /* Prospera Care included: 1 h for 1-3 full users, 2 h for 4-10, 3 h for 11-25, 5 h for 26+. Accounting Desk packages (EGP a month, same as Daftra) */
   function mecH(U){return U<=3?1:U<=10?2:U<=25?3:5}
@@ -29,7 +29,7 @@
   function pl(n,k){return T[k+(n===1?'1':'')]||T[k]}
   function autoWk(U){return 1+Math.floor((U-1)/25)}
   function autoGb(U){return 50*Math.ceil(U/12.5)}
-  function prospera(E,U,Tm,b,y){var p=P[b];U=Math.max(U,p.n);Tm=0;var u=Math.min(U,p.n)*p.p1+Math.max(0,U-p.n)*p.p2;var capped=u;var list=capped+Tm*p.tm;var disc=y==='y1'?list*p.d1:0;var sv=SRV[st.srv]||0;var ad=AD[st.ad]||0;return {ad:ad,mec:mecH(U),users:u,capped:capped,cap:capped<u,team:Tm*p.tm,list:list,disc:disc,pct:Math.round(p.d1*100),srv:sv,listAll:list+sv+ad,total:list-disc+sv+ad}}
+  function prospera(E,U,Tm,b,y){var p=P[b];U=Math.max(U,p.n);Tm=0;var u=Math.min(U,p.n)*p.p1+Math.max(0,U-p.n)*p.p2;var capped=u;var list=capped+Tm*p.tm;var disc=y==='y1'?list*p.d1:0;var sv=SRVF(b)[st.srv]||0;var ad=AD[st.ad]||0;return {ad:ad,mec:mecH(U),users:u,capped:capped,cap:capped<u,team:Tm*p.tm,list:list,disc:disc,pct:Math.round(p.d1*100),srv:sv,listAll:list+sv+ad,total:list-disc+sv+ad}}
   function odoo(U,b,y){var o=O[b];var wk=st.wk==null?Math.max(autoWk(U),SW[st.srv]||1):st.wk,gb=st.gb==null?Math.max(autoGb(U),SG[st.srv]||50):st.gb,sg=st.stg;
     var list=U*o.lic,disc=y==='y1'?U*o.disc:0,hw=0,hg=0,hs=0;
     if(st.host==='sh'){hw=wk*o.wk;hg=gb*o.gb;hs=sg*o.st}
