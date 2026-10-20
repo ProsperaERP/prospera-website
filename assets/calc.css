@@ -148,3 +148,14 @@
 .pc-ql li.pc-qn span{flex:1}
 .pc-set .pc-sg{margin:14px 0 2px;font:600 .72rem/1.2 var(--mono,ui-monospace,monospace);letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#667)}
 .pc-set .pc-sg:first-of-type{margin-top:6px}
+/* v10: first-year discount highlight */
+.pv-y1box{display:flex;flex-direction:column;gap:4px;margin:14px 0 6px;padding:14px 16px;border-radius:14px;background:linear-gradient(135deg,#fff4d6,#ffe7a8);border:1px solid #f2c94c;color:#5c3d00}
+.pv-y1box b{font-size:1.05rem;color:#7a4b00}
+.pv-y1box span{font-size:.9rem;line-height:1.45}
+.pv-tiers em.pv-y1{display:inline-block;margin-top:4px;padding:2px 8px;border-radius:999px;background:#ffe7a8;color:#7a4b00;font-style:normal;font-weight:700;font-size:.78rem;white-space:nowrap}
+.pc-card .pc-y1{margin:10px 0 0;padding:10px 12px;border-radius:12px;background:linear-gradient(135deg,#fff4d6,#ffe7a8);border:1px solid #f2c94c;color:#5c3d00;font-size:.84rem;line-height:1.4;display:flex;flex-direction:column;gap:2px}
+.pc-card .pc-y1 b{color:#7a4b00}
+.pc-card .pc-y1.pc-y1-off{background:#fff8e6;border-style:dashed}
+.pc-ql li.pc-y1l{background:#fff1c7;border-radius:8px;padding:6px 8px;color:#7a4b00;font-weight:700}
+.pv-ex b{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.pv-ex em.pv-y1{display:inline-block;padding:2px 8px;border-radius:999px;background:#ffe7a8;color:#7a4b00;font-style:normal;font-weight:700;font-size:.78rem;white-space:nowrap}
