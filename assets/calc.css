@@ -124,3 +124,22 @@
 .pc-amt small{display:block;margin-top:4px}
 .pv-calc .lede{margin-top:16px}
 .pc-card .pc-plan{margin:0}
+/* v7: quote settings and line-by-line quotes */
+.pc-set{border-top:1px solid var(--line);padding-top:14px}
+.pc-set summary{cursor:pointer;font-weight:600;color:var(--navy);font-size:14.5px}
+.pc-set[open] summary{margin-bottom:14px}
+.pc-set .pc-f{margin-bottom:14px}
+.pc-set label{font-size:13.5px}
+.pc-set select,.pc-set input[type=number]{font:inherit;font-size:14.5px;color:var(--navy);width:100%;margin-top:8px;padding:9px 10px;border:1px solid var(--cool);border-radius:10px;background:var(--white)}
+.pc-set input:disabled{opacity:.45}
+.pc-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pc-quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+.pc-quotes h4{margin:0 0 8px;font-size:14px;color:var(--navy);font-family:var(--body)}
+.pc-ql{list-style:none;margin:0;padding:12px 14px;background:var(--white);border:1px solid var(--line);border-radius:14px;display:grid;gap:7px}
+.pc-ql li{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;color:var(--muted);line-height:1.35}
+.pc-ql li b{color:var(--navy);white-space:nowrap;font-weight:600}
+.pc-ql li.pc-qt{border-top:1px solid var(--line);padding-top:8px;color:var(--navy);font-weight:700}
+.pc-ql li.pc-qt b{font-weight:700}
+.pc-ql li.pc-off{opacity:.5;text-decoration:line-through}
+.pc-break ul.pc-ql{padding-inline-start:14px}
+@media (max-width:980px){.pc-quotes{grid-template-columns:1fr}}
