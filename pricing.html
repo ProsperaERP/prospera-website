@@ -5,7 +5,7 @@
 <title>Prospera Pricing</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="description" content="Pay for your team. Never for your growth. Two ways to buy: our team runs it with you, or you run it yourself.">
+<meta name="description" content="One plan with every app, priced at least 3% below Odoo and Zoho One at every company size. See your price side by side.">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap">
@@ -796,6 +796,7 @@ button:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 .two-tables table{min-width:0!important}.two-tables td.num{text-align:right}
 </style>
 <link rel="stylesheet" href="assets/uplift.css">
+<link rel="stylesheet" href="assets/calc.css">
 
 <header class="header wrap">
   <div class="inner">
@@ -831,7 +832,7 @@ button:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
               <a href="erp.html"><i class="c1">◉</i><span><b>Prospera ERP overview</b><small>Every area on one record</small></span></a>
               <a href="erp-features.html"><i class="c3">≡</i><span><b>Every ERP feature</b><small>420 features, one list</small></span></a>
               <a href="roi.html"><i class="c2">%</i><span><b>ROI calculator</b><small>What one system saves you</small></span></a>
-              <a class="mm-cta" href="run.html"><b>Run by Prospera</b><small>From EGP&nbsp;7,500 a month, software, setup and a team</small><span>See how it works →</span></a>
+              <a class="mm-cta" href="pricing.html#calc"><b>Pricing</b><small>All apps from EGP&nbsp;3,565 a month. Compare with Odoo and Zoho One.</small><span>Open the price calculator →</span></a>
             </div>
           </div>
         </div>
@@ -848,297 +849,94 @@ button:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 </header>
 
 <main id="top">
-  <section class="page-hero wrap">
+  <section class="page-hero pv-hero wrap">
     <div class="inner">
       <p class="label">Pricing</p>
-      <h1>Pay for your team. Never for your growth<span class="stop">.</span></h1>
-      <p class="lede">Two ways to buy: our team runs it with you, or you run it yourself.</p>
-      <ul class="ticks pp-ticks"><li>No caps on invoices, clients or branches</li><li>Team members EGP&nbsp;99, payroll included</li><li>Arabic and English, local tax built in</li></ul>
-      <div class="mode" role="tablist" aria-label="How you buy">
-        <button type="button" role="tab" id="tab-run" aria-controls="panel-run" aria-selected="true" data-mode="run"><b>Run by Prospera</b><small>Software, setup and a team, one monthly price</small></button>
-        <button type="button" role="tab" id="tab-sw" aria-controls="panel-sw" aria-selected="false" data-mode="sw"><b>Software only</b><small>Per-user plans you run yourself</small></button>
-      </div>
-      <div class="toggles">
-        <div class="seg" role="group" aria-label="Market">
-          <button type="button" data-market="egp" aria-pressed="true">Egypt</button>
-          <button type="button" data-market="usd" aria-pressed="false">GCC and international</button>
-        </div>
-        <div class="seg" role="group" aria-label="Billing" id="billing-seg" hidden>
-          <button type="button" data-billing="a" aria-pressed="true">Annual, save up to 18%</button>
-          <button type="button" data-billing="m" aria-pressed="false">Monthly</button>
-        </div>
-      </div>
-      <p class="trial-line">Prices per month, excluding VAT. Egypt and international have separate price lists. Egypt prices apply to companies registered for tax in Egypt and billed in Egyptian pounds.</p>
+      <h1>One plan. Every app. <span class="grad">Less than Odoo and Zoho One.</span></h1>
+      <p class="lede">Pay for the people who work in the system. Everyone else on payroll is free.</p>
+      <ul class="ticks pp-ticks"><li>Every app included, no tiers</li><li>Egypt payroll and e-invoicing built in</li><li>At least 3% below Odoo and Zoho One at every size</li></ul>
+      <div class="pv-bill"><div class="seg" role="group" aria-label="Billing"><button type="button" data-bill="m" aria-pressed="true">Monthly</button><button type="button" data-bill="a" aria-pressed="false">Annual, save up to 24%</button></div></div>
+      <p class="pv-note">Prices per month, excluding VAT, for companies in Egypt billed in Egyptian pounds.</p>
     </div>
   </section>
 
-  <!-- RUN BY PROSPERA -->
-  <section class="price-sec wrap" id="panel-run" role="tabpanel" aria-labelledby="tab-run">
-    <div class="inner">
-      <p class="panel-intro">Software, setup, compliance and a team, for one monthly price. <a href="run.html">See what that means →</a></p>
-      <div class="plans three">
-        <article class="plan">
-          <h3>Essentials</h3>
-          <p class="tagline">For businesses of 3 to 15 people that want it done properly from day one.</p>
-          <div class="price"><span class="amt" data-run="essentials"></span><span class="per">/ month</span></div>
-          <p class="billed" data-runsetup="essentials"></p>
-          <a class="btn btn-outline" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">Book a free systems review →</a>
-          <ul class="meta-list">
-            <li><b>Business plan</b>, includes 4 users</li>
-            <li data-tip="Team members use Prospera only for themselves: expenses, leave, attendance, payslips and approvals. Included at no extra charge in Run by Prospera packages, payroll included."><b>Unlimited</b> team members</li>
-            <li data-tip="Time with our consultants each month for questions, changes, training and reviews of your numbers."><b>5 support hours</b> a month</li>
-          </ul>
-          <p class="incl">What we do for you</p>
-          <ul class="feat-list"><li data-tip="Setup, your opening balances and master data moved in, and your team trained, in about two weeks for a typical small business.">Live in 2 weeks, with your data moved in</li><li>E-invoicing set up and kept compliant</li><li data-tip="Each month the owner gets profit, cash, receivables and stock on one page, reviewed by our team before it goes out.">A monthly pack of management reports</li></ul><details class="pp-more"><summary>2 more included</summary><ul class="feat-list"><li data-tip="We host Prospera, back it up and apply updates after testing them. Enterprise runs on a server of its own.">Hosting, backups and updates handled</li><li>One team to call, in Arabic or English</li></ul></details>
-        </article>
-
-        <article class="plan feature">
-          <span class="rec">Recommended</span>
-          <h3>Operate</h3>
-          <p class="tagline">For growing companies of 15 to 60 people with payroll, stock and month-end to run.</p>
-          <div class="price"><span class="amt" data-run="operate"></span><span class="per">/ month</span></div>
-          <p class="billed" data-runsetup="operate"></p>
-          <a class="btn btn-gold" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">Book a free systems review →</a>
-          <ul class="meta-list">
-            <li data-tip="Full users work in Prospera every day: invoices, stock, accounts. Need more? Add them at the plan&#x27;s per-user price."><b>Professional plan</b>, up to 10 full users</li>
-            <li data-tip="Team members use Prospera only for themselves: expenses, leave, attendance, payslips and approvals. Included at no extra charge in Run by Prospera packages, payroll included."><b>Unlimited</b> team members</li>
-            <li data-tip="Time with our consultants each month for questions, changes, training and reviews of your numbers."><b>8 support hours</b> a month</li>
-          </ul>
-          <p class="incl">Everything in Essentials, plus</p>
-          <ul class="feat-list"><li data-tip="Your team runs payroll. Before it is paid, we review it with you and flag anything that looks wrong.">Payroll reviewed with you every month</li><li data-tip="Your accountant closes the month using our checklist. We review the results and flag anything that needs correcting before the owner sees them.">Month-end review with our partner accountant</li><li>Approvals, budgets and CRM set up for your team</li></ul><details class="pp-more"><summary>1 more included</summary><ul class="feat-list"><li data-tip="Every quarter we look at how the business uses Prospera and recommend changes, such as approvals or reports, that would help.">A quarterly review of how the business runs</li></ul></details>
-        </article>
-
-        <article class="plan">
-          <h3>Partner</h3>
-          <p class="tagline">For groups and multi-company businesses that want a named team on their side.</p>
-          <div class="price"><span class="amt" data-run="partner"></span><span class="per">/ month</span></div>
-          <p class="billed" data-runsetup="partner"></p>
-          <a class="btn btn-primary" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">Book a free systems review →</a>
-          <ul class="meta-list">
-            <li data-tip="Full users work in Prospera every day: invoices, stock, accounts. Need more? Add them at the plan&#x27;s per-user price."><b>Enterprise plan</b>, up to 15 full users</li>
-            <li data-tip="Team members use Prospera only for themselves: expenses, leave, attendance, payslips and approvals. Included at no extra charge in Run by Prospera packages, payroll included."><b>Unlimited</b> team members</li>
-            <li data-tip="Time with our consultants each month for questions, changes, training and reviews of your numbers."><b>20 support hours</b> a month</li>
-          </ul>
-          <p class="incl">Everything in Operate, plus</p>
-          <ul class="feat-list"><li data-tip="One consultant who learns your business and is your first contact for questions and reviews.">A named consultant who knows your business</li><li data-tip="Run several legal entities, each with its own books, and see them in one consolidated report.">Several companies, consolidated</li><li>Prospera Expenses and Commerce rolled out <span class="badge">Expenses: December 2026</span></li></ul><details class="pp-more"><summary>1 more included</summary><ul class="feat-list"><li>Priority response</li></ul></details>
-        </article>
+  <section class="section wrap" id="plan" style="padding-top:0">
+    <div class="inner pv-list">
+      <div class="pv-card">
+        <h2>Prospera ERP</h2>
+        <p class="pv-sub">Accounting, sales, stock, POS, HR and payroll, CRM, projects, manufacturing, helpdesk and more. One plan, every app.</p>
+        <table class="pv-tiers"><tbody><tr><th scope="row">Full users 1 to 3<small>Each person who works in the system</small></th><td class="pv-n"><span data-pm="3565" data-pa="3040">EGP&nbsp;3,565</span><small>each</small></td></tr><tr><th scope="row">Full users 4 to 12<small>Each additional user</small></th><td class="pv-n"><span data-pm="893" data-pa="680">EGP&nbsp;893</span><small>each</small></td></tr><tr><th scope="row">Full user 13 and above<small>Each additional user</small></th><td class="pv-n"><span data-pm="857" data-pa="680">EGP&nbsp;857</span><small>each</small></td></tr><tr><th scope="row">Team members<small>Self-service on the phone: payslips, leave, expenses, check-in, approvals. Optional.</small></th><td class="pv-n"><span data-pm="99" data-pa="79">EGP&nbsp;99</span><small>each</small></td></tr><tr><th scope="row">Everyone else on payroll<small>Paid through payroll, no login</small></th><td class="pv-n pv-free">Free</td></tr><tr><th scope="row">Small-team cap<small>Your user total never goes above this amount for each employee on payroll</small></th><td class="pv-n"><span data-pm="1527" data-pa="1256">EGP&nbsp;1,527</span><small>per employee</small></td></tr></tbody></table>
+        <div class="pv-actions"><a class="btn btn-primary" href="#calc">Calculate your price ↓</a><a class="btn btn-outline" style="color:var(--navy);border-color:var(--cool)" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">Book a free systems review →</a></div>
       </div>
-      <p class="addons-line">12-month minimum, billed monthly. Pay a year up front and get 12 months for the price of 10. Extra full users at the plan's per-user price.</p>
-
-      <div class="zx pp-why"><div class="zx-h"><p class="zx-k">Why Run by Prospera</p><h2>A team, <span class="grad">not a handover.</span></h2><a class="zx-more" href="run.html">See what we do each month →</a></div><div class="zx-c"><span class="zx-i" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5"/><path d="M16 8h5M18.5 5.5v5"/></svg></span><h3>Less than one hire.</h3><p>One junior accountant or IT person costs more in salary and insurance, and brings no software, no compliance and no cover when they leave.</p></div><div class="zx-c"><span class="zx-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><h3>Accountants, not only developers.</h3><p>Our team knows how months are closed, payroll is run and e-invoices are filed. We configure Prospera and review your numbers the way an experienced finance team would.</p></div><div class="zx-c"><span class="zx-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Accountable every month.</h3><p>A freelancer hands over a build and moves on. We stay accountable for the system for as long as you are with us.</p></div></div>
+      <div class="pv-side">
+        <h3>What companies pay</h3>
+        <div class="pv-ex"><div><span>10 employees<small>3 users</small></span><b>EGP&nbsp;10,695</b></div><div><span>25 employees<small>8 users</small></span><b>EGP&nbsp;15,160</b></div><div><span>40 employees<small>12 users</small></span><b>EGP&nbsp;18,732</b></div><div><span>100 employees<small>30 users</small></span><b>EGP&nbsp;34,158</b></div></div>
+        <p class="pv-note">Monthly billing, full users only.</p>
+      </div>
     </div>
   </section>
 
-  <!-- SOFTWARE ONLY -->
-  <section class="price-sec wrap" id="panel-sw" role="tabpanel" aria-labelledby="tab-sw" hidden>
+  <section class="section wrap pv-calc" id="calc">
     <div class="inner">
-      <p class="panel-intro">Per-user plans for teams that run their own system.</p>
-      <div class="plans three">
-        <article class="plan">
-          <h3>Business</h3>
-          <p class="tagline">Accounting, stock, point of sale and payroll for one company.</p>
-          <div class="price"><span class="amt" data-sw="business"></span><span class="per">/ user / month</span></div>
-          <p class="billed" data-swfrom="business"></p>
-          <a class="btn btn-outline" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">Start a guided trial</a>
-          <ul class="meta-list">
-            <li data-tip="A full user works in Prospera every day: invoices, stock, accounts. Add as many as you need. Staff who only need self-service join as team members."><b>From 1</b> full user</li>
-            <li data-tip="AI credits pay for AI work such as reading receipts and supplier invoices. One credit is about 1,000 AI tokens. 1,000 more cost EGP 120 a month."><b>200</b> AI credits a month</li>
-            <li data-tip="Space for attachments such as scanned invoices, receipts and contracts. Extra storage is EGP 25 per GB a month."><b>25 GB</b> storage</li>
-          </ul>
-          <p class="incl">Includes</p>
-          <ul class="feat-list"><li>Chart of accounts, banks, cheques and cost centers</li><li>Fixed assets and depreciation</li><li data-tip="Invoices and receipts go to the Egyptian Tax Authority from the invoice itself, and the response is saved on the record. For Saudi Arabia, invoicing is ZATCA Phase 2 compliant.">Egypt e-invoice and e-receipt, ZATCA Phase 2 compliant</li></ul><details class="pp-more"><summary>6 more included</summary><ul class="feat-list"><li>Sales, purchasing and price lists</li><li data-tip="Track every batch, serial number and expiry date, across as many warehouses as you need at no extra cost.">Stock with batch, serial and expiry, unlimited warehouses</li><li data-tip="Open as many tills as you need at no extra cost. Sales continue without internet and sync when the connection returns.">Point of sale, unlimited tills, works offline</li><li data-tip="Appointments and resource bookings, rental units with contracts, and work orders for jobs, all on the same customer record.">Bookings, rentals and work orders</li><li data-tip="Each employee you pay through Prospera is a team member at EGP 99 a month. That one price covers their payroll and their self-service login. There is no separate payroll fee.">HR and payroll through team members</li><li>Dashboards, custom fields and REST API</li></ul></details>
-        </article>
-
-        <article class="plan feature">
-          <span class="rec">Recommended</span>
-          <h3>Professional</h3>
-          <p class="tagline">The full ERP for growing companies, front office included.</p>
-          <div class="price"><span class="amt" data-sw="professional"></span><span class="per">/ user / month</span></div>
-          <p class="billed" data-swfrom="professional"></p>
-          <a class="btn btn-gold" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">Start a guided trial</a>
-          <ul class="meta-list">
-            <li data-tip="Professional starts from three full users because it adds several companies and approvals for a team. Add as many more as you need."><b>Minimum 3</b> full users</li>
-            <li data-tip="AI credits pay for AI work such as reading receipts and supplier invoices. One credit is about 1,000 AI tokens. 1,000 more cost EGP 120 a month."><b>600</b> AI credits a month</li>
-            <li data-tip="Space for attachments such as scanned invoices, receipts and contracts. Extra storage is EGP 25 per GB a month."><b>50 GB</b> storage</li>
-          </ul>
-          <p class="incl">Everything in Business, plus</p>
-          <ul class="feat-list"><li data-tip="Run up to three legal entities, each with its own books, and see them together in one consolidated report. More companies cost EGP 990 each a month.">Up to 3 companies, consolidated</li><li data-tip="Purchases, expenses or discounts above limits you set wait for the right manager&#x27;s approval before they go through.">Approval workflows</li><li data-tip="Set budgets by account and cost center with warnings when spending goes over, and release prepaid income or costs month by month.">Budgets and deferred revenue</li></ul><details class="pp-more"><summary>5 more included</summary><ul class="feat-list"><li data-tip="Add freight and customs to the cost of stock, reward repeat customers with points, and calculate sales commissions automatically.">Landed cost, loyalty and sales commissions</li><li data-tip="Leads, deals and quotes on the same customer record as orders and invoices, with WhatsApp conversations saved on the customer.">CRM with pipeline and WhatsApp</li><li>Projects, timesheets and job costing</li><li data-tip="Bills of materials, work orders and production costing, with raw materials consumed from stock as you produce.">Manufacturing: BOM and production</li><li data-tip="Staff photograph receipts on their phone, AI reads them, a manager approves and the expense posts to the books. Coming December 2026.">Prospera Expenses with phone app and AI receipt reading <span class="badge">Coming December 2026</span></li></ul></details>
-        </article>
-
-        <article class="plan">
-          <h3>Enterprise</h3>
-          <p class="tagline">The whole platform for groups, with a dedicated server.</p>
-          <div class="price"><span class="amt" data-sw="enterprise"></span><span class="per">/ user / month</span></div>
-          <p class="billed" data-swfrom="enterprise"></p>
-          <a class="btn btn-primary" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">Book a free systems review →</a>
-          <ul class="meta-list">
-            <li data-tip="Enterprise starts from five full users. For larger groups, Enterprise Unlimited covers every user for one price."><b>Minimum 5</b> full users</li>
-            <li data-tip="AI credits pay for AI work such as reading receipts and supplier invoices. Enterprise can instead connect its own AI account and pay its provider directly."><b>1,500</b> AI credits a month, or your own AI account</li>
-            <li data-tip="Space for attachments such as scanned invoices, receipts and contracts. Extra storage is EGP 25 per GB a month."><b>100 GB</b> storage</li>
-          </ul>
-          <p class="incl">Everything in Professional, plus</p>
-          <ul class="feat-list"><li data-tip="Run as many legal entities as you need, each with its own books, consolidated in one report.">Unlimited companies</li><li data-tip="Customer tickets from email and WhatsApp, assigned to your team and tracked against response and resolution times.">Helpdesk with service levels</li><li>Website builder and learning platform</li></ul><details class="pp-more"><summary>4 more included</summary><ul class="feat-list"><li>Team chat</li><li data-tip="Ready connections for Shopify and the couriers Bosta, SMSA and Amazon, so orders, stock and shipping stay in step with your books.">Commerce connectors: Shopify, Bosta, SMSA, Amazon</li><li data-tip="Your own server, not shared with other clients, plus a copy of your system to test changes before they go live.">Dedicated server and a test copy of your system</li><li>Priority support</li></ul></details>
-        </article>
-      </div>
-
-      <div class="strips">
-        <div class="strip">
-          <div><p class="k">Team member</p><h3><span data-team></span> <small>/ person / month</small></h3></div>
-          <p>For staff who do not work in the system: expenses and receipts, leave, attendance, payslips and approvals on their phone. Payroll for that person is included. Available on every plan.</p>
-        </div>
-        <div class="strip dark">
-          <div><p class="k">Enterprise Unlimited</p><h3><span class="from-s">From</span> <span data-unl></span> <small>/ month</small></h3></div>
-          <p>Everything in Enterprise for every user in the group. Billed yearly. Usually the better choice from about 25 full users.</p>
-        </div>
-      </div>
-
-      <div class="config" id="config">
-        <div class="config-in">
-          <p class="label">Work out your price</p>
-          <h2>Your monthly total.</h2>
-          <div class="fields">
-            <label class="f"><span>Plan</span>
-              <select id="c-plan"><option value="business">Business</option><option value="professional" selected>Professional</option><option value="enterprise">Enterprise</option></select>
-            </label>
-            <div class="f"><span id="c-users-l">Full users</span>
-              <div class="step"><button type="button" data-step="users" data-d="-1" aria-label="Fewer full users">−</button><input id="c-users" type="number" inputmode="numeric" min="1" value="5" aria-labelledby="c-users-l"><button type="button" data-step="users" data-d="1" aria-label="More full users">+</button></div>
-            </div>
-            <div class="f"><span id="c-team-l">Team members</span>
-              <div class="step"><button type="button" data-step="team" data-d="-1" aria-label="Fewer team members">−</button><input id="c-team" type="number" inputmode="numeric" min="0" value="5" aria-labelledby="c-team-l"><button type="button" data-step="team" data-d="1" aria-label="More team members">+</button></div>
-            </div>
+      <h2>Your price, <span class="grad">next to Odoo and Zoho One.</span></h2>
+      <p class="lede">Enter your company. We compare Prospera with Odoo Custom, hosted on Odoo.sh, and the cheaper of Zoho One's two plans.</p>
+      <div class="pc-wrap">
+        <form class="pc-in" onsubmit="return false" aria-label="Prospera ERP">
+          <div class="pc-f" id="pc-E"><label for="pc-E-n">Employees on payroll <small>Everyone you pay</small></label>
+          <div class="pc-row"><input type="range" min="1" max="300" value="40" aria-label="Employees on payroll"><input type="number" id="pc-E-n" min="1" max="1000" value="40" inputmode="numeric"></div></div>
+          <div class="pc-f" id="pc-U"><label for="pc-U-n">Full users <small>People who work in the system</small></label>
+          <div class="pc-row"><input type="range" min="1" max="40" value="12" aria-label="Full users"><input type="number" id="pc-U-n" min="1" max="1000" value="12" inputmode="numeric"></div></div>
+          <div class="pc-f" id="pc-T"><label for="pc-T-n">Team members <small>Self-service only, optional</small></label>
+          <div class="pc-row"><input type="range" min="0" max="28" value="0" aria-label="Team members"><input type="number" id="pc-T-n" min="0" max="1000" value="0" inputmode="numeric"></div></div>
+          <p class="pc-hint">Odoo and Zoho One need a full licence for self-service, so team members are not added to their prices.</p>
+          <div class="pc-f"><label>Billing</label><div class="seg" role="group" aria-label="Billing" style="margin-top:10px"><button type="button" data-bill="m" aria-pressed="true">Monthly</button><button type="button" data-bill="a" aria-pressed="false">Annual</button></div></div>
+          <div class="pc-f"><label>Odoo year</label><div class="seg" role="group" aria-label="Odoo year" style="margin-top:10px"><button type="button" data-year="y1" aria-pressed="true">Year 1</button><button type="button" data-year="y2" aria-pressed="false">Year 2 on</button></div></div>
+          <div class="pc-f"><label>Try</label><div class="pc-chips"><button type="button" class="pc-chip" data-preset="10,3,0">10 people, 3 users</button><button type="button" class="pc-chip" data-preset="40,12,0">40 people, 12 users</button><button type="button" class="pc-chip" data-preset="100,30,0">100 people, 30 users</button></div></div>
+        </form>
+        <div class="pc-out" aria-live="polite">
+          <div class="pc-cards">
+            <div class="pc-card pc-us" data-card="p"><h3>Prospera ERP</h3><p class="pc-plan"></p><p class="pc-amt"></p><p class="pc-sub"></p></div>
+            <div class="pc-card" data-card="o"><h3>Odoo Custom + Odoo.sh</h3><p class="pc-plan"></p><p class="pc-amt"></p><p class="pc-sub"></p><span class="pc-tag" hidden></span></div>
+            <div class="pc-card" data-card="z"><h3>Zoho One</h3><p class="pc-plan"></p><p class="pc-amt"></p><p class="pc-sub"></p><span class="pc-tag" hidden></span></div>
           </div>
-          <p class="c-note" id="c-note" aria-live="polite"></p>
-        </div>
-        <div class="config-out" aria-live="polite">
-          <p class="k">Per month</p>
-          <p class="big" id="c-month"></p>
-          <p class="sub" id="c-year"></p>
-          <dl>
-            <div><dt>Launch pack, one time</dt><dd id="c-launch"></dd></div>
-            <div><dt>Average per person</dt><dd id="c-avg"></dd></div>
-          </dl>
-          <a class="btn btn-gold" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">Book a free systems review →</a>
-          <p class="fine">Excludes VAT. Your quote confirms the final figure.</p>
-        </div>
-      </div>
-
-      <div class="two-tables">
-        <div>
-          <h3 class="t-h">Every plan starts with a launch pack.</h3>
-          <p class="t-p">An ERP set up badly costs more than it saves. Each pack is a fixed scope, run by our consultants: settings, chart of accounts, opening balances, data import, e-invoicing registration and training.</p>
-          <div class="tablewrap">
-            <table>
-              <thead><tr><th scope="col">Pack</th><th scope="col">Plan</th><th scope="col">Hours</th><th scope="col">One time</th></tr></thead>
-              <tbody>
-                <tr><td><b>Quick start</b></td><td>Business</td><td class="num">6</td><td class="num" data-launch="business"></td></tr>
-                <tr><td><b>Launch</b></td><td>Professional</td><td class="num">20</td><td class="num" data-launch="professional"></td></tr>
-                <tr><td><b>Enterprise launch</b></td><td>Enterprise</td><td class="num">60</td><td class="num" data-launch="enterprise"></td></tr>
-              </tbody>
-            </table>
+          <div class="pc-bars">
+            <div class="pc-bar pc-us" data-bar="p"><span>Prospera ERP</span><div class="pc-track"><div class="pc-fill"></div></div><b></b></div>
+            <div class="pc-bar" data-bar="o"><span>Odoo</span><div class="pc-track"><div class="pc-fill"></div></div><b></b></div>
+            <div class="pc-bar" data-bar="z"><span>Zoho One</span><div class="pc-track"><div class="pc-fill"></div></div><b></b></div>
           </div>
-        </div>
-        <div>
-          <h3 class="t-h">Add only what you use.</h3>
-          <p class="t-p">Per month unless stated. The same price on annual and monthly billing.</p>
-          <div class="tablewrap">
-            <table>
-              <thead><tr><th scope="col">Add-on</th><th scope="col">Plans</th><th scope="col">Price</th></tr></thead>
-              <tbody>
-                <tr><td><b>1,000 AI credits</b></td><td>All</td><td class="num" data-add="ai"></td></tr>
-                <tr><td><b>Storage</b>, per GB</td><td>All</td><td class="num" data-add="gb"></td></tr>
-                <tr><td><b>Extra company</b>, beyond 3</td><td>Professional</td><td class="num" data-add="co"></td></tr>
-                <tr><td><b>Commerce connector</b>, per store</td><td>Professional</td><td class="num" data-add="shop"></td></tr>
-                <tr><td><b>Consulting</b>, per hour</td><td>All</td><td class="num" data-add="hr"></td></tr>
-              </tbody>
-            </table>
-          </div>
+          <div class="pc-save" id="pc-save"><b></b><span></span></div>
+          <details class="pc-break" id="pc-bk"><summary>How your Prospera price is built</summary><ul></ul></details>
+          <div class="pc-fbtn"><button type="button" class="btn btn-primary" id="pc-show" aria-expanded="false" aria-controls="pc-feat-body">Compare every feature side by side</button></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="unl wrap on-navy" aria-label="Included on every plan">
-    <div class="inner">
-      <h2>Included on every plan.</h2>
-      <ul>
-        <li>Unlimited invoices</li><li>Unlimited clients and products</li><li>Unlimited warehouses</li><li>Unlimited tills, offline too</li><li>Unlimited branches and banks</li><li data-tip="Invoices and receipts go to the Egyptian Tax Authority from the invoice itself, and the response is saved on the record. For Saudi Arabia, invoicing is ZATCA Phase 2 compliant.">Egypt e-invoice and e-receipt</li><li>ZATCA Phase 2 compliant</li><li data-tip="We host Prospera, back it up and apply updates after testing them. Enterprise runs on a server of its own.">Hosting, backups and updates</li><li>Arabic and English</li>
-      </ul>
-      <p class="fine">No fees per branch, per till or per invoice. Your bill changes only when your team changes.</p>
-    </div>
-  </section>
-
-  <section class="section wrap plans-sec" id="compare">
-    <div class="inner">
-      <p class="label">Compare plans</p>
-      <h2>Every feature, side by side.</h2>
-      <div class="pp-bar" role="group" aria-label="Comparison view"><button type="button" class="pp-v" data-v="all" aria-pressed="true">All features</button><button type="button" class="pp-v" data-v="diff" aria-pressed="false">Only differences</button><button type="button" class="pp-x" data-x="1">Collapse all</button></div>
-      <div class="tablewrap grid-table">
-        <table>
-          <thead>
-            <tr><th scope="col">Feature</th><th scope="col" class="plan-col">Business</th><th scope="col" class="plan-col hi">Professional</th><th scope="col" class="plan-col">Enterprise</th></tr>
-          </thead>
-          <tbody>
-            <tr class="grp"><td colspan="4">Plan basics</td></tr>
-            <tr><td data-tip="People who work in Prospera every day. Business starts from 1, Professional from 3, Enterprise from 5. Enterprise Unlimited covers every user for one price.">Full users</td><td class="c">From 1</td><td class="c hi">From 3</td><td class="c">From 5, or Unlimited for every user</td></tr>
-            <tr><td data-tip="Staff who use Prospera only for themselves: expenses, leave, attendance, payslips and approvals. EGP 99 each a month, and that price includes running their payroll.">Team members, payroll included</td><td class="c">EGP&nbsp;99 each</td><td class="c hi">EGP&nbsp;99 each</td><td class="c">EGP&nbsp;99 each</td></tr>
-            <tr><td data-tip="AI credits pay for AI work such as reading receipts and supplier invoices. One credit is about 1,000 AI tokens.">AI credits a month</td><td class="c">200</td><td class="c hi">600</td><td class="c">1,500, or own AI account</td></tr>
-            <tr><td>Storage</td><td class="c">25 GB</td><td class="c hi">50 GB</td><td class="c">100 GB</td></tr>
-            <tr><td data-tip="Separate legal entities, each with its own books. Professional and Enterprise can consolidate them into one report.">Companies</td><td class="c">1</td><td class="c hi">Up to 3, consolidated</td><td class="c">Unlimited, consolidated</td></tr>
-            <tr><td>Invoices, clients, products, warehouses, tills, branches</td><td class="c">Unlimited</td><td class="c hi">Unlimited</td><td class="c">Unlimited</td></tr>
-            <tr class="grp"><td colspan="4">Accounting and compliance</td></tr>
-            <tr><td>Chart of accounts, banks, cheques and cost centers</td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>Fixed assets and depreciation</td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="Invoices and receipts go to the Egyptian Tax Authority from the invoice itself, and the response is saved on the record. For Saudi Arabia, invoicing is ZATCA Phase 2 compliant.">Egypt e-invoice and e-receipt, ZATCA Phase 2 compliant</td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="Set budgets by account and cost center with warnings when spending goes over, and release prepaid income or costs month by month.">Budgets and deferred revenue</td><td class="c"><span class="no" role="img" aria-label="Not included"></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="Purchases, expenses or discounts above limits you set wait for the right manager&#x27;s approval before they go through.">Approval workflows</td><td class="c"><span class="no" role="img" aria-label="Not included"></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr class="grp"><td colspan="4">Sales, stock and point of sale</td></tr>
-            <tr><td>Sales, purchasing and price lists</td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="Track every batch, serial number and expiry date, across as many warehouses as you need at no extra cost.">Stock with batch, serial and expiry</td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>Point of sale, works offline</td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="Add freight and customs to the cost of stock, reward repeat customers with points, and calculate sales commissions automatically.">Landed cost, loyalty and sales commissions</td><td class="c"><span class="no" role="img" aria-label="Not included"></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="Bills of materials, work orders and production costing, with raw materials consumed from stock as you produce.">Manufacturing: BOM and production</td><td class="c"><span class="no" role="img" aria-label="Not included"></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="Ready connections for Shopify and the couriers Bosta, SMSA and Amazon, so orders, stock and shipping stay in step with your books.">Commerce connectors: Shopify, Bosta, SMSA, Amazon</td><td class="c"><span class="no" role="img" aria-label="Not included"></span></td><td class="c hi">Add-on</td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr class="grp"><td colspan="4">People and operations</td></tr>
-            <tr><td>HR, attendance and payroll</td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="Appointments and resource bookings, rental units with contracts, and work orders for jobs, all on the same customer record.">Bookings, rentals and work orders</td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>Expense claims</td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>Prospera Expenses phone app and AI receipts <span class="badge">Coming December 2026</span></td><td class="c"><span class="no" role="img" aria-label="Not included"></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>Projects, timesheets and job costing</td><td class="c"><span class="no" role="img" aria-label="Not included"></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr class="grp"><td colspan="4">Front office</td></tr>
-            <tr><td data-tip="Leads, deals and quotes on the same customer record as orders and invoices, with WhatsApp conversations saved on the customer.">CRM with pipeline and WhatsApp</td><td class="c"><span class="no" role="img" aria-label="Not included"></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="Customer tickets from email and WhatsApp, assigned to your team and tracked against response and resolution times.">Helpdesk with service levels</td><td class="c"><span class="no" role="img" aria-label="Not included"></span></td><td class="c hi"><span class="no" role="img" aria-label="Not included"></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>Website builder and learning platform</td><td class="c"><span class="no" role="img" aria-label="Not included"></span></td><td class="c hi"><span class="no" role="img" aria-label="Not included"></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>Team chat</td><td class="c"><span class="no" role="img" aria-label="Not included"></span></td><td class="c hi"><span class="no" role="img" aria-label="Not included"></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr class="grp"><td colspan="4">Platform and support</td></tr>
-            <tr><td>Dashboards, custom fields and REST API</td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>Works on any phone browser</td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="We host Prospera, back it up and apply updates after testing them. Enterprise runs on a server of its own.">Hosting, backups and updates</td><td class="c">Shared server</td><td class="c hi">Shared server</td><td class="c">Dedicated server</td></tr>
-            <tr><td>Test copy of your system</td><td class="c"><span class="no" role="img" aria-label="Not included"></span></td><td class="c hi"><span class="no" role="img" aria-label="Not included"></span></td><td class="c"><span class="yes" role="img" aria-label="Included"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>Support</td><td class="c">Business hours</td><td class="c hi">Business hours</td><td class="c">Priority</td></tr>
-          </tbody>
-        </table>
+      <div class="pc-feat" id="features">
+        <div id="pc-feat-body" hidden>
+          <div class="pc-feat-h"><h3>Every feature, side by side.</h3><div class="seg" role="group" aria-label="Every feature, side by side."><button type="button" data-fv="a" aria-pressed="true">All features</button><button type="button" data-fv="d" aria-pressed="false">Only differences</button></div></div>
+          <div class="pc-tbl-wrap"><table class="pc-tbl" id="pc-tbl"></table></div>
+        </div>
+        <p class="pc-src">Competitor prices are their Egypt prices, checked on 20 October 2026, excluding VAT. Odoo: Custom plan at US$20.90 a user monthly or US$16.40 yearly, with a first-year discount of US$4 or US$3 a user; Odoo.sh hosting with 2 workers, 50 GB storage and a staging copy (more workers above 50 users). Odoo also offers free standard hosting without custom code. Zoho One: the cheaper of All-Employee (EGP&nbsp;1,575 monthly or 1,295 yearly for every employee) and Flexible User (EGP&nbsp;3,675 or 3,150 a user). US dollars at EGP&nbsp;52.3. Implementation is not included for anyone. Vendors change prices, so confirm with them before you decide.</p>
       </div>
-      <p class="vat">Run by Prospera packages include the plan named on each package. Prospera Expenses is in development for the December 2026 release.</p>
     </div>
   </section>
 
   <section class="section wrap">
-    <div class="inner faq-wrap">
-      <div>
-        <p class="label">Questions</p>
-        <h2>Pricing, plainly.</h2>
-        <p class="lede-s">Not sure which way to buy? The free systems review ends with a written recommendation and a price.</p>
-      </div>
-      <div>
-        <details><summary>Run by Prospera or Software only?</summary><p>If you have an in-house finance or IT person who wants to own the system, Software only works well. If you would rather have specialists set it up, keep it compliant and support your team every month, choose Run by Prospera.</p></details>
-        <details><summary>How is the Software only price worked out?</summary><p>Pick a plan, multiply its per-user price by the people who work in the system, and add EGP&nbsp;99 for each team member. Invoices, clients, warehouses and branches never change the bill.</p></details>
-        <details><summary>What is a team member?</summary><p>Someone who uses Prospera only for themselves: submitting expenses and receipts, requesting leave, checking in, seeing payslips and approving requests sent to them. They cannot create invoices, post entries or move stock. Payroll for that person is included in the EGP&nbsp;99.</p></details>
-        <details><summary>Is there a minimum number of users?</summary><p>Business starts from one full user. Professional starts from three and Enterprise from five, because those plans include several companies, approvals and, on Enterprise, a dedicated server that we set up and support for a whole team. Staff who only need self-service join as team members at EGP&nbsp;99.</p></details>
-        <details><summary>Why does every plan start with a launch pack?</summary><p>An ERP that is set up badly produces wrong numbers for years. The launch pack is a fixed price for a fixed scope, so you start with clean opening balances, working e-invoicing and a trained team.</p></details>
-        <details><summary>What is the difference between annual and monthly billing?</summary><p>On Software only, annual billing is paid yearly and saves up to 18%. Run by Prospera is billed monthly with a 12-month minimum, and a year paid up front buys 12 months for the price of 10.</p></details>
-        <details><summary>What are AI credits?</summary><p>AI credits pay for the AI work inside Prospera, such as reading receipts and supplier invoices. One credit is about 1,000 AI tokens. Each plan includes a monthly allowance; Enterprise can connect its own AI account instead.</p></details>
-        <details><summary>Can we change plans later?</summary><p>Yes. Move up a plan or switch between Software only and Run by Prospera at any time. Your data, settings and history stay exactly where they are.</p></details>
-      </div>
+    <div class="inner">
+      <h2>Included in Prospera ERP.</h2>
+      <ul class="pv-inc"><li>Accounting, banks and cheques</li><li>Egypt e-invoice and e-receipt</li><li>Saudi ZATCA Phase 2</li><li>Invoicing with no monthly cap</li><li>Stock, batches and expiry</li><li>Purchasing with approvals</li><li>Point of sale that works offline</li><li>HR and payroll for Egypt and the Gulf</li><li>CRM with WhatsApp</li><li>Projects, timesheets and job costing</li><li>Manufacturing and quality</li><li>Helpdesk with service levels</li><li>Website builder and learning platform</li><li>Unlimited companies, consolidated</li><li>Shopify, Bosta and SMSA connectors</li><li>1,500 AI credits a month</li><li>REST API and custom fields</li><li>Arabic and English</li></ul>
+    </div>
+  </section>
+
+  <section class="section wrap" style="padding-top:0">
+    <div class="inner">
+      <h2>Add only what you need.</h2>
+      <div class="pv-adds"><div class="pv-add"><h3>Run by Prospera</h3><p>Our team runs the system with you: month-end reviews, compliance and support hours every month.</p><span class="pv-p">Priced to your size after a free systems review</span></div><div class="pv-add"><h3>Setup and training</h3><p>Opening balances, e-invoicing, data migration and training, done for a fixed scope.</p><span class="pv-p">Fixed price after a free systems review</span></div><div class="pv-add"><h3>Extra AI credits</h3><p>For heavy use of receipt and invoice reading. Or connect your own AI account.</p><span class="pv-p">EGP&nbsp;120 for each 1,000 credits</span></div><div class="pv-add"><h3>Your own server</h3><p>Run Prospera on a server you control instead of our cloud.</p><span class="pv-p">On request</span></div></div>
+    </div>
+  </section>
+
+  <section class="section wrap" style="padding-top:0">
+    <div class="inner">
+      <h2 style="text-align:center">Pricing, plainly.</h2>
+      <div class="pv-faq"><details><summary>Who counts as a full user?</summary><p>Anyone who creates invoices, posts entries, moves stock or works in the system every day. People who only need their own payslips, leave and expenses can be team members, and everyone else on payroll is free.</p></details><details><summary>How do you compare with Odoo and Zoho One?</summary><p>At every company size from 5 to 200 employees, Prospera is at least 3% below the lower of Odoo Custom in its first year and Zoho One. From Odoo's second year, when its first-year discount ends, the gap grows.</p></details><details><summary>What is the small-team cap?</summary><p>For small companies where most people log in, your user total never goes above EGP&nbsp;1,527 a month for each employee on payroll (EGP&nbsp;1,256 on annual billing). It keeps you below Zoho One's per-employee plan.</p></details><details><summary>What is the difference between monthly and annual billing?</summary><p>Annual billing is paid yearly and costs less: EGP&nbsp;3,040 instead of 3,565 for each of the first three users, and EGP&nbsp;680 for every user after that.</p></details><details><summary>Is setup included?</summary><p>No. Setup and training are priced for a fixed scope after a free systems review, so you know the full cost before you start.</p></details><details><summary>Are there limits on invoices, clients or branches?</summary><p>No. Invoices, clients, warehouses, branches and companies never change the bill. Only people do.</p></details><details><summary>Do you have prices for the Gulf and other countries?</summary><p>Yes, on request. The prices on this page are for companies in Egypt billed in Egyptian pounds.</p></details></div>
     </div>
   </section>
 
@@ -1150,6 +948,8 @@ button:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
     </div>
   </section>
 </main>
+<script type="application/json" id="pv-data">{"t": {"cur": "EGP {n}", "mo": "a month", "yr": "a year", "perEmp": "per employee", "pName": "Prospera ERP", "oName": "Odoo Custom + Odoo.sh", "zName": "Zoho One", "pPlan": "{u} full users, every app", "pPlan1": "1 full user, every app", "oPlan11": "1 user, year 1 with discount, {w} hosting workers", "oPlan21": "1 user, year 2 on, {w} hosting workers", "zFL1": "Flexible User plan, 1 user", "pPlanT": ", {t} team members", "pCap": ", small-team cap applied", "oPlan1": "{u} users, year 1 with discount, {w} hosting workers", "oPlan2": "{u} users, year 2 on, {w} hosting workers", "zAE": "All-Employee plan, {e} employees licensed", "zFL": "Flexible User plan, {u} users", "saves": "Prospera saves you {n} a year", "costsLess": "{n} a year less than Prospera", "saveBoth": "You save {o} a year against Odoo and {z} against Zoho One.", "saveMixed": "Against Odoo you pay {o}; against Zoho One you pay {z}.", "less": "{n} less a year", "more": "{n} more a year", "billM": "Monthly billing", "billA": "Annual billing", "yr1": "Odoo year 1", "yr2": "Odoo year 2 on", "bk1": "{n} × {p} for users 1 to 3", "bk2": "{n} × {p} for users 4 to 12", "bk3": "{n} × {p} for users 13 and above", "bkCap": "Small-team cap: {e} employees × {p}, so users total {t}", "bkT": "{n} team members × {p}", "bkFree": "{n} other employees on payroll, free", "feat": "Feature", "totalRow": "Your monthly price", "inc": "Included", "notInc": "Not included", "showFeat": "Compare every feature side by side", "hideFeat": "Hide the feature comparison"}, "m": [{"g": "Accounting and compliance"}, {"f": "General ledger, banks and cheques", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Multi-currency", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Bank reconciliation", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Fixed assets and depreciation", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Budgets", "p": ["y", "", ""], "z": ["p", "Limited", ""], "o": ["y", "", ""]}, {"f": "Several companies, consolidated", "p": ["y", "", "Unlimited"], "z": ["p", "Limited", ""], "o": ["p", "Limited", "Multi-company"]}, {"f": "Egypt e-invoice and e-receipt", "p": ["y", "", ""], "z": ["n", "", ""], "o": ["p", "Limited", "E-invoice"]}, {"f": "Saudi ZATCA Phase 2", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "UAE e-invoicing", "p": ["s", "Coming", "2027"], "z": ["y", "", ""], "o": ["u", "Not confirmed", ""]}, {"f": "VAT returns", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"g": "Sales, stock and operations"}, {"f": "Quotes and invoices, no monthly cap", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Recurring billing", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Several warehouses", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Batches, serials and expiry", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Landed cost", "p": ["y", "", ""], "z": ["u", "Not confirmed", ""], "o": ["y", "", ""]}, {"f": "Purchase orders with approvals", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Point of sale that works offline", "p": ["y", "", ""], "z": ["a", "Add-on", "Add-on"], "o": ["y", "", ""]}, {"f": "Manufacturing with bills of materials", "p": ["y", "", ""], "z": ["p", "Limited", ""], "o": ["y", "", ""]}, {"f": "Quality inspections", "p": ["y", "", ""], "z": ["n", "", ""], "o": ["y", "", ""]}, {"f": "Shopify connector", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["a", "Add-on", "Third party"]}, {"g": "People and payroll"}, {"f": "HR and payroll for Egypt", "p": ["y", "", ""], "z": ["p", "Limited", "No Egypt payroll"], "o": ["y", "", ""]}, {"f": "Saudi GOSI and UAE WPS payroll", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Employee self-service", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Expense receipts read by AI", "p": ["s", "Coming", "Dec 2026"], "z": ["y", "", ""], "o": ["y", "", ""]}, {"g": "Customers and service"}, {"f": "CRM pipeline", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "WhatsApp on the customer record", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Helpdesk with service levels", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Projects and timesheets", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Website builder", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"g": "Platform"}, {"f": "AI assistant included", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Arabic interface", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Custom fields and no-code changes", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "API access", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Works on the phone", "p": ["p", "Limited", "Phone browser"], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Choice of where your data lives", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"g": "Service and support"}, {"f": "Local implementation partner", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "Monthly review of your books by accountants", "p": ["a", "Add-on", "Run by Prospera"], "z": ["n", "", ""], "o": ["n", "", ""]}]}</script>
+
 
 <footer class="footer wrap">
   <div class="inner">
@@ -1159,100 +959,6 @@ button:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
     <p class="disc-line"><span class="fcopy">© 2026 Prospera. All rights reserved.</span> Prices are per month and exclude VAT. Your quote confirms the final figure. Prospera Expenses is in development and planned for the December 2026 release; features and timing may change.</p>
   </div>
 </footer>
-<script>
-(function(){
-  var SW={
-    business:{min:1,egp:{a:490,m:590},usd:{a:15,m:18},launch:{egp:7500,usd:390}},
-    professional:{min:3,egp:{a:890,m:1090},usd:{a:27,m:33},launch:{egp:25000,usd:1290}},
-    enterprise:{min:5,egp:{a:1390,m:1690},usd:{a:42,m:51},launch:{egp:75000,usd:3900},from:true}
-  };
-  var TEAM={egp:{a:99,m:119},usd:{a:3,m:4}};
-  var UNL={egp:34900,usd:990};
-  var RUN={
-    essentials:{egp:[7500,15000],usd:[450,900]},
-    operate:{egp:[15000,50000],usd:[890,2900]},
-    partner:{egp:[35000,115000],usd:[1990,6900],from:true}
-  };
-  var ADD={egp:{ai:120,gb:25,co:990,shop:1490,hr:1250},usd:{ai:2.5,gb:0.5,co:25,shop:39,hr:60}};
-  function fromHash(){var h=location.hash.toLowerCase();return{mode:/software/.test(h)?"sw":"run",market:/usd/.test(h)?"usd":"egp"};}
-  var hs=fromHash(),state={mode:hs.mode,market:hs.market,billing:"a"};
-  function n(v){return v.toLocaleString("en-US",{minimumFractionDigits:(v%1?2:0),maximumFractionDigits:2});}
-  function big(v,mk){return mk==="egp"?'<span class="cur">EGP</span>'+n(v):'<span class="cur">$</span>'+n(v);}
-  function plain(v,mk){return mk==="egp"?"EGP\u00a0"+n(v):"$"+n(v);}
-  var $=function(s){return document.querySelector(s);};
-  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s));};
-  var uIn=$("#c-users"),tIn=$("#c-team"),pSel=$("#c-plan");
-  function calc(){
-    var mk=state.market,b=state.billing,p=SW[pSel.value];
-    var u=Math.max(parseInt(uIn.value,10)||0,0),t=Math.max(parseInt(tIn.value,10)||0,0);
-    var note="";
-    if(u<p.min){note="The "+pSel.options[pSel.selectedIndex].text+" plan starts at <b>"+p.min+" full users</b>, so the price below counts "+p.min+".";}
-    var billU=Math.max(u,p.min);
-    var month=billU*p[mk][b]+t*TEAM[mk][b];
-    if(pSel.value==="enterprise"&&b==="a"&&billU*p[mk].a>UNL[mk]){note="At this size <b>Enterprise Unlimited</b> from "+plain(UNL[mk],mk)+" a month costs less, with every user included.";}
-    $("#c-month").innerHTML=big(month,mk);
-    $("#c-year").textContent=b==="a"?"Billed yearly at "+plain(month*12,mk):"Billed monthly";
-    $("#c-launch").textContent=(p.from?"From ":"")+plain(p.launch[mk],mk);
-    var people=billU+t;$("#c-avg").textContent=people?plain(Math.round(month/people*100)/100,mk):"-";
-    $("#c-note").innerHTML=note;
-  }
-  function render(){
-    var mk=state.market,b=state.billing;
-    $$("[data-run]").forEach(function(el){el.innerHTML=big(RUN[el.dataset.run][mk][0],mk);});
-    $$("[data-runsetup]").forEach(function(el){var r=RUN[el.dataset.runsetup];el.textContent="Setup "+(r.from?"from ":"")+plain(r[mk][1],mk)+", one time";});
-    $$("[data-sw]").forEach(function(el){el.innerHTML=big(SW[el.dataset.sw][mk][b],mk);});
-    $$("[data-swfrom]").forEach(function(el){var p=SW[el.dataset.swfrom];el.textContent="From "+plain(p.min*p[mk][b],mk)+" a month with "+p.min+(p.min===1?" user":" users")+(b==="a"?", billed yearly":"");});
-    $$("[data-team]").forEach(function(el){el.textContent=plain(TEAM[mk][b],mk);});
-    $$("[data-unl]").forEach(function(el){el.textContent=plain(UNL[mk],mk);});
-    $$("[data-launch]").forEach(function(el){var p=SW[el.dataset.launch];el.textContent=(p.from?"From ":"")+plain(p.launch[mk],mk);});
-    $$("[data-add]").forEach(function(el){el.textContent=plain(ADD[mk][el.dataset.add],mk);});
-    $$("[data-market]").forEach(function(x){x.setAttribute("aria-pressed",String(x.dataset.market===mk));});
-    $$("[data-billing]").forEach(function(x){x.setAttribute("aria-pressed",String(x.dataset.billing===b));});
-    $$("[data-mode]").forEach(function(x){x.setAttribute("aria-selected",String(x.dataset.mode===state.mode));x.tabIndex=x.dataset.mode===state.mode?0:-1;});
-    $("#panel-run").hidden=state.mode!=="run";
-    $("#panel-sw").hidden=state.mode!=="sw";
-    $("#billing-seg").hidden=state.mode!=="sw";
-    calc();
-  }
-  $$("[data-mode]").forEach(function(x){
-    x.addEventListener("click",function(){state.mode=x.dataset.mode;render();});
-    x.addEventListener("keydown",function(e){if(e.key==="ArrowRight"||e.key==="ArrowLeft"){state.mode=state.mode==="run"?"sw":"run";render();$('[data-mode="'+state.mode+'"]').focus();}});
-  });
-  $$("[data-market]").forEach(function(x){x.addEventListener("click",function(){state.market=x.dataset.market;render();});});
-  $$("[data-billing]").forEach(function(x){x.addEventListener("click",function(){state.billing=x.dataset.billing;render();});});
-  $$("[data-step]").forEach(function(x){x.addEventListener("click",function(){var i=x.dataset.step==="users"?uIn:tIn;i.value=Math.max((parseInt(i.value,10)||0)+parseInt(x.dataset.d,10),x.dataset.step==="users"?1:0);calc();});});
-  pSel.addEventListener("change",function(){var p=SW[pSel.value];if((parseInt(uIn.value,10)||0)<p.min)uIn.value=p.min;calc();});
-  [uIn,tIn].forEach(function(i){i.addEventListener("input",calc);});
-  window.addEventListener("hashchange",function(){var h=fromHash();state.mode=h.mode;state.market=h.market;render();});
-  render();
-})();
-</script>
 <script src="assets/uplift.js" defer></script>
-<script>
-(function(){
-  var t=document.querySelector('#compare table'); if(!t) return;
-  var rows=[].slice.call(t.querySelectorAll('tbody tr'));
-  rows.forEach(function(r){ if(r.classList.contains('grp')) return;
-    var c=[].slice.call(r.querySelectorAll('td.c')).map(function(td){return td.innerHTML.replace(/\s+/g,' ').trim();});
-    if(c.length>1 && c.every(function(x){return x===c[0];})) r.classList.add('pp-same');
-  });
-  function setV(v){ t.classList.toggle('pp-diff',v==='diff');
-    [].forEach.call(document.querySelectorAll('.pp-v'),function(b){b.setAttribute('aria-pressed',b.dataset.v===v);});
-    rows.forEach(function(r){ if(!r.classList.contains('grp')) return; var n=r.nextElementSibling,any=false;
-      while(n&&!n.classList.contains('grp')){ if(!n.classList.contains('pp-same')) any=true; n=n.nextElementSibling; }
-      r.classList.toggle('pp-empty',v==='diff'&&!any); });
-  }
-  [].forEach.call(document.querySelectorAll('.pp-v'),function(b){b.addEventListener('click',function(){setV(b.dataset.v);});});
-  rows.forEach(function(r){ if(!r.classList.contains('grp')) return; var td=r.firstElementChild;
-    td.setAttribute('role','button'); td.tabIndex=0; td.setAttribute('aria-expanded','true');
-    function tog(force){ var open=force!==undefined?force:td.getAttribute('aria-expanded')!=='true';
-      td.setAttribute('aria-expanded',open); var n=r.nextElementSibling;
-      while(n&&!n.classList.contains('grp')){ n.classList.toggle('pp-hide',!open); n=n.nextElementSibling; } }
-    r._tog=tog; td.addEventListener('click',function(){tog();});
-    td.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();tog();} });
-  });
-  var x=document.querySelector('.pp-x');
-  if(x) x.addEventListener('click',function(){ var open=x.dataset.x!=='1'; rows.forEach(function(r){ if(r._tog) r._tog(open); });
-    x.dataset.x=open?'1':'0'; x.textContent=open?'Collapse all':'Expand all'; });
-})();
-</script>
+
+<script src="assets/calc.js" defer></script>

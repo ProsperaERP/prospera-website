@@ -2,10 +2,10 @@
 <html lang="ar" dir="rtl">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta charset="utf-8">
-<title>بروسبيرا | الأسعار</title>
+<title>أسعار بروسبيرا</title>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<meta name="description" content="ادفع مقابل فريقك، لا مقابل نموك. طريقتان للاقتناء: فريقنا يشغّله معك، أو تشغّله بنفسك.">
+<meta name="description" content="خطة واحدة بكل التطبيقات، بسعر أقل من Odoo وZoho One بنسبة 3% على الأقل في كل حجم شركة. شاهد سعرك جنبًا إلى جنب.">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap">
@@ -664,6 +664,7 @@ button:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 .two-tables table{min-width:0!important}.two-tables td.num{text-align:right}
 </style>
 <link rel="stylesheet" href="../assets/uplift.css">
+<link rel="stylesheet" href="../assets/calc.css">
 <link rel="stylesheet" href="../assets/rtl.css">
 
 <header class="header wrap">
@@ -700,7 +701,7 @@ button:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
               <a href="erp.html"><i class="c1">◉</i><span><b>نظرة عامة على بروسبيرا ERP</b><small>كل أقسام الشركة على سجل واحد</small></span></a>
               <a href="erp-features.html"><i class="c3">≡</i><span><b>كل مزايا ERP</b><small>420 ميزة في قائمة واحدة</small></span></a>
               <a href="roi.html"><i class="c2">%</i><span><b>حاسبة العائد على الاستثمار</b><small>ما يوفره لك نظام واحد</small></span></a>
-              <a class="mm-cta" href="run.html"><b>تشغيل بروسبيرا</b><small>من 7,500&nbsp;ج.م شهريًا: البرنامج والإعداد وفريق عمل</small><span>تعرّف على طريقة العمل ←</span></a>
+              <a class="mm-cta" href="pricing.html#calc"><b>الأسعار</b><small>كل التطبيقات من 3,565&nbsp;ج.م شهريًا. قارن مع Odoo وZoho One.</small><span>افتح حاسبة الأسعار ←</span></a>
             </div>
           </div>
         </div>
@@ -717,297 +718,94 @@ button:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 </header>
 
 <main id="top">
-  <section class="page-hero wrap">
+  <section class="page-hero pv-hero wrap">
     <div class="inner">
       <p class="label">الأسعار</p>
-      <h1>ادفع مقابل فريقك، لا مقابل نموك<span class="stop">.</span></h1>
-      <p class="lede">طريقتان للاقتناء: فريقنا يشغّله معك، أو تشغّله بنفسك.</p>
-      <ul class="ticks pp-ticks"><li>بلا حدود على الفواتير أو العملاء أو الفروع</li><li>أعضاء الفريق بـ 99&nbsp;ج.م، شاملًا الرواتب</li><li>بالعربية والإنجليزية، والضرائب المحلية مدمجة</li></ul>
-      <div class="mode" role="tablist" aria-label="طريقة الشراء">
-        <button type="button" role="tab" id="tab-run" aria-controls="panel-run" aria-selected="true" data-mode="run"><b>تشغيل بروسبيرا</b><small>البرنامج والإعداد وفريق عمل، بسعر شهري واحد</small></button>
-        <button type="button" role="tab" id="tab-sw" aria-controls="panel-sw" aria-selected="false" data-mode="sw"><b>البرنامج فقط</b><small>خطط بسعر المستخدم تشغّلها بنفسك</small></button>
-      </div>
-      <div class="toggles">
-        <div class="seg" role="group" aria-label="السوق">
-          <button type="button" data-market="egp" aria-pressed="true">مصر</button>
-          <button type="button" data-market="usd" aria-pressed="false">الخليج والأسواق الدولية</button>
-        </div>
-        <div class="seg" role="group" aria-label="الفوترة" id="billing-seg" hidden>
-          <button type="button" data-billing="a" aria-pressed="true">سنوي، وفّر حتى 18%</button>
-          <button type="button" data-billing="m" aria-pressed="false">شهري</button>
-        </div>
-      </div>
-      <p class="trial-line">الأسعار شهرية ولا تشمل ضريبة القيمة المضافة. لمصر قائمة أسعار مستقلة عن الأسواق الدولية، وتنطبق أسعار مصر على الشركات المسجلة ضريبيًا في مصر والتي تُفوتر بالجنيه المصري.</p>
+      <h1>خطة واحدة. كل التطبيقات. <span class="grad">بأقل من Odoo وZoho One.</span></h1>
+      <p class="lede">ادفع مقابل من يعملون في النظام فقط. وباقي الموظفين على الرواتب مجانًا.</p>
+      <ul class="ticks pp-ticks"><li>كل التطبيقات مشمولة، بلا مستويات</li><li>رواتب مصر والفاتورة الإلكترونية مدمجة</li><li>أقل من Odoo وZoho One بنسبة 3% على الأقل في كل حجم</li></ul>
+      <div class="pv-bill"><div class="seg" role="group" aria-label="الفوترة"><button type="button" data-bill="m" aria-pressed="true">شهري</button><button type="button" data-bill="a" aria-pressed="false">سنوي، وفّر حتى 24%</button></div></div>
+      <p class="pv-note">الأسعار شهرية ولا تشمل ضريبة القيمة المضافة، للشركات في مصر وبالجنيه المصري.</p>
     </div>
   </section>
 
-  <!-- RUN BY PROSPERA -->
-  <section class="price-sec wrap" id="panel-run" role="tabpanel" aria-labelledby="tab-run">
-    <div class="inner">
-      <p class="panel-intro">البرنامج والإعداد والامتثال وفريق عمل، بسعر شهري واحد. <a href="run.html">اعرف ماذا يعني ذلك ←</a></p>
-      <div class="plans three">
-        <article class="plan">
-          <h3>الأساسية</h3>
-          <p class="tagline">للشركات من 3 إلى 15 شخصًا التي تريد العمل الصحيح من اليوم الأول.</p>
-          <div class="price"><span class="amt" data-run="essentials"></span><span class="per">شهريًا</span></div>
-          <p class="billed" data-runsetup="essentials"></p>
-          <a class="btn btn-outline" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">احجز مراجعة مجانية لأنظمتك ←</a>
-          <ul class="meta-list">
-            <li><b>خطة الأعمال (Business)</b>، تشمل 4 مستخدمين</li>
-            <li data-tip="عضو الفريق يستخدم بروسبيرا لنفسه فقط: المصروفات والإجازات والحضور وقسائم الرواتب والموافقات. مشمول دون تكلفة إضافية في باقات تشغيل بروسبيرا، ويشمل تشغيل راتبه."><b>عدد غير محدود</b> من أعضاء الفريق</li>
-            <li data-tip="وقت شهري مع مستشارينا للأسئلة والتعديلات والتدريب ومراجعة أرقامك."><b>5 ساعات دعم</b> شهريًا</li>
-          </ul>
-          <p class="incl">ما نقوم به لك</p>
-          <ul class="feat-list"><li data-tip="الإعداد ونقل أرصدتك الافتتاحية وبياناتك الأساسية وتدريب فريقك خلال نحو أسبوعين لشركة صغيرة نموذجية.">تشغيل فعلي خلال أسبوعين، مع نقل بياناتك</li><li>إعداد الفاتورة الإلكترونية والحفاظ على امتثالها</li><li data-tip="كل شهر يتسلّم المالك الأرباح والنقدية والمستحقات والمخزون في صفحة واحدة، بعد مراجعة فريقنا.">حزمة شهرية من التقارير الإدارية</li></ul><details class="pp-more"><summary>ميزتان أخريان مشمولتان</summary><ul class="feat-list"><li>الاستضافة والنسخ الاحتياطي والتحديثات علينا</li><li>فريق واحد تتصل به، بالعربية أو الإنجليزية</li></ul></details>
-        </article>
-
-        <article class="plan feature">
-          <span class="rec">الأكثر اختيارًا</span>
-          <h3>التشغيل</h3>
-          <p class="tagline">للشركات النامية من 15 إلى 60 شخصًا التي تدير رواتب ومخزونًا وإقفالًا شهريًا.</p>
-          <div class="price"><span class="amt" data-run="operate"></span><span class="per">شهريًا</span></div>
-          <p class="billed" data-runsetup="operate"></p>
-          <a class="btn btn-gold" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">احجز مراجعة مجانية لأنظمتك ←</a>
-          <ul class="meta-list">
-            <li data-tip="المستخدم الكامل يعمل على بروسبيرا يوميًا: الفواتير والمخزون والحسابات. تحتاج أكثر؟ أضف مستخدمين بسعر المستخدم في الخطة."><b>الخطة الاحترافية (Professional)</b>، حتى 10 مستخدمين كاملين</li>
-            <li data-tip="عضو الفريق يستخدم بروسبيرا لنفسه فقط: المصروفات والإجازات والحضور وقسائم الرواتب والموافقات. مشمول دون تكلفة إضافية في باقات تشغيل بروسبيرا، ويشمل تشغيل راتبه."><b>عدد غير محدود</b> من أعضاء الفريق</li>
-            <li data-tip="وقت شهري مع مستشارينا للأسئلة والتعديلات والتدريب ومراجعة أرقامك."><b>8 ساعات دعم</b> شهريًا</li>
-          </ul>
-          <p class="incl">كل ما في الأساسية، بالإضافة إلى</p>
-          <ul class="feat-list"><li data-tip="فريقك يشغّل الرواتب، وقبل الصرف نراجعها معك ونرصد أي خطأ محتمل.">مراجعة الرواتب معك كل شهر</li><li data-tip="يُقفل محاسبك الشهر وفق قائمتنا، ثم نراجع النتائج ونرصد ما يحتاج تصحيحًا قبل أن يراه المالك.">مراجعة نهاية الشهر مع محاسبنا الشريك</li><li>إعداد دورات الموافقة والموازنات وإدارة علاقات العملاء لفريقك</li></ul><details class="pp-more"><summary>ميزة أخرى مشمولة</summary><ul class="feat-list"><li data-tip="كل ربع سنة نراجع طريقة استخدام شركتك لبروسبيرا ونوصي بتحسينات مثل دورات الموافقة أو التقارير.">مراجعة ربع سنوية لسير العمل في شركتك</li></ul></details>
-        </article>
-
-        <article class="plan">
-          <h3>الشريك</h3>
-          <p class="tagline">للمجموعات والشركات متعددة الكيانات التي تريد فريقًا مخصصًا إلى جانبها.</p>
-          <div class="price"><span class="amt" data-run="partner"></span><span class="per">شهريًا</span></div>
-          <p class="billed" data-runsetup="partner"></p>
-          <a class="btn btn-primary" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">احجز مراجعة مجانية لأنظمتك ←</a>
-          <ul class="meta-list">
-            <li data-tip="المستخدم الكامل يعمل على بروسبيرا يوميًا: الفواتير والمخزون والحسابات. تحتاج أكثر؟ أضف مستخدمين بسعر المستخدم في الخطة."><b>خطة المؤسسات (Enterprise)</b>، حتى 15 مستخدمًا كاملًا</li>
-            <li data-tip="عضو الفريق يستخدم بروسبيرا لنفسه فقط: المصروفات والإجازات والحضور وقسائم الرواتب والموافقات. مشمول دون تكلفة إضافية في باقات تشغيل بروسبيرا، ويشمل تشغيل راتبه."><b>عدد غير محدود</b> من أعضاء الفريق</li>
-            <li data-tip="وقت شهري مع مستشارينا للأسئلة والتعديلات والتدريب ومراجعة أرقامك."><b>20 ساعة دعم</b> شهريًا</li>
-          </ul>
-          <p class="incl">كل ما في التشغيل، بالإضافة إلى</p>
-          <ul class="feat-list"><li data-tip="مستشار واحد يتعرّف على شركتك ويكون نقطة تواصلك الأولى للأسئلة والمراجعات.">مستشار مخصص يعرف شركتك</li><li data-tip="أدر عدة شركات قانونية لكل منها دفاترها، واطّلع عليها في تقرير موحّد.">عدة شركات، بقوائم مجمّعة</li><li>تفعيل مصروفات بروسبيرا وتجارة بروسبيرا <span class="badge">المصروفات: ديسمبر 2026</span></li></ul><details class="pp-more"><summary>ميزة أخرى مشمولة</summary><ul class="feat-list"><li>استجابة ذات أولوية</li></ul></details>
-        </article>
+  <section class="section wrap" id="plan" style="padding-top:0">
+    <div class="inner pv-list">
+      <div class="pv-card">
+        <h2>بروسبيرا ERP</h2>
+        <p class="pv-sub">المحاسبة والمبيعات والمخزون ونقاط البيع والموارد البشرية والرواتب وإدارة العملاء والمشاريع والتصنيع ومكتب الدعم وغيرها. خطة واحدة بكل التطبيقات.</p>
+        <table class="pv-tiers"><tbody><tr><th scope="row">المستخدمون الكاملون من 1 إلى 3<small>كل شخص يعمل في النظام</small></th><td class="pv-n"><span data-pm="3565" data-pa="3040">3,565&nbsp;ج.م</span><small>للفرد</small></td></tr><tr><th scope="row">المستخدمون الكاملون من 4 إلى 12<small>كل مستخدم إضافي</small></th><td class="pv-n"><span data-pm="893" data-pa="680">893&nbsp;ج.م</span><small>للفرد</small></td></tr><tr><th scope="row">المستخدم 13 وما بعده<small>كل مستخدم إضافي</small></th><td class="pv-n"><span data-pm="857" data-pa="680">857&nbsp;ج.م</span><small>للفرد</small></td></tr><tr><th scope="row">أعضاء الفريق<small>خدمة ذاتية على الهاتف: قسائم الرواتب والإجازات والمصروفات والحضور والموافقات. اختياري.</small></th><td class="pv-n"><span data-pm="99" data-pa="79">99&nbsp;ج.م</span><small>للفرد</small></td></tr><tr><th scope="row">باقي الموظفين على الرواتب<small>يُصرف راتبهم من النظام، بلا تسجيل دخول</small></th><td class="pv-n pv-free">مجانًا</td></tr><tr><th scope="row">حد الفرق الصغيرة<small>إجمالي المستخدمين لا يتجاوز هذا المبلغ عن كل موظف على الرواتب</small></th><td class="pv-n"><span data-pm="1527" data-pa="1256">1,527&nbsp;ج.م</span><small>لكل موظف</small></td></tr></tbody></table>
+        <div class="pv-actions"><a class="btn btn-primary" href="#calc">احسب سعرك ↓</a><a class="btn btn-outline" style="color:var(--navy);border-color:var(--cool)" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">احجز مراجعة مجانية لأنظمتك ←</a></div>
       </div>
-      <p class="addons-line">الحد الأدنى 12 شهرًا، بفوترة شهرية. ادفع سنة مقدمًا واحصل على 12 شهرًا بسعر 10. المستخدمون الكاملون الإضافيون بسعر المستخدم في الخطة.</p>
-
-      <div class="zx pp-why"><div class="zx-h"><p class="zx-k">لماذا تشغيل بروسبيرا</p><h2>فريق عمل، <span class="grad">لا مجرد تسليم.</span></h2><a class="zx-more" href="run.html">شاهد ما نقوم به كل شهر ←</a></div><div class="zx-c"><span class="zx-i" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5"/><path d="M16 8h5M18.5 5.5v5"/></svg></span><h3>أقل من تكلفة موظف واحد.</h3><p>محاسب مبتدئ واحد أو موظف تقنية معلومات يكلّف أكثر في الراتب والتأمينات، ولا يأتي معه برنامج ولا امتثال ولا بديل حين يغادر.</p></div><div class="zx-c"><span class="zx-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><h3>محاسبون، لا مبرمجون فقط.</h3><p>فريقنا يعرف كيف تُقفل الشهور وتُشغَّل الرواتب وتُرسل الفواتير الإلكترونية. ونُعدّ بروسبيرا ونراجع أرقامك كما يفعل فريق مالي متمرّس.</p></div><div class="zx-c"><span class="zx-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>مسؤولية كل شهر.</h3><p>المستقل يسلّم ما بناه ثم يرحل. أما نحن فنبقى مسؤولين عن النظام ما دمت معنا.</p></div></div>
+      <div class="pv-side">
+        <h3>ما تدفعه الشركات</h3>
+        <div class="pv-ex"><div><span>10 موظفين<small>3 مستخدمين</small></span><b>10,695&nbsp;ج.م</b></div><div><span>25 موظفًا<small>8 مستخدمين</small></span><b>15,160&nbsp;ج.م</b></div><div><span>40 موظفًا<small>12 مستخدمًا</small></span><b>18,732&nbsp;ج.م</b></div><div><span>100 موظف<small>30 مستخدمًا</small></span><b>34,158&nbsp;ج.م</b></div></div>
+        <p class="pv-note">فوترة شهرية، المستخدمون الكاملون فقط.</p>
+      </div>
     </div>
   </section>
 
-  <!-- SOFTWARE ONLY -->
-  <section class="price-sec wrap" id="panel-sw" role="tabpanel" aria-labelledby="tab-sw" hidden>
+  <section class="section wrap pv-calc" id="calc">
     <div class="inner">
-      <p class="panel-intro">خطط بسعر المستخدم للفرق التي تشغّل نظامها بنفسها.</p>
-      <div class="plans three">
-        <article class="plan">
-          <h3>خطة الأعمال (Business)</h3>
-          <p class="tagline">المحاسبة والمخزون ونقاط البيع والرواتب لشركة واحدة.</p>
-          <div class="price"><span class="amt" data-sw="business"></span><span class="per">لكل مستخدم شهريًا</span></div>
-          <p class="billed" data-swfrom="business"></p>
-          <a class="btn btn-outline" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">ابدأ تجربة موجّهة</a>
-          <ul class="meta-list">
-            <li data-tip="المستخدم الكامل يعمل على بروسبيرا يوميًا: الفواتير والمخزون والحسابات. أضف ما تحتاجه، أما الموظفون الذين يحتاجون الخدمة الذاتية فقط فينضمون كأعضاء فريق."><b>من مستخدم كامل واحد</b></li>
-            <li data-tip="أرصدة الذكاء الاصطناعي تغطي أعمالًا مثل قراءة الإيصالات وفواتير الموردين. الرصيد الواحد يعادل نحو 1,000 وحدة معالجة. كل 1,000 رصيد إضافي بـ 120 ج.م شهريًا."><b>200</b> رصيد ذكاء اصطناعي شهريًا</li>
-            <li data-tip="مساحة للمرفقات مثل الفواتير الممسوحة والإيصالات والعقود. المساحة الإضافية بـ 25 ج.م لكل جيجابايت شهريًا."><b>25 GB</b> مساحة تخزين</li>
-          </ul>
-          <p class="incl">تشمل</p>
-          <ul class="feat-list"><li>دليل الحسابات والبنوك والشيكات ومراكز التكلفة</li><li>الأصول الثابتة والإهلاك</li><li data-tip="تُرسل الفواتير والإيصالات إلى مصلحة الضرائب المصرية من الفاتورة نفسها، ويُحفظ الرد على السجل. وفي السعودية، الفوترة متوافقة مع المرحلة الثانية من هيئة الزكاة والضريبة والجمارك.">الفاتورة والإيصال الإلكتروني في مصر، ومتوافق مع المرحلة الثانية من هيئة الزكاة والضريبة والجمارك</li></ul><details class="pp-more"><summary>6 ميزات أخرى مشمولة</summary><ul class="feat-list"><li>المبيعات والمشتريات وقوائم الأسعار</li><li data-tip="تتبّع كل تشغيلة ورقم تسلسلي وتاريخ صلاحية، في ما تحتاجه من مستودعات دون تكلفة إضافية.">المخزون بالتشغيلة والرقم التسلسلي وتاريخ الصلاحية، ومستودعات بلا حدود</li><li>نقاط البيع، بعدد غير محدود من نقاط البيع، تعمل دون اتصال بالإنترنت</li><li>الحجوزات والتأجير وأوامر العمل</li><li data-tip="كل موظف تصرف راتبه عبر بروسبيرا هو عضو فريق بـ 99 ج.م شهريًا. هذا السعر يغطي تشغيل راتبه ودخوله للخدمة الذاتية، دون رسوم رواتب منفصلة.">الموارد البشرية والرواتب عبر أعضاء الفريق</li><li>لوحات المعلومات والحقول المخصصة وواجهة REST API</li></ul></details>
-        </article>
-
-        <article class="plan feature">
-          <span class="rec">الأكثر اختيارًا</span>
-          <h3>الخطة الاحترافية (Professional)</h3>
-          <p class="tagline">نظام ERP الكامل للشركات النامية، شاملًا الواجهة الأمامية.</p>
-          <div class="price"><span class="amt" data-sw="professional"></span><span class="per">لكل مستخدم شهريًا</span></div>
-          <p class="billed" data-swfrom="professional"></p>
-          <a class="btn btn-gold" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">ابدأ تجربة موجّهة</a>
-          <ul class="meta-list">
-            <li data-tip="تبدأ الخطة الاحترافية من ثلاثة مستخدمين كاملين لأنها تضيف عدة شركات ودورات موافقة لفريق عمل. أضف ما تحتاجه بعد ذلك."><b>الحد الأدنى 3</b> مستخدمين كاملين</li>
-            <li data-tip="أرصدة الذكاء الاصطناعي تغطي أعمالًا مثل قراءة الإيصالات وفواتير الموردين. الرصيد الواحد يعادل نحو 1,000 وحدة معالجة. كل 1,000 رصيد إضافي بـ 120 ج.م شهريًا."><b>600</b> رصيد ذكاء اصطناعي شهريًا</li>
-            <li data-tip="مساحة للمرفقات مثل الفواتير الممسوحة والإيصالات والعقود. المساحة الإضافية بـ 25 ج.م لكل جيجابايت شهريًا."><b>50 GB</b> مساحة تخزين</li>
-          </ul>
-          <p class="incl">كل ما في خطة الأعمال، بالإضافة إلى</p>
-          <ul class="feat-list"><li data-tip="أدر حتى ثلاث شركات قانونية لكل منها دفاترها، واطّلع عليها معًا في تقرير موحّد. كل شركة إضافية بـ 990 ج.م شهريًا.">حتى 3 شركات، بقوائم مجمّعة</li><li data-tip="المشتريات أو المصروفات أو الخصومات التي تتجاوز الحدود التي تضعها تنتظر موافقة المدير المختص قبل تنفيذها.">دورات الموافقة</li><li data-tip="ضع موازنات حسب الحساب ومركز التكلفة مع تنبيه عند التجاوز، وحرّر الإيرادات أو التكاليف المدفوعة مقدمًا شهرًا بشهر.">الموازنات والإيرادات المؤجلة</li></ul><details class="pp-more"><summary>5 ميزات أخرى مشمولة</summary><ul class="feat-list"><li data-tip="أضف الشحن والجمارك إلى تكلفة المخزون، وكافئ العملاء المتكررين بالنقاط، واحسب عمولات المبيعات تلقائيًا.">تكلفة الوصول والولاء وعمولات المبيعات</li><li data-tip="العملاء المحتملون والصفقات وعروض الأسعار على سجل العميل نفسه مع الطلبات والفواتير، ومحادثات واتساب محفوظة على العميل.">إدارة علاقات العملاء مع مسار المبيعات وواتساب</li><li>المشاريع وسجلات الوقت وتكاليف الأعمال</li><li data-tip="قوائم المواد وأوامر التشغيل وتكاليف الإنتاج، مع صرف الخامات من المخزون أثناء الإنتاج.">التصنيع: قائمة المواد (BOM) والإنتاج</li><li data-tip="يصوّر الموظف الإيصال بهاتفه، ويقرؤه الذكاء الاصطناعي، ويوافق المدير، ويُرحَّل المصروف إلى الدفاتر. قادم في ديسمبر 2026.">مصروفات بروسبيرا مع تطبيق الهاتف وقراءة الإيصالات بالذكاء الاصطناعي <span class="badge">قادم في ديسمبر 2026</span></li></ul></details>
-        </article>
-
-        <article class="plan">
-          <h3>خطة المؤسسات (Enterprise)</h3>
-          <p class="tagline">المنصة كاملة للمجموعات، مع خادم مخصص.</p>
-          <div class="price"><span class="amt" data-sw="enterprise"></span><span class="per">لكل مستخدم شهريًا</span></div>
-          <p class="billed" data-swfrom="enterprise"></p>
-          <a class="btn btn-primary" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">احجز مراجعة مجانية لأنظمتك ←</a>
-          <ul class="meta-list">
-            <li data-tip="تبدأ خطة المؤسسات من خمسة مستخدمين كاملين. وللمجموعات الأكبر، تغطي المؤسسات غير المحدودة كل المستخدمين بسعر واحد."><b>الحد الأدنى 5</b> مستخدمين كاملين</li>
-            <li data-tip="أرصدة الذكاء الاصطناعي تغطي أعمالًا مثل قراءة الإيصالات وفواتير الموردين. ويمكن لخطة المؤسسات ربط حسابها الخاص لدى مزوّد الذكاء الاصطناعي بدلًا من ذلك."><b>1,500</b> رصيد ذكاء اصطناعي شهريًا، أو حسابك الخاص للذكاء الاصطناعي</li>
-            <li data-tip="مساحة للمرفقات مثل الفواتير الممسوحة والإيصالات والعقود. المساحة الإضافية بـ 25 ج.م لكل جيجابايت شهريًا."><b>100 GB</b> مساحة تخزين</li>
-          </ul>
-          <p class="incl">كل ما في الخطة الاحترافية، بالإضافة إلى</p>
-          <ul class="feat-list"><li data-tip="أدر ما تحتاجه من شركات قانونية لكل منها دفاترها، موحّدة في تقرير واحد.">شركات بلا حدود</li><li data-tip="تذاكر العملاء من البريد وواتساب، تُسند إلى فريقك وتُتابَع وفق أوقات الاستجابة والحل.">مكتب الدعم بمستويات خدمة محددة</li><li>منشئ المواقع ومنصة التعلّم</li></ul><details class="pp-more"><summary>4 ميزات أخرى مشمولة</summary><ul class="feat-list"><li>محادثات الفريق</li><li data-tip="ربط جاهز مع Shopify وشركات الشحن Bosta وSMSA وAmazon، لتبقى الطلبات والمخزون والشحن متوافقة مع دفاترك.">موصلات التجارة: Shopify وBosta وSMSA وAmazon</li><li data-tip="خادم خاص بك لا تشاركه مع عملاء آخرين، مع نسخة تجريبية من نظامك لاختبار التغييرات قبل اعتمادها.">خادم مخصص ونسخة تجريبية من نظامك</li><li>دعم ذو أولوية</li></ul></details>
-        </article>
-      </div>
-
-      <div class="strips">
-        <div class="strip">
-          <div><p class="k">عضو فريق</p><h3><span data-team></span> <small>للفرد شهريًا</small></h3></div>
-          <p>للموظفين الذين لا يعملون داخل النظام: المصروفات والإيصالات والإجازات والحضور وقسائم الرواتب والموافقات من هواتفهم. ورواتب هذا الموظف مشمولة. متاح في كل خطة.</p>
-        </div>
-        <div class="strip dark">
-          <div><p class="k">المؤسسات غير المحدودة</p><h3><span class="from-s">من</span> <span data-unl></span> <small>شهريًا</small></h3></div>
-          <p>كل ما في خطة المؤسسات لكل مستخدم في المجموعة. بفوترة سنوية. وهي عادةً الخيار الأفضل بدءًا من نحو 25 مستخدمًا كاملًا.</p>
-        </div>
-      </div>
-
-      <div class="config" id="config">
-        <div class="config-in">
-          <p class="label">احسب سعرك</p>
-          <h2>إجماليك الشهري.</h2>
-          <div class="fields">
-            <label class="f"><span>الخطة</span>
-              <select id="c-plan"><option value="business">خطة الأعمال (Business)</option><option value="professional" selected>الخطة الاحترافية (Professional)</option><option value="enterprise">خطة المؤسسات (Enterprise)</option></select>
-            </label>
-            <div class="f"><span id="c-users-l">المستخدمون الكاملون</span>
-              <div class="step"><button type="button" data-step="users" data-d="-1" aria-label="تقليل المستخدمين الكاملين">−</button><input id="c-users" type="number" inputmode="numeric" min="1" value="5" aria-labelledby="c-users-l"><button type="button" data-step="users" data-d="1" aria-label="زيادة المستخدمين الكاملين">+</button></div>
-            </div>
-            <div class="f"><span id="c-team-l">أعضاء الفريق</span>
-              <div class="step"><button type="button" data-step="team" data-d="-1" aria-label="تقليل أعضاء الفريق">−</button><input id="c-team" type="number" inputmode="numeric" min="0" value="5" aria-labelledby="c-team-l"><button type="button" data-step="team" data-d="1" aria-label="زيادة أعضاء الفريق">+</button></div>
-            </div>
+      <h2>سعرك، <span class="grad">بجانب Odoo وZoho One.</span></h2>
+      <p class="lede">أدخل بيانات شركتك. نقارن بروسبيرا مع خطة Odoo Custom المستضافة على Odoo.sh، ومع الأرخص بين خطتي Zoho One.</p>
+      <div class="pc-wrap">
+        <form class="pc-in" onsubmit="return false" aria-label="بروسبيرا ERP">
+          <div class="pc-f" id="pc-E"><label for="pc-E-n">الموظفون على الرواتب <small>كل من تدفع لهم راتبًا</small></label>
+          <div class="pc-row"><input type="range" min="1" max="300" value="40" aria-label="الموظفون على الرواتب"><input type="number" id="pc-E-n" min="1" max="1000" value="40" inputmode="numeric"></div></div>
+          <div class="pc-f" id="pc-U"><label for="pc-U-n">المستخدمون الكاملون <small>من يعملون في النظام</small></label>
+          <div class="pc-row"><input type="range" min="1" max="40" value="12" aria-label="المستخدمون الكاملون"><input type="number" id="pc-U-n" min="1" max="1000" value="12" inputmode="numeric"></div></div>
+          <div class="pc-f" id="pc-T"><label for="pc-T-n">أعضاء الفريق <small>خدمة ذاتية فقط، اختياري</small></label>
+          <div class="pc-row"><input type="range" min="0" max="28" value="0" aria-label="أعضاء الفريق"><input type="number" id="pc-T-n" min="0" max="1000" value="0" inputmode="numeric"></div></div>
+          <p class="pc-hint">يحتاج Odoo وZoho One إلى ترخيص كامل للخدمة الذاتية، لذلك لا يُضاف أعضاء الفريق إلى سعريهما.</p>
+          <div class="pc-f"><label>الفوترة</label><div class="seg" role="group" aria-label="الفوترة" style="margin-top:10px"><button type="button" data-bill="m" aria-pressed="true">شهري</button><button type="button" data-bill="a" aria-pressed="false">سنوي</button></div></div>
+          <div class="pc-f"><label>سنة Odoo</label><div class="seg" role="group" aria-label="سنة Odoo" style="margin-top:10px"><button type="button" data-year="y1" aria-pressed="true">السنة الأولى</button><button type="button" data-year="y2" aria-pressed="false">من السنة الثانية</button></div></div>
+          <div class="pc-f"><label>جرّب</label><div class="pc-chips"><button type="button" class="pc-chip" data-preset="10,3,0">10 أشخاص، 3 مستخدمين</button><button type="button" class="pc-chip" data-preset="40,12,0">40 شخصًا، 12 مستخدمًا</button><button type="button" class="pc-chip" data-preset="100,30,0">100 شخص، 30 مستخدمًا</button></div></div>
+        </form>
+        <div class="pc-out" aria-live="polite">
+          <div class="pc-cards">
+            <div class="pc-card pc-us" data-card="p"><h3>بروسبيرا ERP</h3><p class="pc-plan"></p><p class="pc-amt"></p><p class="pc-sub"></p></div>
+            <div class="pc-card" data-card="o"><h3>Odoo Custom + Odoo.sh</h3><p class="pc-plan"></p><p class="pc-amt"></p><p class="pc-sub"></p><span class="pc-tag" hidden></span></div>
+            <div class="pc-card" data-card="z"><h3>Zoho One</h3><p class="pc-plan"></p><p class="pc-amt"></p><p class="pc-sub"></p><span class="pc-tag" hidden></span></div>
           </div>
-          <p class="c-note" id="c-note" aria-live="polite"></p>
-        </div>
-        <div class="config-out" aria-live="polite">
-          <p class="k">شهريًا</p>
-          <p class="big" id="c-month"></p>
-          <p class="sub" id="c-year"></p>
-          <dl>
-            <div><dt>باقة الإطلاق، مرة واحدة</dt><dd id="c-launch"></dd></div>
-            <div><dt>المتوسط للفرد</dt><dd id="c-avg"></dd></div>
-          </dl>
-          <a class="btn btn-gold" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">احجز مراجعة مجانية لأنظمتك ←</a>
-          <p class="fine">لا يشمل ضريبة القيمة المضافة. ويحدد عرض السعر الخاص بك الرقم النهائي.</p>
-        </div>
-      </div>
-
-      <div class="two-tables">
-        <div>
-          <h3 class="t-h">كل خطة تبدأ بباقة إطلاق.</h3>
-          <p class="t-p">نظام ERP يُعَدّ بشكل سيئ يكلّف أكثر مما يوفّر. لكل باقة نطاق ثابت ينفّذه مستشارونا: الإعدادات ودليل الحسابات والأرصدة الافتتاحية واستيراد البيانات والتسجيل في الفاتورة الإلكترونية والتدريب.</p>
-          <div class="tablewrap">
-            <table>
-              <thead><tr><th scope="col">الباقة</th><th scope="col">الخطة</th><th scope="col">الساعات</th><th scope="col">مرة واحدة</th></tr></thead>
-              <tbody>
-                <tr><td><b>البدء السريع</b></td><td>خطة الأعمال (Business)</td><td class="num">6</td><td class="num" data-launch="business"></td></tr>
-                <tr><td><b>الإطلاق</b></td><td>الخطة الاحترافية (Professional)</td><td class="num">20</td><td class="num" data-launch="professional"></td></tr>
-                <tr><td><b>إطلاق المؤسسات</b></td><td>خطة المؤسسات (Enterprise)</td><td class="num">60</td><td class="num" data-launch="enterprise"></td></tr>
-              </tbody>
-            </table>
+          <div class="pc-bars">
+            <div class="pc-bar pc-us" data-bar="p"><span>بروسبيرا ERP</span><div class="pc-track"><div class="pc-fill"></div></div><b></b></div>
+            <div class="pc-bar" data-bar="o"><span>Odoo</span><div class="pc-track"><div class="pc-fill"></div></div><b></b></div>
+            <div class="pc-bar" data-bar="z"><span>Zoho One</span><div class="pc-track"><div class="pc-fill"></div></div><b></b></div>
           </div>
-        </div>
-        <div>
-          <h3 class="t-h">أضف ما تستخدمه فقط.</h3>
-          <p class="t-p">شهريًا ما لم يُذكر غير ذلك. السعر نفسه في الفوترة السنوية والشهرية.</p>
-          <div class="tablewrap">
-            <table>
-              <thead><tr><th scope="col">إضافة</th><th scope="col">الخطط</th><th scope="col">السعر</th></tr></thead>
-              <tbody>
-                <tr><td><b>1,000 رصيد ذكاء اصطناعي</b></td><td>الكل</td><td class="num" data-add="ai"></td></tr>
-                <tr><td><b>مساحة التخزين</b>، لكل GB</td><td>الكل</td><td class="num" data-add="gb"></td></tr>
-                <tr><td><b>شركة إضافية</b>، بعد الشركة الثالثة</td><td>الخطة الاحترافية (Professional)</td><td class="num" data-add="co"></td></tr>
-                <tr><td><b>موصل تجارة</b>، لكل متجر</td><td>الخطة الاحترافية (Professional)</td><td class="num" data-add="shop"></td></tr>
-                <tr><td><b>الاستشارات</b>، للساعة</td><td>الكل</td><td class="num" data-add="hr"></td></tr>
-              </tbody>
-            </table>
-          </div>
+          <div class="pc-save" id="pc-save"><b></b><span></span></div>
+          <details class="pc-break" id="pc-bk"><summary>كيف يُحسب سعر بروسبيرا</summary><ul></ul></details>
+          <div class="pc-fbtn"><button type="button" class="btn btn-primary" id="pc-show" aria-expanded="false" aria-controls="pc-feat-body">قارن كل الميزات جنبًا إلى جنب</button></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="unl wrap on-navy" aria-label="مشمول في كل خطة">
-    <div class="inner">
-      <h2>مشمول في كل خطة.</h2>
-      <ul>
-        <li>فواتير بلا حدود</li><li>عملاء ومنتجات بلا حدود</li><li>مستودعات بلا حدود</li><li data-tip="افتح ما تحتاجه من نقاط البيع دون تكلفة إضافية. يستمر البيع دون إنترنت ويتزامن عند عودة الاتصال.">نقاط بيع بلا حدود، حتى دون اتصال</li><li>فروع وبنوك بلا حدود</li><li data-tip="تُرسل الفواتير والإيصالات إلى مصلحة الضرائب المصرية من الفاتورة نفسها، ويُحفظ الرد على السجل. وفي السعودية، الفوترة متوافقة مع المرحلة الثانية من هيئة الزكاة والضريبة والجمارك.">الفاتورة والإيصال الإلكتروني في مصر</li><li>متوافق مع المرحلة الثانية من هيئة الزكاة والضريبة والجمارك</li><li>الاستضافة والنسخ الاحتياطي والتحديثات</li><li>العربية والإنجليزية</li>
-      </ul>
-      <p class="fine">لا رسوم لكل فرع أو نقطة بيع أو فاتورة. فاتورتك لا تتغير إلا حين يتغير فريقك.</p>
-    </div>
-  </section>
-
-  <section class="section wrap plans-sec" id="compare">
-    <div class="inner">
-      <p class="label">قارن الخطط</p>
-      <h2>كل الميزات، جنبًا إلى جنب.</h2>
-      <div class="pp-bar" role="group" aria-label="طريقة عرض المقارنة"><button type="button" class="pp-v" data-v="all" aria-pressed="true">كل الميزات</button><button type="button" class="pp-v" data-v="diff" aria-pressed="false">الفروق فقط</button><button type="button" class="pp-x" data-x="1">طيّ الكل</button></div>
-      <div class="tablewrap grid-table">
-        <table>
-          <thead>
-            <tr><th scope="col">الميزة</th><th scope="col" class="plan-col">خطة الأعمال (Business)</th><th scope="col" class="plan-col hi">الخطة الاحترافية (Professional)</th><th scope="col" class="plan-col">خطة المؤسسات (Enterprise)</th></tr>
-          </thead>
-          <tbody>
-            <tr class="grp"><td colspan="4">أساسيات الخطة</td></tr>
-            <tr><td data-tip="الموظفون الذين يعملون على بروسبيرا يوميًا. خطة الأعمال من 1، والاحترافية من 3، والمؤسسات من 5. وتغطي المؤسسات غير المحدودة كل المستخدمين بسعر واحد.">المستخدمون الكاملون</td><td class="c">من 1</td><td class="c hi">من 3</td><td class="c">من 5، أو غير محدود لكل المستخدمين</td></tr>
-            <tr><td data-tip="موظفون يستخدمون بروسبيرا لأنفسهم فقط: المصروفات والإجازات والحضور وقسائم الرواتب والموافقات. 99 ج.م لكل منهم شهريًا، ويشمل السعر تشغيل رواتبهم.">أعضاء الفريق، شاملًا الرواتب</td><td class="c">99&nbsp;ج.م لكل عضو</td><td class="c hi">99&nbsp;ج.م لكل عضو</td><td class="c">99&nbsp;ج.م لكل عضو</td></tr>
-            <tr><td>رصيد ذكاء اصطناعي شهريًا</td><td class="c">200</td><td class="c hi">600</td><td class="c">1,500، أو حسابك الخاص للذكاء الاصطناعي</td></tr>
-            <tr><td>مساحة التخزين</td><td class="c">25 GB</td><td class="c hi">50 GB</td><td class="c">100 GB</td></tr>
-            <tr><td data-tip="شركات قانونية منفصلة لكل منها دفاترها. يمكن للخطتين الاحترافية والمؤسسات توحيدها في تقرير واحد.">الشركات</td><td class="c">1</td><td class="c hi">حتى 3، بقوائم مجمّعة</td><td class="c">بلا حدود، بقوائم مجمّعة</td></tr>
-            <tr><td>الفواتير والعملاء والمنتجات والمستودعات ونقاط البيع والفروع</td><td class="c">غير محدود</td><td class="c hi">غير محدود</td><td class="c">غير محدود</td></tr>
-            <tr class="grp"><td colspan="4">المحاسبة والامتثال</td></tr>
-            <tr><td>دليل الحسابات والبنوك والشيكات ومراكز التكلفة</td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>الأصول الثابتة والإهلاك</td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="تُرسل الفواتير والإيصالات إلى مصلحة الضرائب المصرية من الفاتورة نفسها، ويُحفظ الرد على السجل. وفي السعودية، الفوترة متوافقة مع المرحلة الثانية من هيئة الزكاة والضريبة والجمارك.">الفاتورة والإيصال الإلكتروني في مصر، ومتوافق مع المرحلة الثانية من هيئة الزكاة والضريبة والجمارك</td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="ضع موازنات حسب الحساب ومركز التكلفة مع تنبيه عند التجاوز، وحرّر الإيرادات أو التكاليف المدفوعة مقدمًا شهرًا بشهر.">الموازنات والإيرادات المؤجلة</td><td class="c"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="المشتريات أو المصروفات أو الخصومات التي تتجاوز الحدود التي تضعها تنتظر موافقة المدير المختص قبل تنفيذها.">دورات الموافقة</td><td class="c"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr class="grp"><td colspan="4">المبيعات والمخزون ونقاط البيع</td></tr>
-            <tr><td>المبيعات والمشتريات وقوائم الأسعار</td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="تتبّع كل تشغيلة ورقم تسلسلي وتاريخ صلاحية، في ما تحتاجه من مستودعات دون تكلفة إضافية.">المخزون بالتشغيلة والرقم التسلسلي وتاريخ الصلاحية</td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>نقاط البيع، تعمل دون اتصال بالإنترنت</td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="أضف الشحن والجمارك إلى تكلفة المخزون، وكافئ العملاء المتكررين بالنقاط، واحسب عمولات المبيعات تلقائيًا.">تكلفة الوصول والولاء وعمولات المبيعات</td><td class="c"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="قوائم المواد وأوامر التشغيل وتكاليف الإنتاج، مع صرف الخامات من المخزون أثناء الإنتاج.">التصنيع: قائمة المواد (BOM) والإنتاج</td><td class="c"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="ربط جاهز مع Shopify وشركات الشحن Bosta وSMSA وAmazon، لتبقى الطلبات والمخزون والشحن متوافقة مع دفاترك.">موصلات التجارة: Shopify وBosta وSMSA وAmazon</td><td class="c"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c hi">إضافة</td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr class="grp"><td colspan="4">الموظفون والعمليات</td></tr>
-            <tr><td>الموارد البشرية والحضور والرواتب</td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>الحجوزات والتأجير وأوامر العمل</td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>مطالبات المصروفات</td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>تطبيق مصروفات بروسبيرا وقراءة الإيصالات بالذكاء الاصطناعي <span class="badge">قادم في ديسمبر 2026</span></td><td class="c"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>المشاريع وسجلات الوقت وتكاليف الأعمال</td><td class="c"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr class="grp"><td colspan="4">الواجهة الأمامية</td></tr>
-            <tr><td data-tip="العملاء المحتملون والصفقات وعروض الأسعار على سجل العميل نفسه مع الطلبات والفواتير، ومحادثات واتساب محفوظة على العميل.">إدارة علاقات العملاء مع مسار المبيعات وواتساب</td><td class="c"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td data-tip="تذاكر العملاء من البريد وواتساب، تُسند إلى فريقك وتُتابَع وفق أوقات الاستجابة والحل.">مكتب الدعم بمستويات خدمة محددة</td><td class="c"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c hi"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>منشئ المواقع ومنصة التعلّم</td><td class="c"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c hi"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>محادثات الفريق</td><td class="c"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c hi"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr class="grp"><td colspan="4">المنصة والدعم</td></tr>
-            <tr><td>لوحات المعلومات والحقول المخصصة وواجهة REST API</td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>يعمل على متصفح أي هاتف</td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c hi"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>الاستضافة والنسخ الاحتياطي والتحديثات</td><td class="c">خادم مشترك</td><td class="c hi">خادم مشترك</td><td class="c">خادم مخصص</td></tr>
-            <tr><td>نسخة تجريبية من نظامك</td><td class="c"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c hi"><span class="no" role="img" aria-label="غير مشمول"></span></td><td class="c"><span class="yes" role="img" aria-label="مشمول"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></td></tr>
-            <tr><td>الدعم</td><td class="c">ساعات العمل</td><td class="c hi">ساعات العمل</td><td class="c">أولوية</td></tr>
-          </tbody>
-        </table>
+      <div class="pc-feat" id="features">
+        <div id="pc-feat-body" hidden>
+          <div class="pc-feat-h"><h3>كل الميزات، جنبًا إلى جنب.</h3><div class="seg" role="group" aria-label="كل الميزات، جنبًا إلى جنب."><button type="button" data-fv="a" aria-pressed="true">كل الميزات</button><button type="button" data-fv="d" aria-pressed="false">الفروق فقط</button></div></div>
+          <div class="pc-tbl-wrap"><table class="pc-tbl" id="pc-tbl"></table></div>
+        </div>
+        <p class="pc-src">أسعار المنافسين هي أسعارهم في مصر، تحققنا منها في 20 أكتوبر 2026، ولا تشمل ضريبة القيمة المضافة. Odoo: خطة Custom بسعر 20.90 دولارًا للمستخدم شهريًا أو 16.40 دولارًا سنويًا، مع خصم السنة الأولى 4 أو 3 دولارات للمستخدم، واستضافة Odoo.sh بعاملين وتخزين 50 جيجابايت ونسخة تجريبية (وعمال إضافيون فوق 50 مستخدمًا). ويقدم Odoo أيضًا استضافة قياسية مجانية دون برمجة مخصصة. Zoho One: الأرخص بين خطة كل الموظفين (1,575 ج.م شهريًا أو 1,295 سنويًا لكل موظف) وخطة المستخدم المرن (3,675 أو 3,150 ج.م للمستخدم). الدولار بسعر 52.3 ج.م. التنفيذ غير مشمول لدى أي طرف. يغيّر الموردون أسعارهم، فتأكد منهم قبل أن تقرر.</p>
       </div>
-      <p class="vat">تشمل باقات تشغيل بروسبيرا الخطة المذكورة في كل باقة. مصروفات بروسبيرا قيد التطوير لإصدار ديسمبر 2026.</p>
     </div>
   </section>
 
   <section class="section wrap">
-    <div class="inner faq-wrap">
-      <div>
-        <p class="label">أسئلة</p>
-        <h2>الأسعار، بوضوح.</h2>
-        <p class="lede-s">لست متأكدًا من طريقة الشراء المناسبة؟ تنتهي المراجعة المجانية لأنظمتك بتوصية مكتوبة وسعر محدد.</p>
-      </div>
-      <div>
-        <details><summary>تشغيل بروسبيرا أم البرنامج فقط؟</summary><p>إن كان لديك موظف مالي أو تقني داخلي يريد تولّي النظام، فخيار البرنامج فقط مناسب. وإن كنت تفضّل أن يتولى متخصصون إعداده والحفاظ على امتثاله ودعم فريقك كل شهر، فاختر تشغيل بروسبيرا.</p></details>
-        <details><summary>كيف يُحسب سعر البرنامج فقط؟</summary><p>اختر خطة، واضرب سعر المستخدم فيها في عدد من يعملون داخل النظام، ثم أضف 99&nbsp;ج.م لكل عضو فريق. الفواتير والعملاء والمستودعات والفروع لا تغيّر الفاتورة أبدًا.</p></details>
-        <details><summary>من هو عضو الفريق؟</summary><p>شخص يستخدم بروسبيرا لشؤونه فقط: تقديم المصروفات والإيصالات، وطلب الإجازات، وتسجيل الحضور، والاطلاع على قسائم الراتب، والموافقة على الطلبات المرسلة إليه. لا يستطيع إنشاء فواتير أو تسجيل قيود أو تحريك مخزون. ورواتبه مشمولة في الـ 99&nbsp;ج.م.</p></details>
-        <details><summary>هل يوجد حد أدنى لعدد المستخدمين؟</summary><p>تبدأ خطة الأعمال من مستخدم كامل واحد. وتبدأ الخطة الاحترافية من ثلاثة، وخطة المؤسسات من خمسة، لأن هاتين الخطتين تتضمنان عدة شركات ودورات موافقة، وفي خطة المؤسسات خادمًا مخصصًا نجهّزه وندعمه لفريق كامل. أما الموظفون الذين يحتاجون الخدمة الذاتية فقط فينضمون كأعضاء فريق بـ 99&nbsp;ج.م.</p></details>
-        <details><summary>لماذا تبدأ كل خطة بباقة إطلاق؟</summary><p>نظام ERP يُعَدّ بشكل سيئ يُنتج أرقامًا خاطئة لسنوات. باقة الإطلاق سعر ثابت لنطاق ثابت، لتبدأ بأرصدة افتتاحية سليمة وفاتورة إلكترونية تعمل وفريق مدرَّب.</p></details>
-        <details><summary>ما الفرق بين الفوترة السنوية والشهرية؟</summary><p>في البرنامج فقط، تُدفع الفوترة السنوية مرة في العام وتوفّر حتى 18%. أما تشغيل بروسبيرا فيُفوتر شهريًا بحد أدنى 12 شهرًا، ودفع سنة مقدمًا يمنحك 12 شهرًا بسعر 10.</p></details>
-        <details><summary>ما أرصدة الذكاء الاصطناعي؟</summary><p>أرصدة الذكاء الاصطناعي تغطي عمل الذكاء الاصطناعي داخل بروسبيرا، مثل قراءة الإيصالات وفواتير الموردين. الرصيد الواحد يعادل نحو 1,000 وحدة (token) ذكاء اصطناعي. تشمل كل خطة حصة شهرية، ويمكن لخطة المؤسسات (Enterprise) ربط حسابها الخاص للذكاء الاصطناعي بدلًا من ذلك.</p></details>
-        <details><summary>هل يمكننا تغيير الخطة لاحقًا؟</summary><p>نعم. انتقل إلى خطة أعلى أو بدّل بين البرنامج فقط وتشغيل بروسبيرا في أي وقت. وتبقى بياناتك وإعداداتك وسجلّك كما هي تمامًا.</p></details>
-      </div>
+    <div class="inner">
+      <h2>مشمول في بروسبيرا ERP.</h2>
+      <ul class="pv-inc"><li>المحاسبة والبنوك والشيكات</li><li>الفاتورة والإيصال الإلكتروني في مصر</li><li>المرحلة الثانية من فاتورة السعودية</li><li>فوترة بلا حد شهري</li><li>المخزون والدفعات والصلاحية</li><li>المشتريات مع الموافقات</li><li>نقاط بيع تعمل دون إنترنت</li><li>الموارد البشرية والرواتب لمصر والخليج</li><li>إدارة العملاء مع واتساب</li><li>المشاريع وسجلات الوقت وتكلفة الأعمال</li><li>التصنيع والجودة</li><li>مكتب الدعم بمستويات الخدمة</li><li>منشئ المواقع ومنصة التعلّم</li><li>شركات بلا حد مع التجميع</li><li>الربط مع Shopify وبوسطة وSMSA</li><li>1,500 رصيد ذكاء اصطناعي شهريًا</li><li>REST API وحقول مخصصة</li><li>العربية والإنجليزية</li></ul>
+    </div>
+  </section>
+
+  <section class="section wrap" style="padding-top:0">
+    <div class="inner">
+      <h2>أضف ما تحتاجه فقط.</h2>
+      <div class="pv-adds"><div class="pv-add"><h3>تشغيل بروسبيرا</h3><p>فريقنا يشغّل النظام معك: مراجعات نهاية الشهر والامتثال وساعات دعم كل شهر.</p><span class="pv-p">بسعر يناسب حجمك بعد مراجعة مجانية لأنظمتك</span></div><div class="pv-add"><h3>الإعداد والتدريب</h3><p>الأرصدة الافتتاحية والفاتورة الإلكترونية ونقل البيانات والتدريب، بنطاق محدد.</p><span class="pv-p">سعر ثابت بعد مراجعة مجانية لأنظمتك</span></div><div class="pv-add"><h3>أرصدة ذكاء اصطناعي إضافية</h3><p>للاستخدام الكثيف في قراءة الإيصالات والفواتير، أو اربط حسابك الخاص.</p><span class="pv-p">120 ج.م لكل 1,000 رصيد</span></div><div class="pv-add"><h3>خادمك الخاص</h3><p>شغّل بروسبيرا على خادم تتحكم فيه بدلًا من سحابتنا.</p><span class="pv-p">عند الطلب</span></div></div>
+    </div>
+  </section>
+
+  <section class="section wrap" style="padding-top:0">
+    <div class="inner">
+      <h2 style="text-align:center">الأسعار بوضوح.</h2>
+      <div class="pv-faq"><details><summary>من يُحسب مستخدمًا كاملًا؟</summary><p>كل من ينشئ الفواتير أو يسجل القيود أو يحرك المخزون أو يعمل في النظام يوميًا. ومن يحتاج قسائم راتبه وإجازاته ومصروفاته فقط يمكن أن يكون عضو فريق، وباقي الموظفين على الرواتب مجانًا.</p></details><details><summary>كيف تقارنون مع Odoo وZoho One؟</summary><p>في كل حجم شركة من 5 إلى 200 موظف، بروسبيرا أقل بنسبة 3% على الأقل من الأرخص بين Odoo Custom في سنته الأولى وZoho One. ومن السنة الثانية لـ Odoo، حين ينتهي خصم السنة الأولى، يتسع الفارق.</p></details><details><summary>ما حد الفرق الصغيرة؟</summary><p>للشركات الصغيرة التي يسجّل فيها معظم الفريق الدخول، لا يتجاوز إجمالي المستخدمين 1,527 ج.م شهريًا عن كل موظف على الرواتب (1,256 ج.م بالفوترة السنوية)، فيبقى سعرك أقل من خطة Zoho One لكل موظف.</p></details><details><summary>ما الفرق بين الفوترة الشهرية والسنوية؟</summary><p>الفوترة السنوية تُدفع مرة في السنة وتكلفتها أقل: 3,040 ج.م بدلًا من 3,565 لكل من أول ثلاثة مستخدمين، و680 ج.م لكل مستخدم بعد ذلك.</p></details><details><summary>هل الإعداد مشمول؟</summary><p>لا. يُسعّر الإعداد والتدريب بنطاق ثابت بعد مراجعة مجانية لأنظمتك، فتعرف التكلفة كاملة قبل أن تبدأ.</p></details><details><summary>هل هناك حدود على الفواتير أو العملاء أو الفروع؟</summary><p>لا. الفواتير والعملاء والمستودعات والفروع والشركات لا تغيّر الفاتورة. الأشخاص فقط.</p></details><details><summary>هل لديكم أسعار للخليج ودول أخرى؟</summary><p>نعم، عند الطلب. الأسعار في هذه الصفحة للشركات في مصر وبالجنيه المصري.</p></details></div>
     </div>
   </section>
 
@@ -1019,6 +817,8 @@ button:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
     </div>
   </section>
 </main>
+<script type="application/json" id="pv-data">{"t": {"cur": "{n} ج.م", "mo": "شهريًا", "yr": "سنويًا", "perEmp": "لكل موظف", "pName": "بروسبيرا ERP", "oName": "Odoo Custom + Odoo.sh", "zName": "Zoho One", "pPlan": "{u} مستخدمين كاملين، كل التطبيقات", "pPlan1": "مستخدم كامل واحد، كل التطبيقات", "oPlan11": "مستخدم واحد، السنة الأولى بالخصم، {w} عامل استضافة", "oPlan21": "مستخدم واحد، من السنة الثانية، {w} عامل استضافة", "zFL1": "خطة المستخدم المرن، مستخدم واحد", "pPlanT": "، {t} من أعضاء الفريق", "pCap": "، مع تطبيق حد الفرق الصغيرة", "oPlan1": "{u} مستخدمين، السنة الأولى بالخصم، {w} عامل استضافة", "oPlan2": "{u} مستخدمين، من السنة الثانية، {w} عامل استضافة", "zAE": "خطة كل الموظفين، ترخيص {e} موظفًا", "zFL": "خطة المستخدم المرن، {u} مستخدمين", "saves": "بروسبيرا يوفر لك {n} سنويًا", "costsLess": "أقل من بروسبيرا بـ {n} سنويًا", "saveBoth": "توفر {o} سنويًا مقارنة بـ Odoo و{z} مقارنة بـ Zoho One.", "saveMixed": "مقارنة بـ Odoo تدفع {o}؛ ومقارنة بـ Zoho One تدفع {z}.", "less": "أقل بـ {n} سنويًا", "more": "أكثر بـ {n} سنويًا", "billM": "فوترة شهرية", "billA": "فوترة سنوية", "yr1": "السنة الأولى لـ Odoo", "yr2": "من السنة الثانية لـ Odoo", "bk1": "{n} × {p} للمستخدمين من 1 إلى 3", "bk2": "{n} × {p} للمستخدمين من 4 إلى 12", "bk3": "{n} × {p} للمستخدم 13 وما بعده", "bkCap": "حد الفرق الصغيرة: {e} موظفين × {p}، فإجمالي المستخدمين {t}", "bkT": "{n} من أعضاء الفريق × {p}", "bkFree": "{n} من باقي الموظفين على الرواتب، مجانًا", "feat": "الميزة", "totalRow": "سعرك الشهري", "inc": "مشمول", "notInc": "غير مشمول", "showFeat": "قارن كل الميزات جنبًا إلى جنب", "hideFeat": "أخفِ مقارنة الميزات"}, "m": [{"g": "المحاسبة والامتثال"}, {"f": "دفتر الأستاذ والبنوك والشيكات", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "تعدد العملات", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "التسوية البنكية", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "الأصول الثابتة والإهلاك", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "الموازنات", "p": ["y", "", ""], "z": ["p", "محدود", ""], "o": ["y", "", ""]}, {"f": "عدة شركات مع التجميع", "p": ["y", "", "بلا حد"], "z": ["p", "محدود", ""], "o": ["p", "محدود", "تعدد الشركات"]}, {"f": "الفاتورة والإيصال الإلكتروني في مصر", "p": ["y", "", ""], "z": ["n", "", ""], "o": ["p", "محدود", "الفاتورة فقط"]}, {"f": "المرحلة الثانية من فاتورة السعودية (ZATCA)", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "الفوترة الإلكترونية في الإمارات", "p": ["s", "قريبًا", "2027"], "z": ["y", "", ""], "o": ["u", "غير مؤكد", ""]}, {"f": "إقرارات ضريبة القيمة المضافة", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"g": "المبيعات والمخزون والعمليات"}, {"f": "عروض أسعار وفواتير بلا حد شهري", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "الفوترة المتكررة", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "عدة مستودعات", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "الدفعات والأرقام التسلسلية والصلاحية", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "التكلفة الواصلة", "p": ["y", "", ""], "z": ["u", "غير مؤكد", ""], "o": ["y", "", ""]}, {"f": "أوامر شراء مع موافقات", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "نقاط بيع تعمل دون إنترنت", "p": ["y", "", ""], "z": ["a", "إضافة", "إضافة"], "o": ["y", "", ""]}, {"f": "التصنيع بقوائم المواد", "p": ["y", "", ""], "z": ["p", "محدود", ""], "o": ["y", "", ""]}, {"f": "فحوص الجودة", "p": ["y", "", ""], "z": ["n", "", ""], "o": ["y", "", ""]}, {"f": "الربط مع Shopify", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["a", "إضافة", "طرف ثالث"]}, {"g": "الموظفون والرواتب"}, {"f": "الموارد البشرية والرواتب لمصر", "p": ["y", "", ""], "z": ["p", "محدود", "لا رواتب لمصر"], "o": ["y", "", ""]}, {"f": "رواتب التأمينات السعودية وحماية الأجور الإماراتية", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "الخدمة الذاتية للموظفين", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "قراءة إيصالات المصروفات بالذكاء الاصطناعي", "p": ["s", "قريبًا", "ديسمبر 2026"], "z": ["y", "", ""], "o": ["y", "", ""]}, {"g": "العملاء والخدمة"}, {"f": "مسار المبيعات في إدارة العملاء", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "واتساب على ملف العميل", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "مكتب الدعم بمستويات الخدمة", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "المشاريع وسجلات الوقت", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "منشئ المواقع", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"g": "المنصة"}, {"f": "مساعد ذكاء اصطناعي مدمج", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "واجهة عربية", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "حقول مخصصة وتعديلات دون برمجة", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "الوصول عبر API", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "يعمل على الهاتف", "p": ["p", "محدود", "متصفح الهاتف"], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "اختيار مكان استضافة بياناتك", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"g": "الخدمة والدعم"}, {"f": "شريك تنفيذ محلي", "p": ["y", "", ""], "z": ["y", "", ""], "o": ["y", "", ""]}, {"f": "مراجعة شهرية لدفاترك من محاسبين", "p": ["a", "إضافة", "تشغيل بروسبيرا"], "z": ["n", "", ""], "o": ["n", "", ""]}]}</script>
+
 
 <footer class="footer wrap">
   <div class="inner">
@@ -1028,100 +828,6 @@ button:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
     <p class="disc-line"><span class="fcopy">© 2026 بروسبيرا. جميع الحقوق محفوظة.</span> الأسعار شهرية ولا تشمل ضريبة القيمة المضافة، ويحدد عرض السعر الخاص بك الرقم النهائي. مصروفات بروسبيرا قيد التطوير ومن المخطط إطلاقها في إصدار ديسمبر 2026، وقد تتغير الميزات والمواعيد.</p>
   </div>
 </footer>
-<script>
-(function(){
-  var SW={
-    business:{min:1,egp:{a:490,m:590},usd:{a:15,m:18},launch:{egp:7500,usd:390}},
-    professional:{min:3,egp:{a:890,m:1090},usd:{a:27,m:33},launch:{egp:25000,usd:1290}},
-    enterprise:{min:5,egp:{a:1390,m:1690},usd:{a:42,m:51},launch:{egp:75000,usd:3900},from:true}
-  };
-  var TEAM={egp:{a:99,m:119},usd:{a:3,m:4}};
-  var UNL={egp:34900,usd:990};
-  var RUN={
-    essentials:{egp:[7500,15000],usd:[450,900]},
-    operate:{egp:[15000,50000],usd:[890,2900]},
-    partner:{egp:[35000,115000],usd:[1990,6900],from:true}
-  };
-  var ADD={egp:{ai:120,gb:25,co:990,shop:1490,hr:1250},usd:{ai:2.5,gb:0.5,co:25,shop:39,hr:60}};
-  function fromHash(){var h=location.hash.toLowerCase();return{mode:/software/.test(h)?"sw":"run",market:/usd/.test(h)?"usd":"egp"};}
-  var hs=fromHash(),state={mode:hs.mode,market:hs.market,billing:"a"};
-  function n(v){return v.toLocaleString("en-US",{minimumFractionDigits:(v%1?2:0),maximumFractionDigits:2});}
-  function big(v,mk){return mk==="egp"?'<span class="cur">EGP</span>'+n(v):'<span class="cur">$</span>'+n(v);}
-  function plain(v,mk){return mk==="egp"?n(v)+"\u00a0ج.م":"$"+n(v);}
-  var $=function(s){return document.querySelector(s);};
-  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s));};
-  var uIn=$("#c-users"),tIn=$("#c-team"),pSel=$("#c-plan");
-  function calc(){
-    var mk=state.market,b=state.billing,p=SW[pSel.value];
-    var u=Math.max(parseInt(uIn.value,10)||0,0),t=Math.max(parseInt(tIn.value,10)||0,0);
-    var note="";
-    if(u<p.min){note=pSel.options[pSel.selectedIndex].text+" تبدأ من <b>"+p.min+" مستخدمين كاملين</b>، لذا يُحتسب السعر أدناه على "+p.min+" مستخدمين.";}
-    var billU=Math.max(u,p.min);
-    var month=billU*p[mk][b]+t*TEAM[mk][b];
-    if(pSel.value==="enterprise"&&b==="a"&&billU*p[mk].a>UNL[mk]){note="بهذا الحجم، تكون <b>المؤسسات غير المحدودة</b> بسعر يبدأ من "+plain(UNL[mk],mk)+" شهريًا أقل تكلفة، وتشمل كل المستخدمين.";}
-    $("#c-month").innerHTML=big(month,mk);
-    $("#c-year").textContent=b==="a"?"فوترة سنوية بقيمة "+plain(month*12,mk):"فوترة شهرية";
-    $("#c-launch").textContent=(p.from?"من ":"")+plain(p.launch[mk],mk);
-    var people=billU+t;$("#c-avg").textContent=people?plain(Math.round(month/people*100)/100,mk):"-";
-    $("#c-note").innerHTML=note;
-  }
-  function render(){
-    var mk=state.market,b=state.billing;
-    $$("[data-run]").forEach(function(el){el.innerHTML=big(RUN[el.dataset.run][mk][0],mk);});
-    $$("[data-runsetup]").forEach(function(el){var r=RUN[el.dataset.runsetup];el.textContent="الإعداد "+(r.from?"من ":"")+plain(r[mk][1],mk)+"، مرة واحدة";});
-    $$("[data-sw]").forEach(function(el){el.innerHTML=big(SW[el.dataset.sw][mk][b],mk);});
-    $$("[data-swfrom]").forEach(function(el){var p=SW[el.dataset.swfrom];el.textContent="من "+plain(p.min*p[mk][b],mk)+" شهريًا لـ "+(p.min===1?"مستخدم واحد":p.min+" مستخدمين")+(b==="a"?"، بفوترة سنوية":"");});
-    $$("[data-team]").forEach(function(el){el.textContent=plain(TEAM[mk][b],mk);});
-    $$("[data-unl]").forEach(function(el){el.textContent=plain(UNL[mk],mk);});
-    $$("[data-launch]").forEach(function(el){var p=SW[el.dataset.launch];el.textContent=(p.from?"من ":"")+plain(p.launch[mk],mk);});
-    $$("[data-add]").forEach(function(el){el.textContent=plain(ADD[mk][el.dataset.add],mk);});
-    $$("[data-market]").forEach(function(x){x.setAttribute("aria-pressed",String(x.dataset.market===mk));});
-    $$("[data-billing]").forEach(function(x){x.setAttribute("aria-pressed",String(x.dataset.billing===b));});
-    $$("[data-mode]").forEach(function(x){x.setAttribute("aria-selected",String(x.dataset.mode===state.mode));x.tabIndex=x.dataset.mode===state.mode?0:-1;});
-    $("#panel-run").hidden=state.mode!=="run";
-    $("#panel-sw").hidden=state.mode!=="sw";
-    $("#billing-seg").hidden=state.mode!=="sw";
-    calc();
-  }
-  $$("[data-mode]").forEach(function(x){
-    x.addEventListener("click",function(){state.mode=x.dataset.mode;render();});
-    x.addEventListener("keydown",function(e){if(e.key==="ArrowRight"||e.key==="ArrowLeft"){state.mode=state.mode==="run"?"sw":"run";render();$('[data-mode="'+state.mode+'"]').focus();}});
-  });
-  $$("[data-market]").forEach(function(x){x.addEventListener("click",function(){state.market=x.dataset.market;render();});});
-  $$("[data-billing]").forEach(function(x){x.addEventListener("click",function(){state.billing=x.dataset.billing;render();});});
-  $$("[data-step]").forEach(function(x){x.addEventListener("click",function(){var i=x.dataset.step==="users"?uIn:tIn;i.value=Math.max((parseInt(i.value,10)||0)+parseInt(x.dataset.d,10),x.dataset.step==="users"?1:0);calc();});});
-  pSel.addEventListener("change",function(){var p=SW[pSel.value];if((parseInt(uIn.value,10)||0)<p.min)uIn.value=p.min;calc();});
-  [uIn,tIn].forEach(function(i){i.addEventListener("input",calc);});
-  window.addEventListener("hashchange",function(){var h=fromHash();state.mode=h.mode;state.market=h.market;render();});
-  render();
-})();
-</script>
 <script src="../assets/uplift.js" defer></script>
-<script>
-(function(){
-  var t=document.querySelector('#compare table'); if(!t) return;
-  var rows=[].slice.call(t.querySelectorAll('tbody tr'));
-  rows.forEach(function(r){ if(r.classList.contains('grp')) return;
-    var c=[].slice.call(r.querySelectorAll('td.c')).map(function(td){return td.innerHTML.replace(/\s+/g,' ').trim();});
-    if(c.length>1 && c.every(function(x){return x===c[0];})) r.classList.add('pp-same');
-  });
-  function setV(v){ t.classList.toggle('pp-diff',v==='diff');
-    [].forEach.call(document.querySelectorAll('.pp-v'),function(b){b.setAttribute('aria-pressed',b.dataset.v===v);});
-    rows.forEach(function(r){ if(!r.classList.contains('grp')) return; var n=r.nextElementSibling,any=false;
-      while(n&&!n.classList.contains('grp')){ if(!n.classList.contains('pp-same')) any=true; n=n.nextElementSibling; }
-      r.classList.toggle('pp-empty',v==='diff'&&!any); });
-  }
-  [].forEach.call(document.querySelectorAll('.pp-v'),function(b){b.addEventListener('click',function(){setV(b.dataset.v);});});
-  rows.forEach(function(r){ if(!r.classList.contains('grp')) return; var td=r.firstElementChild;
-    td.setAttribute('role','button'); td.tabIndex=0; td.setAttribute('aria-expanded','true');
-    function tog(force){ var open=force!==undefined?force:td.getAttribute('aria-expanded')!=='true';
-      td.setAttribute('aria-expanded',open); var n=r.nextElementSibling;
-      while(n&&!n.classList.contains('grp')){ n.classList.toggle('pp-hide',!open); n=n.nextElementSibling; } }
-    r._tog=tog; td.addEventListener('click',function(){tog();});
-    td.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();tog();} });
-  });
-  var x=document.querySelector('.pp-x');
-  if(x) x.addEventListener('click',function(){ var open=x.dataset.x!=='1'; rows.forEach(function(r){ if(r._tog) r._tog(open); });
-    x.dataset.x=open?'1':'0'; x.textContent=open?'طيّ الكل':'توسيع الكل'; });
-})();
-</script>
+
+<script src="../assets/calc.js" defer></script>

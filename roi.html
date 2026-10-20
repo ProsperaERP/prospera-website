@@ -343,12 +343,12 @@ details p{margin-top:8px;color:var(--muted);font-size:15px;max-width:65ch}
               <a href="projects.html"><i class="c4">◫</i><span><b>Projects</b><small>Timesheets, job costing</small></span></a>
             </div>
             <div class="mm-col mm-feat"><p>Platform</p>
-              <a href="apps.html"><i class="c4">▦</i><span><b>All apps</b><small>52 apps, filter by plan</small></span></a>
+              <a href="apps.html"><i class="c4">▦</i><span><b>All apps</b><small>52 apps, all included</small></span></a>
               <a href="ai.html"><i class="c5">✦</i><span><b>Prospera Intelligence</b><small>AI that reads and drafts</small></span></a>
               <a href="erp.html"><i class="c1">◉</i><span><b>Prospera ERP overview</b><small>Every area on one record</small></span></a>
               <a href="erp-features.html"><i class="c3">≡</i><span><b>Every ERP feature</b><small>420 features, one list</small></span></a>
               <a href="roi.html"><i class="c2">%</i><span><b>ROI calculator</b><small>What one system saves you</small></span></a>
-              <a class="mm-cta" href="run.html"><b>Run by Prospera</b><small>From EGP&nbsp;7,500 a month, software, setup and a team</small><span>See how it works →</span></a>
+              <a class="mm-cta" href="pricing.html#calc"><b>Pricing</b><small>All apps from EGP&nbsp;3,565 a month. Compare with Odoo and Zoho One.</small><span>Open the price calculator →</span></a>
             </div>
           </div>
         </div>
@@ -384,7 +384,8 @@ details p{margin-top:8px;color:var(--muted);font-size:15px;max-width:65ch}
             <label><span>Average monthly cost of one of those people (EGP)</span><input type="range" id="r-sal" min="8000" max="80000" step="1000" value="22000"><output id="o-sal"></output></label>
             <label><span>Monthly spend on tools Prospera would replace (EGP)</span><input type="range" id="r-tools" min="0" max="60000" step="500" value="6000"><output id="o-tools"></output></label>
             <label><span>Share of that manual time you expect one system to remove</span><input type="range" id="r-share" min="10" max="90" step="5" value="50"><output id="o-share"></output></label>
-            <label class="sel"><span>Prospera option</span><select id="r-plan"><option value="ess">Run by Prospera Essentials, EGP&nbsp;7,500</option><option value="op" selected>Run by Prospera Operate, EGP&nbsp;15,000</option><option value="pro">Software only, Professional, EGP&nbsp;890 per user</option></select></label>
+            <label><span>Full users in Prospera ERP</span><input type="range" id="r-users" min="1" max="60" value="6"><output id="o-users"></output></label>
+            <label class="sel"><span>Prospera ERP billing</span><select id="r-plan"><option value="m" selected>Monthly billing</option><option value="y">Annual billing, per month</option></select></label>
           </div>
         </div>
         <div class="config-out" aria-live="polite">
@@ -396,10 +397,10 @@ details p{margin-top:8px;color:var(--muted);font-size:15px;max-width:65ch}
             <div><dt>Staff time value</dt><dd id="r-time"></dd></div>
             <div><dt>Tools retired</dt><dd id="r-tl"></dd></div>
             <div><dt>Prospera each month</dt><dd id="r-cost"></dd></div>
-            <div><dt>Setup recovered in</dt><dd id="r-pay"></dd></div>
+            <div><dt>Net value a year</dt><dd id="r-pay"></dd></div>
           </dl>
           <a class="btn btn-gold" href="https://prospera.zohobookings.com/#/prosperasystems" target="_blank" rel="noopener">Check it in a free systems review →</a>
-          <p class="fine">An estimate from your own inputs, not a promise. Excludes VAT.</p>
+          <p class="fine">An estimate from your own inputs, not a promise. Prospera ERP software with every app, Egypt prices, excluding VAT. Setup is quoted after a free systems review.</p>
         </div>
       </div>
       <div class="fo-points" style="margin-top:clamp(48px,6vw,80px)">
@@ -421,16 +422,17 @@ details p{margin-top:8px;color:var(--muted);font-size:15px;max-width:65ch}
 </footer>
 <script>
 (function(){
- var $=function(i){return document.getElementById(i)};var ids=["staff","hours","sal","tools","share"];
- var PL={ess:{m:7500,setup:15000},op:{m:15000,setup:50000},pro:{per:890,setup:25000}};
+ var $=function(i){return document.getElementById(i)};var ids=["staff","hours","sal","tools","share","users"];
+ var PL={m:[3565,893,857],y:[3040,680,680]};
+ function price(u,p){return Math.min(u,3)*p[0]+Math.max(0,Math.min(u,12)-3)*p[1]+Math.max(0,u-12)*p[2]}
  function f(n){return "EGP "+Math.round(n).toLocaleString("en-US")}
- function run(){var s=+$("r-staff").value,h=+$("r-hours").value,sal=+$("r-sal").value,tl=+$("r-tools").value,sh=+$("r-share").value/100;
-  $("o-staff").textContent=s;$("o-hours").textContent=h+" h";$("o-sal").textContent=f(sal);$("o-tools").textContent=f(tl);$("o-share").textContent=Math.round(sh*100)+"%";
-  var hrs=s*h*4.33*sh,rate=sal/173,time=hrs*rate,val=time+tl,p=PL[$("r-plan").value],cost=p.m||Math.max(3,s)*p.per,net=val-cost;
+ function run(){var s=+$("r-staff").value,h=+$("r-hours").value,sal=+$("r-sal").value,tl=+$("r-tools").value,sh=+$("r-share").value/100,u=+$("r-users").value;
+  $("o-staff").textContent=s;$("o-hours").textContent=h+" h";$("o-sal").textContent=f(sal);$("o-tools").textContent=f(tl);$("o-share").textContent=Math.round(sh*100)+"%";$("o-users").textContent=u;
+  var hrs=s*h*4.33*sh,rate=sal/173,time=hrs*rate,val=time+tl,cost=price(u,PL[$("r-plan").value]),net=val-cost;
   $("r-val").innerHTML='<span class="cur">EGP</span>'+Math.round(val).toLocaleString("en-US");
   $("r-net").textContent=net>=0?"About "+f(net)+" a month more than Prospera costs":"Prospera costs about "+f(-net)+" a month more than this estimate";
   $("r-hrs").textContent=Math.round(hrs)+" h";$("r-time").textContent=f(time);$("r-tl").textContent=f(tl);$("r-cost").textContent=f(cost);
-  $("r-pay").textContent=net>0?Math.max(1,Math.ceil(p.setup/net))+" months":"Not on these numbers";}
+  $("r-pay").textContent=net>0?f(net*12):"Not on these numbers";}
  ids.concat(["plan"]).forEach(function(i){$("r-"+i).addEventListener("input",run)});run();
 })();
 </script>
