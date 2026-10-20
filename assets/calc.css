@@ -1,3 +1,7 @@
+.seg{display:inline-flex;padding:4px;border:1px solid var(--cool);border-radius:12px;background:var(--white);gap:4px}
+.seg button{font:inherit;font-size:14px;font-weight:500;color:var(--navy);background:transparent;border:0;border-radius:9px;padding:9px 16px;cursor:pointer;min-height:40px;transition:background .2s ease,color .2s ease}
+.seg button:hover{background:var(--off)}
+.seg button[aria-pressed="true"]{background:var(--navy);color:var(--white);font-weight:700}
 /* Prospera pricing v6 page + calculator */
 .pv-hero .inner{text-align:center}
 .pv-hero h1{max-width:20ch;margin-inline:auto}
@@ -206,3 +210,46 @@
 .pv-ad .lede{max-width:760px}
 @media (max-width:1000px){.pv-adpk{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.pv-adpk{grid-template-columns:1fr}}
+/* v14: plain-language price list, calculator first */
+.pv-hw{list-style:none;margin:16px 0 0;padding:0}
+.pv-hw li{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.pv-hw-l{font-size:15.5px;color:var(--navy);line-height:1.45;max-width:62%}
+.pv-hw-v{display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:end}
+.pv-hw-v b{font-size:18px;color:var(--navy);font-weight:800;white-space:nowrap}
+.pv-hw-v b.pv-free{color:#1F7A4D}
+.pv-hw-v small{font-size:12.5px;color:var(--muted)}
+.pv-hw-v em.pv-y1{display:inline-block;padding:2px 8px;border-radius:999px;background:#ffe7a8;color:#7a4b00;font-style:normal;font-weight:700;font-size:.78rem;white-space:nowrap}
+.pv-hwcap,.pv-hwex{margin:12px 0 0;font-size:13.5px;color:var(--muted);line-height:1.5}
+.pv-hwex{color:var(--navy);font-weight:600}
+.pv-full{margin-top:14px}
+.pv-full summary{cursor:pointer;font-weight:600;color:#2A4FA0;font-size:14px}
+.pv-full .pv-tiers{margin-top:10px}
+.pc-cmp{margin-top:18px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--white);display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;font-size:14px;color:var(--navy)}
+.pc-cmp a{color:#2A4FA0;font-weight:600}
+.pc-cmp span{flex-basis:100%;color:var(--muted);font-size:13px}
+@media (max-width:560px){.pv-hw-l{max-width:58%;font-size:14.5px}}
+/* v14 layouts by mode */
+.pc-solo .pc-out{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:18px;align-items:start}
+.pc-solo .pc-cards{grid-template-columns:1fr}
+.pc-solo .pc-break{margin-top:0}
+.pc-solo .pc-quotes{grid-template-columns:1fr}
+.pc-duo .pc-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pc-duo .pc-quotes{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pc-card.pc-has-y1 .pc-plan{padding-inline-end:64px}
+@media (max-width:900px){.pc-solo .pc-out{grid-template-columns:1fr}}
+@media (max-width:640px){.pc-duo .pc-cards,.pc-duo .pc-quotes{grid-template-columns:1fr}}
+/* v14: Daftra total-cost table */
+.pv-dt-wrap{overflow-x:auto;margin-top:22px;border:1px solid var(--line);border-radius:16px;background:var(--white)}
+.pv-dt{width:100%;min-width:0;border-collapse:collapse;font-size:14.5px}
+.pv-dt th,.pv-dt td{padding:14px 16px;text-align:start;border-bottom:1px solid var(--line);font-family:inherit;text-transform:none;letter-spacing:0}
+.pv-dt thead th{font-size:12.5px;color:var(--muted);font-weight:600;background:var(--off)}
+.pv-dt tbody th{color:var(--navy);font-weight:600}
+.pv-dt td{color:var(--navy);font-weight:700;white-space:nowrap}
+.pv-dt td.pv-win{color:#1F7A4D}
+.pv-dt td.pv-win::after{content:" ✓";font-weight:800}
+.pv-honest{margin-top:24px;padding:16px 18px;border-radius:14px;background:var(--off);border:1px solid var(--line)}
+.pv-honest b{color:var(--navy)}
+.pv-honest p{margin:6px 0 0;color:var(--muted);font-size:14.5px;line-height:1.5}
+@media (max-width:560px){.pv-dt th,.pv-dt td{padding:10px 10px;font-size:13px}.pv-dt td{white-space:normal}}
+.pv-dt tbody th{font-size:14.5px!important;background:var(--white)!important;text-transform:none!important;letter-spacing:0!important;font-family:inherit!important}
+.pv-dt thead th{text-transform:none!important;letter-spacing:0!important;font-family:inherit!important}

@@ -1,14 +1,17 @@
-/* Prospera pricing calculator v13: Prospera ERP vs Odoo Custom vs Zoho One. Competitor prices: Egypt, checked 20 Oct 2026. */
+/* Prospera pricing calculator v14: Prospera ERP vs Odoo Custom vs Zoho One. Competitor prices: Egypt, checked 20 Oct 2026. */
 (function(){
   var D=document.getElementById('pv-data'); if(!D) return;
   var C=JSON.parse(D.textContent), T=C.t;
+  /* mode: '' = Prospera only (pricing page), 'o' = vs Odoo, 'z' = vs Zoho One, 'oz' = both */
+  var CMP=D.getAttribute('data-cmp')||'', HAS={p:1,o:CMP.indexOf('o')>=0,z:CMP.indexOf('z')>=0};
+  (function(){var w=document.querySelector('.pc-wrap');if(w)w.classList.add(CMP.length===0?'pc-solo':CMP.length===1?'pc-duo':'pc-trio')})();
   /* Prospera v7: users 1-2 at p1, every user after at p2; never more than cap x employees; team members on top */
   var P={ m:{p1:3457,n:2,p2:857,cap:1527,tm:99,d1:4/20.9}, a:{p1:2760,n:2,p2:680,cap:1256,tm:79,d1:3/16.4} };
-  /* servers: Basic included; upgrades monthly in EGP (US$120 and US$195 at 52.3), not discounted in year 1 */
-  var SRV={basic:0,pro:6280,adv:10200};
+  /* servers: Basic included; upgrades monthly in EGP (US$120 and US$195 at 54.5), not discounted in year 1 */
+  var SRV={basic:0,pro:6540,adv:10630};
   /* like-for-like: Odoo.sh capacity matched to the Prospera server (1 worker per 25 users, same storage) */
-  /* Month-End Close included: 1 h for 1-3 full users, 2 h for 4-10, 3 h for 11+. Accounting Desk packages (EGP a month, same as Daftra) */
-  function mecH(U){return U<=3?1:U<=10?2:3}
+  /* Prospera Care included: 1 h for 1-3 full users, 2 h for 4-10, 3 h for 11-25, 5 h for 26+. Accounting Desk packages (EGP a month, same as Daftra) */
+  function mecH(U){return U<=3?1:U<=10?2:U<=25?3:5}
   var AD={0:0,4:4250,8:8500,16:15500,24:22500};
   var SW={basic:1,pro:2,adv:4},SG={basic:50,pro:160,adv:240};
   /* first-year discount: the same share Odoo takes off its Custom plan in year 1 (US$4 of 20.90 monthly, US$3 of 16.40 annual) */
@@ -17,7 +20,7 @@
   /* Zoho One Standard, Egypt (EGP) */
   /* Support as a share of the subscription; Enterprise from 50 licences, Platinum from 250 on annual billing. Jumpstart US$200 an hour, 10 hours minimum */
   var Z={ m:{ae:1575,fl:3675,es:420}, a:{ae:1295,fl:3150,es:350}, sup:{classic:0,premium:0.20,enterprise:0.25,platinum:0.30}, min:{enterprise:50,platinum:250}, js:200, jsMin:10, ebs:2100 };
-  var st={bill:'m',year:'y1',E:40,U:12,T:0,fx:52.3,host:'sh',wk:null,gb:null,stg:1,zplan:'best',zsup:'classic',zjs:0,zebs:0,zadd:0,zone:0,srv:'basic',ad:0};
+  var st={bill:'m',year:'y1',E:40,U:12,T:0,fx:54.5,host:'sh',wk:null,gb:null,stg:1,zplan:'best',zsup:'classic',zjs:0,zebs:0,zadd:0,zone:0,srv:'basic',ad:0};
   function $(s,r){return (r||document).querySelector(s)}
   function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
   function fmt(n){return Math.round(n).toLocaleString('en-US')}
@@ -62,15 +65,17 @@
   /* quote settings */
   var S={host:$('#pc-host'),wk:$('#pc-wk'),gb:$('#pc-gb'),stg:$('#pc-stg'),fx:$('#pc-fx'),zplan:$('#pc-zplan'),zsup:$('#pc-zsup'),zjs:$('#pc-zjs'),zebs:$('#pc-zebs'),zadd:$('#pc-zadd'),zone:$('#pc-zone')};
   function num(el,min,def){var v=parseFloat(el.value);return isNaN(v)?def:Math.max(min,v)}
-  if(S.host){S.host.addEventListener('change',function(){st.host=S.host.value;calc()});
-    S.wk.addEventListener('input',function(){st.wk=S.wk.value===''?null:Math.round(num(S.wk,1,1));calc()});
-    S.gb.addEventListener('input',function(){st.gb=S.gb.value===''?null:Math.round(num(S.gb,1,50));calc()});
-    S.stg.addEventListener('input',function(){st.stg=Math.round(num(S.stg,0,1));calc()});
-    S.fx.addEventListener('input',function(){st.fx=num(S.fx,1,52.3);calc()});
-    S.zplan.addEventListener('change',function(){st.zplan=S.zplan.value;calc()});
-    S.zsup.addEventListener('change',function(){st.zsup=S.zsup.value;calc()});
-    ['zjs','zebs','zadd','zone'].forEach(function(k){if(S[k])S[k].addEventListener(k==='zebs'?'change':'input',function(){st[k]=Math.round(num(S[k],0,0));calc()});if(k==='zebs')return;if(S[k])S[k].addEventListener('input',function(){st[k]=Math.round(num(S[k],0,0));calc()})});
-    var rs=$('#pc-reset');if(rs)rs.addEventListener('click',function(){st.wk=null;st.gb=null;st.stg=1;st.host='sh';st.fx=52.3;st.zplan='best';st.zsup='classic';st.zjs=0;st.zebs=0;st.zadd=0;st.zone=0;['zjs','zebs','zadd','zone'].forEach(function(k){if(S[k])S[k].value=0});S.host.value='sh';S.stg.value=1;S.fx.value=52.3;S.zplan.value='best';S.zsup.value='classic';S.wk.value='';S.gb.value='';calc()});}
+  function on(el,ev,fn){if(el)el.addEventListener(ev,fn)}
+  on(S.host,'change',function(){st.host=S.host.value;calc()});
+  on(S.wk,'input',function(){st.wk=S.wk.value===''?null:Math.round(num(S.wk,1,1));calc()});
+  on(S.gb,'input',function(){st.gb=S.gb.value===''?null:Math.round(num(S.gb,1,50));calc()});
+  on(S.stg,'input',function(){st.stg=Math.round(num(S.stg,0,1));calc()});
+  on(S.fx,'input',function(){st.fx=num(S.fx,1,54.5);calc()});
+  on(S.zplan,'change',function(){st.zplan=S.zplan.value;calc()});
+  on(S.zsup,'change',function(){st.zsup=S.zsup.value;calc()});
+  ['zjs','zebs','zadd','zone'].forEach(function(k){on(S[k],k==='zebs'?'change':'input',function(){st[k]=Math.round(num(S[k],0,0));calc()})});
+  on($('#pc-reset'),'click',function(){st.wk=null;st.gb=null;st.stg=1;st.host='sh';st.fx=54.5;st.zplan='best';st.zsup='classic';st.zjs=0;st.zebs=0;st.zadd=0;st.zone=0;
+    ['zjs','zebs','zadd','zone'].forEach(function(k){if(S[k])S[k].value=0});var dv={host:'sh',stg:1,fx:54.5,zplan:'best',zsup:'classic',wk:'',gb:''};Object.keys(dv).forEach(function(k){if(S[k])S[k].value=dv[k]});calc()});
 
   function setCard(k,mo,plan,tag,tagCls){var c=$('[data-card='+k+']');if(!c)return;$('.pc-amt',c).innerHTML=money(mo)+' <small>'+T.mo+'</small>';
     $('.pc-plan',c).textContent=plan;$('.pc-sub',c).textContent=money(mo*12)+' '+T.yr+' · '+money(mo/st.E)+' '+T.perEmp;
@@ -88,8 +93,11 @@
     var oh=st.host==='sh'?T.oHostSh.replace('{w}',o.wk).replace('{g}',o.gb):T.oHostOn;
     setCard('o',ov,pl(st.U,y==='y1'?'oPlan1':'oPlan2').replace('{u}',st.U)+', '+oh,co[0],co[1]);
     setCard('z',zv,(z.plan==='ae'?T.zAE.replace('{e}',st.E):z.plan==='es'?T.zES.replace('{u}',st.U):pl(st.U,'zFL').replace('{u}',st.U))+(z.sup?T.zSup:''),cz[0],cz[1]);
-    var mx=Math.max(pv,ov,zv);[['p',pv],['o',ov],['z',zv]].forEach(function(a){var r=$('[data-bar='+a[0]+']');if(!r)return;$('.pc-fill',r).style.width=(a[1]/mx*100).toFixed(1)+'%';$('b',r).textContent=money(a[1])});
-    var sv=$('#pc-save');if(sv){var so=(ov-pv)*12,sz=(zv-pv)*12;
+    var all=[['p',pv],['o',ov],['z',zv]].filter(function(a){return HAS[a[0]]});var mx=Math.max.apply(null,all.map(function(a){return a[1]}));all.forEach(function(a){var r=$('[data-bar='+a[0]+']');if(!r)return;$('.pc-fill',r).style.width=(a[1]/mx*100).toFixed(1)+'%';$('b',r).textContent=money(a[1])});
+    var sv=$('#pc-save');if(sv&&CMP.length===1){var one=HAS.o?ov:zv,nm=HAS.o?'Odoo':T.zName,d1=(one-pv)*12;
+      $('b',sv).textContent=d1>=0?T.saveOne.replace('{n}',money(d1)).replace('{c}',nm):T.saveOneLess.replace('{n}',money(-d1)).replace('{c}',nm);
+      $('span',sv).textContent=(b==='m'?T.billM:T.billA)+' · '+(y==='y1'?T.yr1:T.yr2);}
+    else if(sv){var so=(ov-pv)*12,sz=(zv-pv)*12;
       if(so>0&&sz>0){$('b',sv).textContent=T.saveBoth.replace('{o}',money(so)).replace('{z}',money(sz));}
       else {$('b',sv).textContent=T.saveMixed.replace('{o}',(so>=0?T.less:T.more).replace('{n}',money(Math.abs(so)))).replace('{z}',(sz>=0?T.less:T.more).replace('{n}',money(Math.abs(sz))));}
       $('span',sv).textContent=(b==='m'?T.billM:T.billA)+' · '+(y==='y1'?T.yr1:T.yr2);}
@@ -112,15 +120,16 @@
       if(z.add)L3+=li(T.zqAdd,money(z.add));L3+=li(T.total,money(zv),'pc-qt');L3+=li(T.zq12,money(zv*12));
       if(z.js)L3+=li(T.zqJs.replace('{n}',z.js).replace('{p}',usd(Z.js)),money(z.jsE));if(z.ebs)L3+=li(T.zqEbs.replace('{n}',z.ebs).replace('{p}',money(Z.ebs)),money(z.ebsE));if(z.one)L3+=li(T.zqOne,money(z.one));
       if(z.js||z.ebs||z.one)L3+=li(T.zqY1,money(z.y1),'pc-qt');q.innerHTML=L3}
-    var tr=$('#pc-total');if(tr){var c=$$('td',tr);c[0].textContent=money(pv);c[1].textContent=money(ov);c[2].textContent=money(zv)}
+    var tr=$('#pc-total');if(tr){var c=$$('td',tr),vals={p:pv,o:ov,z:zv};COLS.forEach(function(k,i){if(c[i])c[i].textContent=money(vals[k])})}
   }
 
+  var COLS=['p'].concat(HAS.o?['o']:[]).concat(HAS.z?['z']:[]);
   var tbl=$('#pc-tbl');
   function cell(v){var k=v[0],lab=v[1],sm=v[2];var ic=k==='y'?'<span class="cv y" role="img" aria-label="'+T.inc+'"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.3l2.8 2.8 6.2-6.4"/></svg></span>':k==='n'?'<span class="cv n" role="img" aria-label="'+T.notInc+'"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 8h7"/></svg></span>':'<span class="cv '+k+'">'+lab+'</span>';return ic+(sm?'<small>'+sm+'</small>':'')}
-  if(tbl){var h='<thead><tr><th scope="col">'+T.feat+'</th><th scope="col" class="pc-us">'+T.pName+'</th><th scope="col">'+T.oName+'</th><th scope="col">'+T.zName+'</th></tr></thead><tbody>';
-    h+='<tr class="pc-total" id="pc-total"><th scope="row">'+T.totalRow+'</th><td></td><td></td><td></td></tr>';
-    C.m.forEach(function(r){if(r.g){h+='<tr class="pc-g"><th colspan="4" scope="colgroup">'+r.g+'</th></tr>';return}
-      var same=(r.p.join()===r.z.join()&&r.p.join()===r.o.join());h+='<tr'+(same?' class="pc-same"':'')+'><th scope="row">'+r.f+'</th><td class="pc-us">'+cell(r.p)+'</td><td>'+cell(r.o)+'</td><td>'+cell(r.z)+'</td></tr>'});
+  if(tbl){var NM={p:T.pName,o:T.oName,z:T.zName};var h='<thead><tr><th scope="col">'+T.feat+'</th>'+COLS.map(function(k){return '<th scope="col"'+(k==='p'?' class="pc-us"':'')+'>'+NM[k]+'</th>'}).join('')+'</tr></thead><tbody>';
+    h+='<tr class="pc-total" id="pc-total"><th scope="row">'+T.totalRow+'</th>'+COLS.map(function(){return '<td></td>'}).join('')+'</tr>';
+    C.m.forEach(function(r){if(r.g){h+='<tr class="pc-g"><th colspan="'+(COLS.length+1)+'" scope="colgroup">'+r.g+'</th></tr>';return}
+      var same=COLS.every(function(k){return r[k].join()===r.p.join()});h+='<tr'+(same?' class="pc-same"':'')+'><th scope="row">'+r.f+'</th>'+COLS.map(function(k){return '<td'+(k==='p'?' class="pc-us"':'')+'>'+cell(r[k])+'</td>'}).join('')+'</tr>'});
     tbl.innerHTML=h+'</tbody>';}
   var fb=$('#pc-show'),fw=$('#pc-feat-body');
   if(fb&&fw){fb.addEventListener('click',function(){var open=fw.hidden;fw.hidden=!open;fb.setAttribute('aria-expanded',open);fb.textContent=open?T.hideFeat:T.showFeat;if(open)fw.scrollIntoView({behavior:'smooth',block:'start'})})}
