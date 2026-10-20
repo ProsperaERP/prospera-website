@@ -1,4 +1,4 @@
-/* Prospera pricing calculator v7: Prospera ERP vs Odoo Custom vs Zoho One. Competitor prices: Egypt, checked 20 Oct 2026. */
+/* Prospera pricing calculator v8: Prospera ERP vs Odoo Custom vs Zoho One. Competitor prices: Egypt, checked 20 Oct 2026. */
 (function(){
   var D=document.getElementById('pv-data'); if(!D) return;
   var C=JSON.parse(D.textContent), T=C.t;
@@ -7,8 +7,9 @@
   /* Odoo Custom plan, Egypt (USD). Odoo.sh: 1 worker + 1 per 25 back-end users; 50 GB for every 12.5 users; staging copies */
   var O={ m:{lic:20.9,disc:4,wk:72,gb:0.25,st:18}, a:{lic:16.4,disc:3,wk:57.6,gb:0.2,st:14.4} };
   /* Zoho One Standard, Egypt (EGP) */
-  var Z={ m:{ae:1575,fl:3675}, a:{ae:1295,fl:3150}, sup:{classic:0,premium:0.20,enterprise:0.25} };
-  var st={bill:'m',year:'y1',E:40,U:12,T:0,fx:52.3,host:'sh',wk:null,gb:null,stg:1,zplan:'best',zsup:'classic'};
+  /* Support as a share of the subscription; Enterprise from 50 licences, Platinum from 250 on annual billing. Jumpstart US$200 an hour, 10 hours minimum */
+  var Z={ m:{ae:1575,fl:3675}, a:{ae:1295,fl:3150}, sup:{classic:0,premium:0.20,enterprise:0.25,platinum:0.30}, min:{enterprise:50,platinum:250}, js:200, jsMin:10 };
+  var st={bill:'m',year:'y1',E:40,U:12,T:0,fx:52.3,host:'sh',wk:null,gb:null,stg:1,zplan:'best',zsup:'classic',zjs:0,zadd:0,zone:0};
   function $(s,r){return (r||document).querySelector(s)}
   function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
   function fmt(n){return Math.round(n).toLocaleString('en-US')}
@@ -22,7 +23,9 @@
     var list=U*o.lic,disc=y==='y1'?U*o.disc:0,hw=0,hg=0,hs=0;
     if(st.host==='sh'){hw=wk*o.wk;hg=gb*o.gb;hs=sg*o.st}
     var tot=list-disc+hw+hg+hs;return {total:tot*st.fx,usd:tot,list:list,disc:disc,hw:hw,hg:hg,hs:hs,wk:wk,gb:gb,sg:sg}}
-  function zoho(E,U,b){var z=Z[b];var ae=E*z.ae,fl=U*z.fl,plan=st.zplan==='best'?(ae<=fl?'ae':'fl'):st.zplan;var base=plan==='ae'?ae:fl;var sup=base*Z.sup[st.zsup];return {total:base+sup,base:base,sup:sup,plan:plan}}
+  function zoho(E,U,b){var z=Z[b];var ae=E*z.ae,fl=U*z.fl,plan=st.zplan==='best'?(ae<=fl?'ae':'fl'):st.zplan;var base=plan==='ae'?ae:fl;var lic=plan==='ae'?E:U;var sup=base*Z.sup[st.zsup];
+    var js=st.zjs>0?Math.max(Z.jsMin,st.zjs):0;var jsE=js*Z.js*st.fx;var tot=base+sup+st.zadd;
+    return {total:tot,base:base,sup:sup,plan:plan,lic:lic,add:st.zadd,js:js,jsE:jsE,one:st.zone,y1:tot*12+jsE+st.zone,minOk:!(Z.min[st.zsup]&&lic<Z.min[st.zsup]),annOk:!(st.zsup==='platinum'&&b!=='a')}}
 
   function setBill(b){st.bill=b;$$('[data-bill]').forEach(function(x){x.setAttribute('aria-pressed',x.getAttribute('data-bill')===b)});
     $$('[data-pm]').forEach(function(x){x.textContent=money(+x.getAttribute(b==='m'?'data-pm':'data-pa'))});calc();}
@@ -40,7 +43,7 @@
   $$('[data-preset]').forEach(function(x){x.addEventListener('click',function(){var v=x.getAttribute('data-preset').split(',');F.E.n.value=v[0];F.U.n.value=v[1];F.T.n.value=v[2]||0;clamp();calc()})});
 
   /* quote settings */
-  var S={host:$('#pc-host'),wk:$('#pc-wk'),gb:$('#pc-gb'),stg:$('#pc-stg'),fx:$('#pc-fx'),zplan:$('#pc-zplan'),zsup:$('#pc-zsup')};
+  var S={host:$('#pc-host'),wk:$('#pc-wk'),gb:$('#pc-gb'),stg:$('#pc-stg'),fx:$('#pc-fx'),zplan:$('#pc-zplan'),zsup:$('#pc-zsup'),zjs:$('#pc-zjs'),zadd:$('#pc-zadd'),zone:$('#pc-zone')};
   function num(el,min,def){var v=parseFloat(el.value);return isNaN(v)?def:Math.max(min,v)}
   if(S.host){S.host.addEventListener('change',function(){st.host=S.host.value;calc()});
     S.wk.addEventListener('input',function(){st.wk=S.wk.value===''?null:Math.round(num(S.wk,1,1));calc()});
@@ -49,7 +52,8 @@
     S.fx.addEventListener('input',function(){st.fx=num(S.fx,1,52.3);calc()});
     S.zplan.addEventListener('change',function(){st.zplan=S.zplan.value;calc()});
     S.zsup.addEventListener('change',function(){st.zsup=S.zsup.value;calc()});
-    var rs=$('#pc-reset');if(rs)rs.addEventListener('click',function(){st.wk=null;st.gb=null;st.stg=1;st.host='sh';st.fx=52.3;st.zplan='best';st.zsup='classic';S.host.value='sh';S.stg.value=1;S.fx.value=52.3;S.zplan.value='best';S.zsup.value='classic';S.wk.value='';S.gb.value='';calc()});}
+    ['zjs','zadd','zone'].forEach(function(k){if(S[k])S[k].addEventListener('input',function(){st[k]=Math.round(num(S[k],0,0));calc()})});
+    var rs=$('#pc-reset');if(rs)rs.addEventListener('click',function(){st.wk=null;st.gb=null;st.stg=1;st.host='sh';st.fx=52.3;st.zplan='best';st.zsup='classic';st.zjs=0;st.zadd=0;st.zone=0;['zjs','zadd','zone'].forEach(function(k){if(S[k])S[k].value=0});S.host.value='sh';S.stg.value=1;S.fx.value=52.3;S.zplan.value='best';S.zsup.value='classic';S.wk.value='';S.gb.value='';calc()});}
 
   function setCard(k,mo,plan,tag,tagCls){var c=$('[data-card='+k+']');if(!c)return;$('.pc-amt',c).innerHTML=money(mo)+' <small>'+T.mo+'</small>';
     $('.pc-plan',c).textContent=plan;$('.pc-sub',c).textContent=money(mo*12)+' '+T.yr+' · '+money(mo/st.E)+' '+T.perEmp;
@@ -83,7 +87,11 @@
       L2+=li(T.oqTotal,usd(o.usd));L2+=li(T.oqEgp.replace('{fx}',st.fx),money(ov),'pc-qt');q.innerHTML=L2}
     q=$('#pc-q-z');if(q){var zz=Z[b],L3='';L3+=li(T.zqAE.replace('{n}',st.E).replace('{p}',money(zz.ae)),money(st.E*zz.ae),z.plan==='ae'?'pc-on':'pc-off');
       L3+=li(T.zqFL.replace('{n}',st.U).replace('{p}',money(zz.fl)),money(st.U*zz.fl),z.plan==='fl'?'pc-on':'pc-off');
-      if(z.sup)L3+=li(T.zqSup.replace('{p}',Math.round(Z.sup[st.zsup]*100)),money(z.sup));L3+=li(T.total,money(zv),'pc-qt');q.innerHTML=L3}
+      if(z.sup)L3+=li(T.zqSup.replace('{s}',T.supN[st.zsup]).replace('{p}',Math.round(Z.sup[st.zsup]*100)),money(z.sup));
+      if(!z.minOk)L3+=li(T.zqMin.replace('{n}',Z.min[st.zsup]),'','pc-qn');if(!z.annOk)L3+=li(T.zqAnn,'','pc-qn');
+      if(z.add)L3+=li(T.zqAdd,money(z.add));L3+=li(T.total,money(zv),'pc-qt');L3+=li(T.zq12,money(zv*12));
+      if(z.js)L3+=li(T.zqJs.replace('{n}',z.js).replace('{p}',usd(Z.js)),money(z.jsE));if(z.one)L3+=li(T.zqOne,money(z.one));
+      if(z.js||z.one)L3+=li(T.zqY1,money(z.y1),'pc-qt');q.innerHTML=L3}
     var tr=$('#pc-total');if(tr){var c=$$('td',tr);c[0].textContent=money(pv);c[1].textContent=money(ov);c[2].textContent=money(zv)}
   }
 
