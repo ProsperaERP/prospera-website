@@ -953,3 +953,45 @@ html[dir="rtl"] .footer .fcol p{font-family:var(--body);letter-spacing:0;text-tr
 .plan.feature .pp-more summary::after{color:var(--gold)}
 .tip-pop{top:0;left:50%}
 .tip-pop:not(.on){visibility:hidden;transition:opacity .2s,transform .2s,visibility 0s .2s}
+/* Demo and contact forms (12 Nov 2026) */
+.pl-dlg{border:0;padding:0;overflow:auto;overscroll-behavior:contain;border-radius:var(--radius,16px);width:min(560px,calc(100vw - 32px));max-height:calc(100dvh - 32px);background:var(--white,#fff);color:var(--navy,#0A1931);box-shadow:0 30px 80px rgba(10,25,49,.35)}
+.pl-dlg::backdrop{background:rgba(10,25,49,.55);backdrop-filter:blur(3px)}
+.pl-dlg[open]{animation:plIn .25s ease}
+@keyframes plIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.pl-dlg[open]{animation:none}}
+.pl-in{position:relative;padding:32px 32px 28px;overflow:auto}
+.pl-in h2{margin:0 40px 8px 0;font-size:clamp(24px,4vw,30px);line-height:1.15;color:var(--navy,#0A1931)}
+[dir=rtl] .pl-in h2,:lang(ar) .pl-in h2{margin:0 0 8px 40px}
+.pl-sub{margin:0 0 22px;color:var(--muted,#4A5A70);font-size:15px;line-height:1.55}
+.pl-x{position:absolute;top:16px;inset-inline-end:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line,#E3E7EE);background:var(--white,#fff);color:var(--navy,#0A1931);font-size:24px;line-height:1;cursor:pointer}
+.pl-x:hover,.pl-x:focus-visible{border-color:var(--gold,#C2B067)}
+.pl-form{display:grid;gap:14px}
+.pl-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:560px){.pl-row{grid-template-columns:1fr}.pl-in{padding:26px 18px 22px}}
+.pl-f{display:grid;gap:6px;min-width:0}
+.pl-f label{font-size:13px;font-weight:600;color:var(--ink,#1E3A5C)}
+.pl-f input,.pl-f select,.pl-f textarea{width:100%;box-sizing:border-box;font:inherit;font-size:16px;color:var(--navy,#0A1931);background:var(--white,#fff);border:1px solid #C9D1DD;border-radius:10px;padding:11px 13px;min-height:46px;box-shadow:none}
+.pl-f textarea{resize:vertical;min-height:84px}
+.pl-f input:focus,.pl-f select:focus,.pl-f textarea:focus{outline:none;border-color:var(--navy,#0A1931);box-shadow:0 0 0 3px var(--gold-tint,#F6F1DF)}
+.pl-f [aria-invalid=true]{border-color:#B42318}
+.pl-err{margin:0;font-size:13px;color:#B42318}
+.pl-msg{margin:0;padding:10px 12px;border-radius:10px;background:#FEF3F2;color:#912018;font-size:14px;line-height:1.5}
+.pl-msg a{color:inherit;font-weight:600}
+.pl-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.pl-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:4px}
+.pl-actions .btn,.pl-ok .btn{margin-top:0;align-self:auto;cursor:pointer}
+.pl-actions .btn[disabled]{opacity:.7;cursor:wait}
+.pl-note{font-size:13px;color:var(--muted,#4A5A70)}
+.pl-ok{text-align:center;padding:12px 0 4px;outline:none}
+.pl-ok h3{margin:14px 0 8px;font-size:22px;color:var(--navy,#0A1931)}
+.pl-ok p{margin:0 auto 20px;max-width:40ch;color:var(--muted,#4A5A70);line-height:1.55}
+.pl-tick{display:inline-block;width:52px;height:52px;border-radius:50%;background:var(--gold-tint,#F6F1DF);border:1px solid var(--gold-line,#E6DCB6);position:relative}
+.pl-tick::after{content:"";position:absolute;left:18px;top:13px;width:12px;height:22px;border:solid var(--navy,#0A1931);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.pl-inline{background:var(--white,#fff);border:1px solid var(--line,#E3E7EE);border-radius:var(--radius,16px);padding:28px;box-shadow:0 10px 30px rgba(10,25,49,.06)}
+@media (max-width:560px){.pl-inline{padding:20px 16px}}
+.pl-contact{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;align-items:start;padding-bottom:72px}
+@media (max-width:900px){.pl-contact{grid-template-columns:1fr}}
+.pl-side{background:var(--gold-tint,#F6F1DF);border:1px solid var(--gold-line,#E6DCB6);border-radius:var(--radius,16px);padding:28px}
+.pl-side h2{margin:0 0 10px;font-size:24px;line-height:1.2;color:var(--navy,#0A1931)}
+.pl-side p{margin:0 0 20px;color:var(--muted,#4A5A70);line-height:1.55}
+.pl-side .btn{margin-top:0}

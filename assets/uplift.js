@@ -202,3 +202,121 @@
   window.addEventListener("load",run);window.addEventListener("resize",soon);
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(run);
 })();
+/* Demo and contact forms (12 Nov 2026). Each request becomes a Lead in Prospera ERP, source "prosperasystems.com".
+   Every "Book a free systems review" link opens the demo form here (it still goes straight to booking if this script
+   doesn't run). After sending, the visitor can pick a time on the booking page. A page can hold the contact form inline
+   with <div data-lead-form="contact"></div>; any element with data-lead="demo" or data-lead="contact" opens that form. */
+(function(){
+  var API="https://prosperasuite.com/api/method/prospera_realestate.property_portal.site_leads.submit";
+  var BOOK="https://prospera.zohobookings.com/#/prosperasystems";
+  var AR=(document.documentElement.lang||"").toLowerCase().indexOf("ar")===0;
+  var T=AR?{
+    demoT:"احجز مراجعة مجانية لأنظمتك",demoS:"اترك بياناتك وسنتواصل معك لنفهم طريقة عملك ونعرض عليك بروسبيرا على أرقامك.",
+    contactT:"تواصل معنا",contactS:"اكتب لنا رسالتك وسيرد عليك فريقنا.",
+    name:"الاسم بالكامل",email:"البريد الإلكتروني للعمل",email2:"البريد الإلكتروني",phone:"الموبايل (واتساب)",phoneOpt:"الموبايل (اختياري)",
+    company:"اسم الشركة",companyOpt:"اسم الشركة (اختياري)",size:"عدد الموظفين",sizeAny:"اختر",country:"الدولة",
+    eg:"مصر",sa:"السعودية",ae:"الإمارات",other:"دولة أخرى",cover:"ما الذي تريد أن نركز عليه؟ (اختياري)",message:"رسالتك",
+    send:"أرسل الطلب",sendC:"أرسل الرسالة",sending:"جارٍ الإرسال...",privacy:"نستخدم بياناتك للرد عليك فقط.",
+    okT:"شكرًا {0}، وصلنا طلبك.",okDemo:"يمكنك اختيار موعد يناسبك الآن، أو سيتواصل معك فريقنا لترتيبه.",pick:"اختر موعدًا",
+    okC:"وصلت رسالتك إلى فريقنا وسنرد عليك.",close:"إغلاق",
+    e_name:"اكتب اسمك بالكامل.",e_email:"اكتب بريدًا إلكترونيًا صحيحًا.",e_phone:"اكتب رقم موبايل صحيحًا مع كود الدولة إن أمكن.",e_message:"اكتب رسالتك.",
+    e_send:"تعذر الإرسال الآن. حاول مرة أخرى، أو احجز موعدًا مباشرة.",bookNow:"احجز موعدًا مباشرة"
+  }:{
+    demoT:"Book a free systems review",demoS:"Leave your details and we'll get in touch to understand how you work and show you Prospera on your own numbers.",
+    contactT:"Contact us",contactS:"Send us a message and our team will reply.",
+    name:"Full name",email:"Work email",email2:"Email",phone:"Mobile (WhatsApp)",phoneOpt:"Mobile (optional)",
+    company:"Company",companyOpt:"Company (optional)",size:"Employees",sizeAny:"Choose",country:"Country",
+    eg:"Egypt",sa:"Saudi Arabia",ae:"United Arab Emirates",other:"Other",cover:"What should we focus on? (optional)",message:"Your message",
+    send:"Send request",sendC:"Send message",sending:"Sending...",privacy:"We use your details only to reply to you.",
+    okT:"Thank you, {0}. We have your request.",okDemo:"Pick a time that suits you now, or our team will contact you to arrange it.",pick:"Pick a time",
+    okC:"Your message has reached our team and we'll reply.",close:"Close",
+    e_name:"Enter your full name.",e_email:"Enter a valid email address.",e_phone:"Enter a valid mobile number, with the country code if you can.",e_message:"Write your message.",
+    e_send:"We couldn't send this right now. Try again, or book a time directly.",bookNow:"Book a time directly"
+  };
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+  // Campaign tags from the landing URL, kept for this visit
+  var UTM=["utm_source","utm_medium","utm_campaign"];
+  try{var q=new URLSearchParams(location.search);UTM.forEach(function(k){var v=q.get(k);if(v)sessionStorage.setItem("pl_"+k,v.slice(0,120));});}catch(e){}
+  function utm(k){try{return sessionStorage.getItem("pl_"+k)||"";}catch(e){return "";}}
+  var uid=0;
+  function field(id,label,input){return '<div class="pl-f"><label for="'+id+'">'+label+'</label>'+input+'<p class="pl-err" id="'+id+'-e" hidden></p></div>';}
+  function formHTML(kind){
+    var p="pl"+(++uid)+"-",demo=kind==="demo";
+    var h='<form class="pl-form" novalidate data-kind="'+kind+'">';
+    h+=field(p+"name",T.name,'<input id="'+p+'name" name="name" autocomplete="name" required maxlength="140">');
+    h+='<div class="pl-row">'+field(p+"email",demo?T.email:T.email2,'<input id="'+p+'email" name="email" type="email" autocomplete="email" required maxlength="140" dir="ltr">');
+    h+=field(p+"phone",demo?T.phone:T.phoneOpt,'<input id="'+p+'phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" dir="ltr"'+(demo?" required":"")+'>')+'</div>';
+    h+=field(p+"company",demo?T.company:T.companyOpt,'<input id="'+p+'company" name="company" autocomplete="organization" maxlength="140">');
+    if(demo){
+      h+='<div class="pl-row">'+field(p+"size",T.size,'<select id="'+p+'size" name="size"><option value="">'+T.sizeAny+'</option><option>1-10</option><option>11-50</option><option>51-200</option><option>201-500</option><option>501-1000</option><option>1000+</option></select>');
+      h+=field(p+"country",T.country,'<select id="'+p+'country" name="country"><option value="eg">'+T.eg+'</option><option value="sa">'+T.sa+'</option><option value="ae">'+T.ae+'</option><option value="">'+T.other+'</option></select>')+'</div>';
+    }
+    h+=field(p+"message",demo?T.cover:T.message,'<textarea id="'+p+'message" name="message" rows="'+(demo?3:5)+'" maxlength="3000"'+(demo?"":" required")+'></textarea>');
+    h+='<div class="pl-hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>';
+    h+='<p class="pl-msg" role="alert" hidden></p>';
+    h+='<div class="pl-actions"><button type="submit" class="btn btn-gold">'+(demo?T.send:T.sendC)+'</button><span class="pl-note">'+T.privacy+'</span></div></form>';
+    return h;
+  }
+  function showErr(form,name,text){var i=form.elements[name];if(!i)return;var e=document.getElementById(i.id+"-e");i.setAttribute("aria-invalid",text?"true":"false");if(e){e.textContent=text||"";e.hidden=!text;if(text)i.setAttribute("aria-describedby",e.id);}}
+  function check(form){
+    var kind=form.getAttribute("data-kind"),v=function(n){return(form.elements[n]&&form.elements[n].value||"").trim();},bad=null;
+    function need(n,ok,msg){var good=ok(v(n));showErr(form,n,good?"":msg);if(!good&&!bad)bad=n;}
+    need("name",function(x){return x.length>=2;},T.e_name);
+    need("email",function(x){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(x);},T.e_email);
+    need("phone",function(x){var d=x.replace(/\D/g,"");return kind==="contact"&&!d?true:d.length>=8&&d.length<=15;},T.e_phone);
+    if(kind==="contact")need("message",function(x){return x.length>=2;},T.e_message);
+    if(bad)form.elements[bad].focus();
+    return !bad;
+  }
+  function done(box,kind,name){
+    var first=esc((name||"").split(" ")[0]);
+    var h='<div class="pl-ok" tabindex="-1"><span class="pl-tick" aria-hidden="true"></span><h3>'+T.okT.replace("{0}",first)+'</h3>';
+    h+=kind==="demo"?'<p>'+T.okDemo+'</p><a class="btn btn-gold" data-pl-direct href="'+BOOK+'" target="_blank" rel="noopener">'+T.pick+'</a>':'<p>'+T.okC+'</p>';
+    box.innerHTML=h+'</div>';var ok=box.querySelector(".pl-ok");if(ok)ok.focus();
+  }
+  function wire(box){
+    var form=box.querySelector("form"),kind=form.getAttribute("data-kind");
+    form.addEventListener("submit",function(ev){
+      ev.preventDefault();
+      var msg=form.querySelector(".pl-msg"),btn=form.querySelector("button[type=submit]");
+      msg.hidden=true;
+      if(!check(form))return;
+      var data=new URLSearchParams();
+      ["name","email","phone","company","size","country","message","website"].forEach(function(n){if(form.elements[n])data.append(n,form.elements[n].value.trim());});
+      data.append("kind",kind);data.append("page",location.pathname+location.hash);data.append("lang",AR?"ar":"en");
+      UTM.forEach(function(k){data.append(k,utm(k));});
+      btn.disabled=true;var label=btn.textContent;btn.textContent=T.sending;
+      fetch(API,{method:"POST",body:data,credentials:"omit",mode:"cors"}).then(function(r){return r.json();}).then(function(j){
+        var m=j&&j.message||{};
+        if(m.ok){done(box,kind,form.elements.name.value.trim());return;}
+        if(m.error&&form.elements[m.error]){check(form);showErr(form,m.error,T["e_"+m.error]||T.e_send);form.elements[m.error].focus();}
+        else throw new Error("save");
+        btn.disabled=false;btn.textContent=label;
+      }).catch(function(){
+        msg.innerHTML=esc(T.e_send)+' <a data-pl-direct href="'+BOOK+'" target="_blank" rel="noopener">'+T.bookNow+'</a>';msg.hidden=false;
+        btn.disabled=false;btn.textContent=label;
+      });
+    });
+  }
+  var dlg=null;
+  function open(kind){
+    if(!dlg){
+      dlg=document.createElement("dialog");dlg.className="pl-dlg";dlg.setAttribute("aria-labelledby","pl-dlg-t");
+      document.body.appendChild(dlg);
+      dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close();});
+    }
+    var demo=kind==="demo";
+    dlg.innerHTML='<div class="pl-in"><button type="button" class="pl-x" aria-label="'+T.close+'">&times;</button><h2 id="pl-dlg-t">'+(demo?T.demoT:T.contactT)+'</h2><p class="pl-sub">'+(demo?T.demoS:T.contactS)+'</p><div class="pl-box">'+formHTML(kind)+'</div></div>';
+    dlg.querySelector(".pl-x").addEventListener("click",function(){dlg.close();});
+    wire(dlg.querySelector(".pl-box"));
+    if(dlg.showModal){dlg.showModal();}else{dlg.setAttribute("open","");}
+    var f=dlg.querySelector("input[name=name]");if(f)f.focus();
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest('a[href*="zohobookings.com"],[data-lead]');
+    if(!a||a.hasAttribute("data-pl-direct")||e.metaKey||e.ctrlKey||e.shiftKey)return;
+    if(typeof HTMLDialogElement==="undefined")return;   // very old browsers: the link goes straight to booking
+    e.preventDefault();open(a.getAttribute("data-lead")==="contact"?"contact":"demo");
+  });
+  document.querySelectorAll("[data-lead-form]").forEach(function(box){box.classList.add("pl-box","pl-inline");box.innerHTML=formHTML(box.getAttribute("data-lead-form")==="demo"?"demo":"contact");wire(box);});
+})();
