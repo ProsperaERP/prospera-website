@@ -995,3 +995,8 @@ html[dir="rtl"] .footer .fcol p{font-family:var(--body);letter-spacing:0;text-tr
 .pl-side h2{margin:0 0 10px;font-size:24px;line-height:1.2;color:var(--navy,#0A1931)}
 .pl-side p{margin:0 0 20px;color:var(--muted,#4A5A70);line-height:1.55}
 .pl-side .btn{margin-top:0}
+/* Sign in to Prospera ERP (13 Nov 2026) */
+.signin{font-size:14px;font-weight:600;color:var(--navy);text-decoration:none;padding:8px 12px;margin-inline-end:4px;white-space:nowrap;border-radius:999px}
+.signin:hover,.signin:focus-visible{background:var(--off);text-decoration:underline;text-underline-offset:3px}
+.nav-signin{display:none}
+@media (max-width:860px){.signin{display:none}.nav .nav-signin{display:block;font-weight:700;border-top:1px solid var(--cool);margin-top:8px;padding-top:16px}}
